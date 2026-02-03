@@ -1,50 +1,305 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Rover Page 2</title>
+<meta charset="UTF-8">
+<title>Documentation (Page 2)</title>
+
+<style>
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f6f6fb;
+  }
+
+  /* ---- LAYOUT ---- */
+  .layout {
+    display: flex;
+    min-height: 100vh;
+  }
+
+  /* ---- SIDEBAR ---- */
+  .sidebar {
+    width: 240px;
+    background: #c9c0f5; /* light purple */
+    padding: 16px 12px;
+    box-sizing: border-box;
+  }
+
+  .sidebar h2 {
+    margin: 0 0 14px 0;
+    font-size: 18px;
+    color: #6a4bdc;
+    font-weight: 700;
+  }
+
+  .sidebar .nav-title {
+    margin-top: 18px;
+    margin-bottom: 10px;
+    font-size: 12px;
+    color: rgba(60, 40, 140, 0.8);
+    letter-spacing: 0.4px;
+    text-transform: uppercase;
+  }
+
+  .nav {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+  }
+
+  .nav a {
+    text-decoration: none;
+    color: #4b3aa5;
+    background: rgba(255, 255, 255, 0.35);
+    border: 1px solid rgba(0,0,0,0.08);
+    border-radius: 10px;
+    padding: 10px 12px;
+    display: block;
+    font-weight: 600;
+  }
+
+  .nav a:hover {
+    background: rgba(255, 255, 255, 0.55);
+  }
+
+  .nav a.active {
+    background: white;
+    border-left: 6px solid #7b5cff;
+    padding-left: 8px;
+  }
+
+  /* ---- MAIN CONTENT ---- */
+  .main {
+    flex: 1;
+    padding: 32px 40px;
+    box-sizing: border-box;
+  }
+
+  .page-title {
+    text-align: center;
+    color: #7b5cff;
+    font-size: 42px;
+    margin: 10px 0 8px 0;
+    font-family: "Trebuchet MS", Arial, sans-serif;
+  }
+
+  .page-subtitle {
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto 18px auto;
+    color: #666;
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  /* ---- DROPDOWN PANELS ---- */
+  .panel-wrap {
+    max-width: 980px;
+    margin: 0 auto;
+  }
+
+  details {
+    margin: 18px 0;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid rgba(0,0,0,0.12);
+    background: white;
+  }
+
+  summary {
+    cursor: pointer;
+    font-weight: 700;
+    padding: 16px 18px;
+    background: linear-gradient(90deg, #7b5cff, #a06bff);
+    color: white;
+    list-style: none;
+    position: relative;
+  }
+
+  /* Hide default marker and make our own triangle */
+  summary::-webkit-details-marker { display: none; }
+
+  summary::after {
+    content: "▾";
+    position: absolute;
+    right: 16px;
+    top: 14px;
+    font-size: 18px;
+    opacity: 0.9;
+    transform: rotate(0deg);
+    transition: transform 0.2s ease;
+  }
+
+  details[open] summary::after {
+    transform: rotate(180deg);
+  }
+
+  .panel-body {
+    padding: 18px;
+    color: #444;
+    font-size: 14px;
+    line-height: 1.65;
+  }
+
+  .panel-body ul {
+    margin-top: 10px;
+  }
+
+  .download-btn {
+    display: inline-block;
+    margin-top: 14px;
+    padding: 10px 14px;
+    border-radius: 8px;
+    border: none;
+    background: #7b5cff;
+    color: white;
+    font-weight: 700;
+    cursor: pointer;
+    text-decoration: none;
+  }
+
+  .download-btn:hover {
+    background: #6a4bdc;
+  }
+
+  /* ---- WBS IMAGE PLACEHOLDER ---- */
+  .image-box {
+    margin-top: 18px;
+    border: 2px dashed rgba(0,0,0,0.25);
+    border-radius: 10px;
+    background: #fafafe;
+    padding: 18px;
+    text-align: center;
+  }
+
+  .image-box img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    border: 1px solid rgba(0,0,0,0.12);
+  }
+
+  .hint {
+    color: #777;
+    font-size: 13px;
+    margin-top: 8px;
+  }
+</style>
 </head>
 
-
 <body>
+<div class="layout">
 
-<h1>Rover Progress Page 2 (Documentation)</h1>
-<p> - This is Page 2 for the Integration II Rover project.
-    This page includes ____ (put actual stuff in here soon )
-</p>
+  <!-- LEFT SIDEBAR (same for all pages) -->
+  <aside class="sidebar">
+    <h2>Operation Rover Rebuttal</h2>
 
-<br>
+   
+    <nav class="nav">
+        <a href="index.html" class="active">Home (Page 1)</a>
+        <a href="page2.html">Defining the Project (Page 2)</a>
+        <a href="page3.html">Defining the Product (Page 3)</a>
+        <a href="page4.html">Generation and Evaluation of Concepts (Page 4)</a>
+        <a href="page5.html">Concept finalization (Page 5)</a>
+        <a href="page6.html">Product Development (Page 6)</a>
+        <a href="page7.html">Closing thoughts (Page 7)</a>
+        <a href="page8.html">Other Projects (Page 8)</a>
+      </nav>
+  </aside>
 
-<button onclick="location.href='index.html'"> Go to Page 1 (Home Page)</button>
+  <!-- MAIN CONTENT -->
+  <main class="main">
 
-<br>
+    <h1 class="page-title">Defining the Project</h1>
 
-<button onclick="location.href='page2.html'" >Go to Page 2 (Documentation)</button>
+    <p class="page-subtitle">
+      Here you will find the building blocks of the overall development process for our autonomous rover.
+      Our team will use these components to plan, track progress, and organize our work as the rover evolves
+      from concept to final testing.
+    </p>
 
-<br>
+    <div class="panel-wrap">
 
-<button onclick="location.href='page3.html'"> Go to Page 3</button>
+      <!-- GANTT CHART -->
+      <details open>
+        <summary>Gantt Chart</summary>
+        <div class="panel-body">
+          <p>
+            Our team developed and actively uses a Gantt chart to plan, monitor, and manage the engineering process
+            of our autonomous rover project. The Gantt chart serves as a visual timeline that organizes our tasks,
+            milestones, and deadlines, allowing us to clearly see how each phase fits within the overall schedule.
+          </p>
 
-<br>
+          <p><b>By using the Gantt chart, we are able to:</b></p>
+          <ul>
+            <li>Coordinate work across disciplines, ensuring mechanical, electrical, and software tasks progress in sync.</li>
+            <li>Visualize dependencies between subsystems, helping us identify which tasks must be completed before others can begin.</li>
+            <li>Track our progress effectively, so we can adjust priorities and timelines as challenges arise.</li>
+            <li>Improve time management, ensuring that we stay on schedule and meet our project milestones.</li>
+            <li>Enhance teamwork and accountability, as each member can see their responsibilities within the larger timeline.</li>
+          </ul>
 
-<button onclick="location.href='page4.html'"> Go to Page 4</button>
+          <p>
+            In summary, our Gantt chart is a key project management tool that helps us maintain organization,
+            coordination, and efficiency throughout the rover’s design and development stages.
+          </p>
 
-<br>
+          <p><i>If you would like to download it and see it for yourself, feel free!</i></p>
 
-<button onclick="location.href='page5.html'"> Go to Page 5</button>
+          <!-- DOWNLOAD BUTTON SPACE -->
+          <!-- Put your PDF in the repo (example: gantt.pdf) then update the href -->
+          <a class="download-btn" href="gantt.pdf" download>Download Gantt Chart (PDF)</a>
 
-<br>
+          <p class="hint">
+            (To make the download work: upload your PDF into the same GitHub folder as this page and name it "gantt.pdf")
+          </p>
+        </div>
+      </details>
 
-<button onclick="location.href='page6.html'"> Go to Page 6</button>
+      <!-- WBS -->
+      <details>
+        <summary>Work Breakdown Structure</summary>
+        <div class="panel-body">
+          <p>
+            The Work Breakdown Structure (WBS) provides a clear and organized overview of the key components involved
+            in the engineering development of our autonomous rover project.
+          </p>
 
-<br>
+          <p>
+            Having this WBS is essential in engineering development because it:
+          </p>
 
-<button onclick="location.href='page7.html'"> Go to Page 7</button>
+          <ul>
+            <li>Clarifies the project scope, ensuring every necessary component is identified.</li>
+            <li>Improves planning and coordination between mechanical, electrical, and software teams.</li>
+            <li>Supports task allocation and scheduling, allowing efficient resource management.</li>
+            <li>Enhances risk management, since each subsystem can be analyzed and tested independently.</li>
+            <li>Provides a foundation for progress tracking and performance evaluation.</li>
+          </ul>
 
-<br>
+          <p>
+            In summary, this WBS transforms a complex engineering project into a structured, step-by-step plan that makes
+            development more efficient, organized, and easier to control from design to implementation.
+          </p>
 
-<button onclick="location.href='page8.html'"> Go to Page 8</button>
+          <!-- IMAGE PLACEHOLDER -->
+          <div class="image-box">
+            <!-- Upload your image into the repo and rename it wbs.png (or change the src below) -->
+            <p><b>Work Breakdown Structure Screenshot</b></p>
+            <img src="wbs.png" alt="WBS Screenshot (replace wbs.png with your file)">
+            <div class="hint">
+              Upload your screenshot to GitHub in the same folder as page2.html and name it <b>wbs.png</b>
+              (or change the filename in the code).
+            </div>
+          </div>
 
+        </div>
+      </details>
 
+    </div>
+
+  </main>
+</div>
 </body>
 </html>

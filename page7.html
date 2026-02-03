@@ -1,51 +1,116 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Rover Page 7</title>
-</head>
+<meta charset="UTF-8">
+<title>Rover Page 7</title>
 
+<style>
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f6f6fb;
+  }
+
+  /* ---- LAYOUT ---- */
+  .layout {
+    display: flex;
+    min-height: 100vh;
+  }
+
+  /* ---- SIDEBAR ---- */
+  .sidebar {
+    width: 240px;
+    background: #c9c0f5;
+    padding: 16px 12px;
+    box-sizing: border-box;
+  }
+
+  .sidebar h2 {
+    margin: 0 0 14px 0;
+    font-size: 18px;
+    color: #6a4bdc;
+    font-weight: 700;
+  }
+
+  .sidebar .nav-title {
+    margin-top: 18px;
+    margin-bottom: 10px;
+    font-size: 12px;
+    color: rgba(60, 40, 140, 0.8);
+    letter-spacing: 0.4px;
+    text-transform: uppercase;
+  }
+
+  .nav {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+  }
+
+  .nav a {
+    text-decoration: none;
+    color: #4b3aa5;
+    background: rgba(255, 255, 255, 0.35);
+    border: 1px solid rgba(0,0,0,0.08);
+    border-radius: 10px;
+    padding: 10px 12px;
+    display: block;
+    font-weight: 600;
+  }
+
+  .nav a:hover {
+    background: rgba(255, 255, 255, 0.55);
+  }
+
+  .nav a.active {
+    background: white;
+    border-left: 6px solid #7b5cff;
+    padding-left: 8px;
+  }
+
+  /* ---- MAIN CONTENT ---- */
+  .main {
+    flex: 1;
+    padding: 32px 40px;
+    box-sizing: border-box;
+  }
+</style>
+</head>
 
 <body>
 
+<div class="layout">
+
+<!-- LEFT SIDEBAR (same as Page 2) -->
+<aside class="sidebar">
+  <h2>Operation Rover Rebuttal</h2>
+
+  
+  <nav class="nav">
+    <a href="index.html" class="active">Home (Page 1)</a>
+    <a href="page2.html">Defining the Project (Page 2)</a>
+    <a href="page3.html">Defining the Product (Page 3)</a>
+    <a href="page4.html">Generation and Evaluation of Concepts (Page 4)</a>
+    <a href="page5.html">Concept finalization (Page 5)</a>
+    <a href="page6.html">Product Development (Page 6)</a>
+    <a href="page7.html">Closing thoughts (Page 7)</a>
+    <a href="page8.html">Other Projects (Page 8)</a>
+  </nav>
+</aside>
+
+<!-- MAIN CONTENT -->
+<main class="main">
+
 <h1>Rover Progress Page 7 (Put actual words in here soon)</h1>
-<p> - This is Page 7 for the Integration II Rover project.
-    This page includes ____ (put actual stuff in here soon )
+
+<p>
+This is Page 7 for the Integration II Rover project.  
+This page includes ____ (put actual stuff in here soon).
 </p>
 
-<br>
-
-<button onclick="location.href='index.html'"> Go to Page 1 (Home Page)</button>
-
-<br>
-
-<button onclick="location.href='page2.html'"> Go to Page 2</button>
-
-<br>
-
-<button onclick="location.href='page3.html'"> Go to Page 3</button>
-
-<br>
-
-<button onclick="location.href='page4.html'"> Go to Page 4</button>
-
-<br>
-
-<button onclick="location.href='page5.html'"> Go to Page 5</button>
-
-<br>
-
-<button onclick="location.href='page6.html'"> Go to Page 6</button>
-
-<br>
-
-<button onclick="location.href='page7.html'"> Go to Page 7</button>
-
-<br>
-
-<button onclick="location.href='page8.html'"> Go to Page 8</button>
-
-
+</main>
+</div>
 
 </body>
 </html>

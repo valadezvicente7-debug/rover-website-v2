@@ -1,228 +1,270 @@
-<!-- republish -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>A Rover's Tale</title>
+<meta charset="UTF-8">
+<title>A Rover's Tale</title>
 
-    <script>
-        function showContact(name) {
-            if (name === "Evan Trembley") {
-                alert("Evan Trembley\nContact Information:\n\nEmail: estrembley@mavs.coloradomesa.edu");
-            } 
-            else if (name === "Bryson Cranmer") {
-                alert("Bryson Cranmer\nContact Information:\n\nEmail: bccranmer@mavs.coloradomesa.edu");
-            } 
-            else if (name === "Vicente Valadez") {
-                alert("Vicente Valadez\nContact Information:\n\nEmail: vpvaladez@mavs.coloradomesa.edu");
-            } 
-            else if (name === "William Mcglochlin") {
-                alert("William Mcglochlin\nContact Information:\n\nEmail: wmmcglochlin@mavs.coloradomesa.edu");
-            }
-        }
-    </script>
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
 
-    <style>
-        /* Small styling so it reads clean */
-        .about-box{
-            max-width: 900px;
-            padding: 16px;
-            border: 1px solid #ccc;
-            border-radius: 8px;
-            margin-top: 20px;
-            margin-bottom: 20px;
-            background: #fff;
-        }
-        details {
-            margin: 10px 0;
-        }
-        summary {
-            cursor: pointer;
-            font-weight: bold;
-        }
-        .subtext {
-            margin-top: 10px;
-        }
-    </style>
+/* ---- LAYOUT ---- */
+.layout {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* ---- SIDEBAR ---- */
+.sidebar {
+  width: 240px;
+  background: #c9c0f5;
+  padding: 16px 12px;
+  box-sizing: border-box;
+}
+
+.sidebar h2 {
+  margin: 0 0 14px 0;
+  font-size: 18px;
+  color: #6a4bdc;
+  font-weight: 700;
+}
+
+.nav {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.nav a {
+  text-decoration: none;
+  color: #4b3aa5;
+  background: rgba(255, 255, 255, 0.35);
+  border: 1px solid rgba(0,0,0,0.08);
+  border-radius: 10px;
+  padding: 10px 12px;
+  display: block;
+  font-weight: 600;
+}
+
+.nav a:hover {
+  background: rgba(255, 255, 255, 0.55);
+}
+
+.nav a.active {
+  background: white;
+  border-left: 6px solid #7b5cff;
+  padding-left: 8px;
+}
+
+/* ---- MAIN CONTENT ---- */
+.main {
+  flex: 1;
+  padding: 30px;
+  box-sizing: border-box;
+}
+
+/* ---- ABOUT BOX ---- */
+.about-box{
+  max-width: 900px;
+  padding: 16px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  background: #fff;
+}
+
+/* ---- DROPDOWNS (TRIANGLES) ---- */
+details {
+  margin: 10px 0;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid rgba(0,0,0,0.12);
+}
+
+summary {
+  cursor: pointer;
+  font-weight: bold;
+  padding: 14px 16px;
+  background: #8d6bff;
+  color: white;
+}
+
+details > div {
+  padding: 16px;
+  background: white;
+}
+
+.subtext {
+  margin-top: 10px;
+}
+</style>
+
+<script>
+function showContact(name) {
+  if (name === "Evan Trembley") {
+    alert("Evan Trembley\nContact Information:\n\nEmail: estrembley@mavs.coloradomesa.edu");
+  } 
+  else if (name === "Bryson Cranmer") {
+    alert("Bryson Cranmer\nContact Information:\n\nEmail: bccranmer@mavs.coloradomesa.edu");
+  } 
+  else if (name === "Vicente Valadez") {
+    alert("Vicente Valadez\nContact Information:\n\nEmail: vpvaladez@mavs.coloradomesa.edu");
+  } 
+  else if (name === "William Mcglochlin") {
+    alert("William Mcglochlin\nContact Information:\n\nEmail: wmmcglochlin@mavs.coloradomesa.edu");
+  }
+}
+</script>
+
 </head>
 
-<body style="color: brown;">
+<body>
 
-    <h1 
-        style="color: blue;
-        font-family: 'Times New Roman', Times, serif;
-        font-size: 60px;">
-        Integration II class Wesbite for are Rover
-    </h1>
+<div class="layout">
 
-    <p>
-        Hello all, Welcome to page 1 of this website, this group will track the progress of this team's rover for Integration Industries (Dr.Bevill)
-        The students in this project are Bryson Cranmer, Evan Trembley, William Mcglochlin, Vicente Valadez.
-    </p>
+<!-- LEFT SIDEBAR -->
+<aside class="sidebar">
+  <h2>Operation Rover Rebuttal</h2>
 
-    <br>
+  <nav class="nav">
+    <a href="index.html" class="active">Home (Page 1)</a>
+    <a href="page2.html">Defining the Project (Page 2)</a>
+    <a href="page3.html">Defining the Product (Page 3)</a>
+    <a href="page4.html">Generation and Evaluation of Concepts (Page 4)</a>
+    <a href="page5.html">Concept finalization (Page 5)</a>
+    <a href="page6.html">Product Development (Page 6)</a>
+    <a href="page7.html">Closing thoughts (Page 7)</a>
+    <a href="page8.html">Other Projects (Page 8)</a>
+  </nav>
+</aside>
 
-    <!-- SINGLE DROPDOWN FOR TEAM CONTACT INFO -->
-    <label for="team">Team Contact Info:</label>
-    <select id="team" onchange="showContact(this.value)">
-        <option value="">-- Select a team member --</option>
-        <option value="Vicente Valadez">Vicente Valadez</option>
-        <option value="Bryson Cranmer">Bryson Cranmer</option>
-        <option value="Evan Trembley">Evan Trembley</option>
-        <option value="William Mcglochlin">William Mcglochlin</option>
-    </select>
+<!-- MAIN CONTENT -->
+<main class="main">
 
-    <br><br>
+<h1 style="color: blue; font-family: 'Times New Roman', Times, serif; font-size: 60px;">
+Integration II class Website for our Rover
+</h1>
 
-    <!-- ABOUT THIS PROJECT SECTION -->
-    <div class="about-box">
-        <h2 style="color: blue; font-family: 'Times New Roman', Times, serif;">About This Project</h2>
+<p style="color:brown;">
+Hello all, Welcome to page 1 of this website. This group will track the progress of this team's rover for Integration Industries (Dr. Bevill).  
+The students in this project are Bryson Cranmer, Evan Trembley, William Mcglochlin, and Vicente Valadez.
+</p>
 
-        <h3 style="color: brown;">Major Design Project: Autonomous Rover</h3>
+<br>
 
-        <p>
-            Create an autonomous rover capable of navigating to specified GPS coordinates and delivering a
-            payload. For your missions the payload will be modeled as a cubic wooden block ~1.5”x1.5”x1.5”.
-            The rover should be capable of obstacle avoidance, navigating rough/uneven/sandy terrain, and
-            meeting speed and navigation accuracy requirements. Missions your team should meet to
-            demonstrate timely progress and project functionality are as follows:
-        </p>
+<!-- TEAM DROPDOWN -->
+<label for="team"><b>Team Contact Info:</b></label>
+<select id="team" onchange="showContact(this.value)">
+  <option value="">-- Select a team member --</option>
+  <option value="Vicente Valadez">Vicente Valadez</option>
+  <option value="Bryson Cranmer">Bryson Cranmer</option>
+  <option value="Evan Trembley">Evan Trembley</option>
+  <option value="William Mcglochlin">William Mcglochlin</option>
+</select>
 
-        <!-- Mission 1 -->
-        <details>
-            <summary>1. Rolling Chassis (will require two consecutive successful runs)</summary>
-            <ul>
-                <li>
-                    <b>a. Rolling Chassis:</b> drive in a ~10ft square pattern, stop at original location and deliver
-                    payload. The marker should be within 3ft of the rover’s original location and the
-                    mission should be completed within 60 seconds.
-                </li>
-                <li>
-                    <b>b. Rolling Chassis:</b> drive straight for 15-30ft and place physical marker. The rover will
-                    read the specific intended distance from an RF transmitter beacon at the starting
-                    location. The marker should be within +/- 10% of the specified drive distance and the
-                    task should be completed in less than 30 seconds.
-                    <ul>
-                        <li>
-                            The distance to drive will be transmitted as a 12-character message. The
-                            distance will be two digits preceded by an ‘X’. The remainder of the message
-                            will be padded with ‘Z’ characters. For example, the message for the rover to
-                            travel 15 feet would be “X15ZZZZZZZZZ”.
-                        </li>
-                        <li>
-                            The distance to be traveled will be continuously transmitted from the RF
-                            beacon at 5 second intervals.
-                        </li>
-                    </ul>
-                </li>
-            </ul>
-        </details>
+<br><br>
 
-        <!-- Mission 2 -->
-        <details>
-            <summary>2. Obstacle avoidance (Without GPS Navigation) (will require two consecutive successful runs)</summary>
-            <ul>
-                <li>
-                    <b>a.</b> Drive in an enclosed area (approx 6’x6’) without contacting walls or obstacles. The
-                    mission will last 60 seconds.
-                </li>
-                <li>
-                    <b>b.</b> Drive forward to waypoint 30’ directly ahead of robot. Demonstrate avoidance
-                    algorithm by continuing to original waypoint after navigating around a single
-                    obstacle. The rover should deliver payload within 5ft of the marked waypoint and
-                    complete the mission in under 120 seconds.
-                </li>
-            </ul>
-        </details>
+<!-- ABOUT THIS PROJECT -->
+<div class="about-box">
 
-        <!-- Mission 3 -->
-        <details>
-            <summary>3. Basic GPS navigation (will require two consecutive successful runs)</summary>
-            <p class="subtext">
-                Point due North. From an arbitrary start location and heading, navigate so that the
-                rover is pointing due North. Point north within +/- 20° and complete the mission
-                within 180 seconds. Deliver payload to signify mission completion.
-            </p>
-            <p class="subtext">
-                Full credit will require completion of the mission on rough or sandy terrain.
-            </p>
-        </details>
+<h2 style="color: blue;">About This Project</h2>
 
-        <!-- Mission 4 -->
-        <details>
-            <summary>4. Advanced GPS navigation</summary>
-            <ul>
-                <li>
-                    <b>a.</b> Navigate to specified GPS waypoint that will be provided to you. You may hardcode
-                    the GPS waypoint coordinates for this mission. The rover should deliver payload
-                    within 15 feet of the marked GPS waypoint.
-                </li>
-                <li>
-                    <b>b.</b> The rover should read the GPS coordinates from an RF transmitter beacon placed at
-                    the starting location, place a physical marker within 15 feet of the specified waypoint,
-                    and return to original start location. The distance between the physical marker and
-                    the marked waypoint will be measured along with the distance between start and end
-                    positions of the rover. The cumulative error should not exceed 25 feet.
-                    <ul>
-                        <li>
-                            The GPS coordinates of the waypoint will be transmitted as a 12-character
-                            message. The latitude coordinate will be 5 digits preceded by an ‘N’, the
-                            longitude will be 5 digits preceded by a ‘W’. The 5 digits of the latitude
-                            represent the decimals that would be appended to 39; the five digits following
-                            W represent the decimals that would be appended to -108 to form the
-                            longitude. For example, the message for the rover to travel to 39.09495N by
-                            -108.58784W would be “N09495W58784”.
-                        </li>
-                        <li>
-                            Coordinates will be continuously transmitted by the RF beacon at 5 second
-                            interval.
-                        </li>
-                        <li>
-                            Using this coding algorithm will allow your rover to travel in the shaded
-                            region indicated below. Travel outside of this region would require additional
-                            digits to be transmitted.
-                        </li>
-                    </ul>
-                </li>
-            </ul>
+<h3 style="color: brown;">Major Design Project: Autonomous Rover</h3>
 
-            <p class="subtext">
-                Full credit will require completion of the mission on rough or sandy terrain.
-            </p>
-        </details>
+<p>
+Create an autonomous rover capable of navigating to specified GPS coordinates and delivering a
+payload. For your missions the payload will be modeled as a cubic wooden block ~1.5”x1.5”x1.5”.
+The rover should be capable of obstacle avoidance, navigating rough/uneven/sandy terrain, and
+meeting speed and navigation accuracy requirements. Missions your team should meet to
+demonstrate timely progress and project functionality are as follows:
+</p>
 
-        <!-- Other Requirements -->
-        <details>
-            <summary>Other rover requirements include:</summary>
-            <ul>
-                <li><b>Maximum weight:</b> The rover weight (including payload) should not exceed 2.5 pounds</li>
-                <li><b>Robustness:</b> The rover should be capable of completing any mission following an 18” drop</li>
-                <li><b>Weather resistance:</b> The rover should be capable of completing the final mission in simulated rainy conditions (a.k.a. the “sprinkler test”)</li>
-                <li><b>Original design:</b> Preference should be given to original designs developed by the team rather than relying on commercial kits or externally sourced designs.</li>
-            </ul>
-        </details>
+<!-- Mission 1 -->
+<details>
+<summary>1. Rolling Chassis (two consecutive successful runs)</summary>
+<div>
+<ul>
+<li>
+<b>a.</b> Drive in a ~10ft square pattern, stop at original location and deliver payload within 3ft, in 60 seconds.
+</li>
+<li>
+<b>b.</b> Drive straight for 15–30ft and place a marker. Must be within ±10% of the target distance in under 30 seconds.
+<ul>
+<li>The distance is sent as a 12-character message like “X15ZZZZZZZZZ”.</li>
+<li>The message is transmitted every 5 seconds.</li>
+</ul>
+</li>
+</ul>
+</div>
+</details>
 
-    </div>
+<!-- Mission 2 -->
+<details>
+<summary>2. Obstacle Avoidance (no GPS)</summary>
+<div>
+<ul>
+<li><b>a.</b> Navigate a 6’x6’ enclosed area for 60 seconds without hitting obstacles.</li>
+<li><b>b.</b> Drive to a waypoint 30’ ahead, avoid one obstacle, and deliver payload within 5ft in under 120 seconds.</li>
+</ul>
+</div>
+</details>
 
-    <!-- YOUR ORIGINAL BUTTONS -->
-    <button onclick="location.href='index.html'"> Go to Page 1 (Home Page)</button>
-    <br>
-    <button onclick="location.href='page2.html'">Go to Page 2 (Documentation)</button>
-    <br>
-    <button onclick="location.href='page3.html'">Go to Page 3 (Put actual words in here soon!)</button>
-    <br>
-    <button onclick="location.href='page4.html'">Go to Page 4 (Put actual words in here soon!)</button>
-    <br>
-    <button onclick="location.href='page5.html'">Go to Page 5 (Put actual words in here soon!)</button>
-    <br>
-    <button onclick="location.href='page6.html'"> Go to Page 6</button>
-    <br>
-    <button onclick="location.href='page7.html'"> Go to Page 7</button>
-    <br>
-    <button onclick="location.href='page8.html'"> Go to Page 8</button>
+<!-- Mission 3 -->
+<details>
+<summary>3. Basic GPS Navigation</summary>
+<div>
+<p class="subtext">
+Point due North within ±20° and complete within 180 seconds. Deliver payload to finish.
+</p>
+<p class="subtext">
+Full credit requires completion on rough or sandy terrain.
+</p>
+</div>
+</details>
+
+<!-- Mission 4 -->
+<details>
+<summary>4. Advanced GPS Navigation</summary>
+<div>
+<ul>
+<li>
+<b>a.</b> Navigate to a hardcoded GPS waypoint and deliver payload within 15 feet.
+</li>
+<li>
+<b>b.</b> Read GPS from RF beacon, place a marker within 15 feet, and return to start.
+<ul>
+<li>Coordinates are sent as a 12-character message like: “N09495W58784”.</li>
+<li>Coordinates are transmitted every 5 seconds.</li>
+</ul>
+</li>
+</ul>
+<p class="subtext">
+Full credit requires completion on rough or sandy terrain.
+</p>
+</div>
+</details>
+
+<!-- Other Requirements -->
+<details>
+<summary>Other Rover Requirements</summary>
+<div>
+<ul>
+<li><b>Max weight:</b> 2.5 lbs including payload</li>
+<li><b>Robustness:</b> Must survive an 18” drop</li>
+<li><b>Weather resistance:</b> Must pass “sprinkler test”</li>
+<li><b>Original design:</b> Preference for team-built designs</li>
+</ul>
+</div>
+</details>
+
+</div> <!-- end about-box -->
+
+</main>
+</div>
 
 </body>
-
 </html>
