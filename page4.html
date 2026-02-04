@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Rover Page 4</title>
+<meta charset="UTF-8" />
+<title>Generation and Evaluation of Concepts (Page 4)</title>
 
 <style>
   body {
@@ -32,15 +32,6 @@
     font-weight: 700;
   }
 
-  .sidebar .nav-title {
-    margin-top: 18px;
-    margin-bottom: 10px;
-    font-size: 12px;
-    color: rgba(60, 40, 140, 0.8);
-    letter-spacing: 0.4px;
-    text-transform: uppercase;
-  }
-
   .nav {
     display: flex;
     flex-direction: column;
@@ -63,6 +54,7 @@
     background: rgba(255, 255, 255, 0.55);
   }
 
+  /* highlight current page */
   .nav a.active {
     background: white;
     border-left: 6px solid #7b5cff;
@@ -75,42 +67,286 @@
     padding: 32px 40px;
     box-sizing: border-box;
   }
+
+  .page-title {
+    color: #7b5cff;
+    font-size: 42px;
+    margin: 10px 0 8px 0;
+    font-family: "Trebuchet MS", Arial, sans-serif;
+  }
+
+  .page-subtitle {
+    max-width: 980px;
+    margin: 0 0 18px 0;
+    color: #666;
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  /* ---- DROPDOWN PANELS ---- */
+  .panel-wrap {
+    max-width: 980px;
+  }
+
+  details {
+    margin: 18px 0;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid rgba(0,0,0,0.12);
+    background: white;
+  }
+
+  summary {
+    cursor: pointer;
+    font-weight: 700;
+    padding: 16px 18px;
+    background: linear-gradient(90deg, #7b5cff, #a06bff);
+    color: white;
+    list-style: none;
+    position: relative;
+  }
+
+  summary::-webkit-details-marker { display: none; }
+
+  summary::after {
+    content: "▾";
+    position: absolute;
+    right: 16px;
+    top: 14px;
+    font-size: 18px;
+    opacity: 0.9;
+    transform: rotate(0deg);
+    transition: transform 0.2s ease;
+  }
+
+  details[open] summary::after {
+    transform: rotate(180deg);
+  }
+
+  .panel-body {
+    padding: 18px;
+    color: #444;
+    font-size: 14px;
+    line-height: 1.65;
+  }
+
+  .panel-body h3 {
+    margin: 0 0 10px 0;
+    color: #4b3aa5;
+  }
+
+  .hint {
+    color: #777;
+    font-size: 13px;
+    margin-top: 8px;
+  }
+
+  /* ---- IMAGE PLACEHOLDERS ---- */
+  .image-row {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+    margin-top: 14px;
+  }
+
+  .image-box {
+    flex: 1;
+    min-width: 260px;
+    border: 2px dashed rgba(0,0,0,0.25);
+    border-radius: 10px;
+    background: #fafafe;
+    padding: 14px;
+    text-align: center;
+  }
+
+  .image-box img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    border: 1px solid rgba(0,0,0,0.12);
+  }
+
+  /* ---- DOWNLOAD BUTTON ---- */
+  .download-btn {
+    display: inline-block;
+    margin-top: 12px;
+    padding: 10px 14px;
+    border-radius: 8px;
+    border: none;
+    background: #7b5cff;
+    color: white;
+    font-weight: 700;
+    cursor: pointer;
+    text-decoration: none;
+  }
+
+  .download-btn:hover {
+    background: #6a4bdc;
+  }
 </style>
 </head>
 
 <body>
-
 <div class="layout">
 
-<!-- LEFT SIDEBAR -->
-<aside class="sidebar">
-  <h2>Operation Rover Rebuttal</h2>
+  <!-- LEFT SIDEBAR -->
+  <aside class="sidebar">
+    <h2>Operation Rover Rebuttal</h2>
 
-  <nav class="nav">
-    <a href="index.html">Home (Page 1)</a>
-    <a href="page2.html">Defining the Project (Page 2)</a>
-    <a href="page3.html">Defining the Product (Page 3)</a>
-    <a href="page4.html" class="active">Generation and Evaluation of Concepts (Page 4)</a>
-    <a href="page5.html">Concept finalization (Page 5)</a>
-    <a href="page6.html">Product Development (Page 6)</a>
-    <a href="page7.html">Closing thoughts (Page 7)</a>
-    <a href="page8.html">Other Projects (Page 8)</a>
-    <a href="page9.html">Weekly Team Meeting Summaries (Page 9)</a>
-  </nav>
-</aside>
+    <nav class="nav">
+      <a href="index.html">Home (Page 1)</a>
+      <a href="page2.html">Defining the Project (Page 2)</a>
+      <a href="page3.html">Defining the Product (Page 3)</a>
+      <a href="page4.html" class="active">Generation and Evaluation of Concepts (Page 4)</a>
+      <a href="page5.html">Concept finalization (Page 5)</a>
+      <a href="page6.html">Product Development (Page 6)</a>
+      <a href="page7.html">Closing thoughts (Page 7)</a>
+      <a href="page8.html">Other Projects (Page 8)</a>
+      <!-- If you already made page9, keep it; otherwise remove this line -->
+      <a href="page9.html">Weekly Team Meeting Summaries (Page 9)</a>
+    </nav>
+  </aside>
 
-<!-- MAIN CONTENT -->
-<main class="main">
+  <!-- MAIN CONTENT -->
+  <main class="main">
+    <h1 class="page-title">Generation and Evaluation of Concepts</h1>
+    <p class="page-subtitle">
+      Here you will find the overall concept generation and evaluation process for our team.
+    </p>
 
-<h1>Rover Progress Page 4 (Put actual words in here soon)</h1>
+    <div class="panel-wrap">
 
-<p>
-This is Page 4 for the Integration II Rover project.  
-This page includes ____ (put actual stuff in here soon).
-</p>
+      <!-- 1) Calculations for Torque and Stress -->
+      <details>
+        <summary>Calculations for Torque and Stress</summary>
+        <div class="panel-body">
+          <p>
+            <!-- WRITE HERE -->
+            <b>Write your summary here:</b> Explain the calculations you used (torque, stress, assumptions, and results).
+          </p>
 
-</main>
+          <div class="image-row">
+            <div class="image-box">
+              <p><b>Upload Calculation Photo #1</b></p>
+              <img src="calc1.png" alt="Replace calc1.png with your file name">
+              <div class="hint">Upload an image to GitHub (same folder) and name it <b>calc1.png</b> (or change the src).</div>
+            </div>
+
+            <div class="image-box">
+              <p><b>Upload Calculation Photo #2</b></p>
+              <img src="calc2.png" alt="Replace calc2.png with your file name">
+              <div class="hint">Upload an image to GitHub (same folder) and name it <b>calc2.png</b> (or change the src).</div>
+            </div>
+          </div>
+        </div>
+      </details>
+
+      <!-- 2) New Concept for Rover -->
+      <details>
+        <summary>New Concept for Rover</summary>
+        <div class="panel-body">
+          <p>
+            <!-- WRITE HERE -->
+            <b>Write your concept description here:</b> What is the new rover concept? Why did you choose it?
+            What problem does it solve compared to the earlier idea?
+          </p>
+
+          <p>
+            <!-- OPTIONAL: bullet list -->
+            <b>Key features (optional):</b>
+          </p>
+          <ul>
+            <li>Feature 1 (replace)</li>
+            <li>Feature 2 (replace)</li>
+            <li>Feature 3 (replace)</li>
+          </ul>
+
+          <div class="image-box">
+            <p><b>Upload Concept Sketch / CAD Screenshot</b></p>
+            <img src="new-concept.png" alt="Replace new-concept.png with your file name">
+            <div class="hint">Upload your image and name it <b>new-concept.png</b> (or change the src).</div>
+          </div>
+        </div>
+      </details>
+
+      <!-- 3) Promising Concepts -->
+      <details>
+        <summary>Promising Concepts</summary>
+        <div class="panel-body">
+          <p>
+            <b>Write here:</b> List the top promising concepts you considered and why they were strong candidates.
+          </p>
+
+          <p><b>Concept options (example format):</b></p>
+          <ul>
+            <li><b>Concept A:</b> (describe)</li>
+            <li><b>Concept B:</b> (describe)</li>
+          </ul>
+
+          <div class="image-box">
+            <p><b>Upload Image for Promising Concepts</b></p>
+            <img src="promising-concepts.png" alt="Replace promising-concepts.png with your file name">
+            <div class="hint">Upload your image and name it <b>promising-concepts.png</b> (or change the src).</div>
+          </div>
+        </div>
+      </details>
+
+      <!-- 4) Decision Matrices -->
+      <details>
+        <summary>Decision Matrices</summary>
+        <div class="panel-body">
+          <p>
+            <b>Write here:</b> Explain your criteria, how you scored each concept, and what the matrix showed.
+          </p>
+
+          <div class="image-row">
+            <div class="image-box">
+              <p><b>Upload Decision Matrix #1</b></p>
+              <img src="decision-matrix-1.png" alt="Replace decision-matrix-1.png with your file name">
+              <div class="hint">Upload and name it <b>decision-matrix-1.png</b> (or change the src).</div>
+            </div>
+
+            <div class="image-box">
+              <p><b>Upload Decision Matrix #2</b></p>
+              <img src="decision-matrix-2.png" alt="Replace decision-matrix-2.png with your file name">
+              <div class="hint">Upload and name it <b>decision-matrix-2.png</b> (or change the src).</div>
+            </div>
+          </div>
+        </div>
+      </details>
+
+      <!-- 5) Our Team’s Rough Design -->
+      <details>
+        <summary>Our Team’s Rough Design</summary>
+        <div class="panel-body">
+          <p>
+            <b>Write here:</b> Describe the rough selected design your team decided to move forward with and why.
+          </p>
+
+          <div class="image-box">
+            <p><b>Upload Rough Design Image / CAD Render</b></p>
+            <img src="rough-design.png" alt="Replace rough-design.png with your file name">
+            <div class="hint">Upload your image and name it <b>rough-design.png</b> (or change the src).</div>
+          </div>
+
+          <p style="margin-top: 14px;">
+            <i>If you would like to download our rough design file and open it in SolidWorks, feel free!</i>
+          </p>
+
+          <!-- Put your file in the repo and update the filename below -->
+          <!-- Example: rough-design.SLDPRT or rough-design.SLDASM -->
+          <a class="download-btn" href="rough-design.SLDPRT" download>Download SolidWorks File (.SLDPRT)</a>
+
+          <div class="hint">
+            Upload your SolidWorks file into the same GitHub folder and name it <b>rough-design.SLDPRT</b>
+            (or change the href).
+          </div>
+        </div>
+      </details>
+
+    </div>
+  </main>
+
 </div>
-
 </body>
 </html>
