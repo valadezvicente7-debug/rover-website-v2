@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Rover Page 5</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Concept Finalization (Page 5)</title>
 
 <style>
   body {
@@ -30,15 +31,6 @@
     font-size: 18px;
     color: #6a4bdc;
     font-weight: 700;
-  }
-
-  .sidebar .nav-title {
-    margin-top: 18px;
-    margin-bottom: 10px;
-    font-size: 12px;
-    color: rgba(60, 40, 140, 0.8);
-    letter-spacing: 0.4px;
-    text-transform: uppercase;
   }
 
   .nav {
@@ -75,42 +67,270 @@
     padding: 32px 40px;
     box-sizing: border-box;
   }
+
+  .page-title {
+    text-align: center;
+    color: #7b5cff;
+    font-size: 42px;
+    margin: 10px 0 8px 0;
+    font-family: "Trebuchet MS", Arial, sans-serif;
+  }
+
+  .page-subtitle {
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto 18px auto;
+    color: #666;
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  /* ---- DROPDOWN PANELS ---- */
+  .panel-wrap {
+    max-width: 980px;
+    margin: 0 auto;
+  }
+
+  details {
+    margin: 18px 0;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid rgba(0,0,0,0.12);
+    background: white;
+  }
+
+  summary {
+    cursor: pointer;
+    font-weight: 700;
+    padding: 16px 18px;
+    background: linear-gradient(90deg, #7b5cff, #a06bff);
+    color: white;
+    list-style: none;
+    position: relative;
+  }
+
+  summary::-webkit-details-marker { display: none; }
+
+  summary::after {
+    content: "▾";
+    position: absolute;
+    right: 16px;
+    top: 14px;
+    font-size: 18px;
+    opacity: 0.9;
+    transform: rotate(0deg);
+    transition: transform 0.2s ease;
+  }
+
+  details[open] summary::after {
+    transform: rotate(180deg);
+  }
+
+  .panel-body {
+    padding: 18px;
+    color: #444;
+    font-size: 14px;
+    line-height: 1.65;
+  }
+
+  .section-title {
+    font-weight: 800;
+    color: #111;
+    margin: 10px 0 6px 0;
+  }
+
+  .image-box {
+    margin-top: 14px;
+    border: 2px dashed rgba(0,0,0,0.25);
+    border-radius: 10px;
+    background: #fafafe;
+    padding: 16px;
+    text-align: center;
+  }
+
+  .image-box img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    border: 1px solid rgba(0,0,0,0.12);
+  }
+
+  .hint {
+    color: #777;
+    font-size: 13px;
+    margin-top: 8px;
+  }
+
+  .download-btn {
+    display: inline-block;
+    margin-top: 14px;
+    padding: 10px 14px;
+    border-radius: 8px;
+    border: none;
+    background: #7b5cff;
+    color: white;
+    font-weight: 700;
+    cursor: pointer;
+    text-decoration: none;
+  }
+
+  .download-btn:hover {
+    background: #6a4bdc;
+  }
 </style>
 </head>
 
 <body>
-
 <div class="layout">
 
-<!-- LEFT SIDEBAR (same as Page 2) -->
-<aside class="sidebar">
-  <h2>Operation Rover Rebuttal</h2>
+  <!-- LEFT SIDEBAR -->
+  <aside class="sidebar">
+    <h2>Operation Rover Rebuttal</h2>
 
-  <nav class="nav">
-    <a href="index.html">Home (Page 1)</a>
-    <a href="page2.html">Defining the Project (Page 2)</a>
-    <a href="page3.html">Defining the Product (Page 3)</a>
-    <a href="page4.html">Generation and Evaluation of Concepts (Page 4)</a>
-    <a href="page5.html" class="active">Concept finalization (Page 5)</a>
-    <a href="page6.html">Product Development (Page 6)</a>
-    <a href="page7.html">Closing thoughts (Page 7)</a>
-    <a href="page8.html">Other Projects (Page 8)</a>
-    <a href="page9.html">Weekly Team Meeting Summaries (Page 9)</a>
-  </nav>
-</aside>
+    <nav class="nav">
+      <a href="index.html">Home (Page 1)</a>
+      <a href="page2.html">Defining the Project (Page 2)</a>
+      <a href="page3.html">Defining the Product (Page 3)</a>
+      <a href="page4.html">Generation and Evaluation of Concepts (Page 4)</a>
+      <a href="page5.html" class="active">Concept Finalization (Page 5)</a>
+      <a href="page6.html">Product Development (Page 6)</a>
+      <a href="page7.html">Closing thoughts (Page 7)</a>
+      <a href="page8.html">Other Projects (Page 8)</a>
+      <a href="page9.html">Weekly Team Meeting Summaries (Page 9)</a>
+    </nav>
+  </aside>
 
-<!-- MAIN CONTENT -->
-<main class="main">
+  <!-- MAIN CONTENT -->
+  <main class="main">
+    <h1 class="page-title">Concept Finalization</h1>
+    <p class="page-subtitle">Final design decisions and detailed modeling</p>
 
-<h1>Rover Progress Page 5 (Put actual words in here soon)</h1>
+    <div class="panel-wrap">
 
-<p>
-This is Page 5 for the Integration II Rover project.  
-This page includes ____ (put actual stuff in here soon).
-</p>
+      <!-- 1) FINALIZING THE DETAILS -->
+      <details>
+        <summary>Finalizing the Details</summary>
+        <div class="panel-body">
 
-</main>
+          <div class="section-title">Title for Paragraph 1</div>
+          <p>[Write paragraph 1 here]</p>
+
+          <div class="section-title">Title for Paragraph 2</div>
+          <p>[Write paragraph 2 here]</p>
+
+          <div class="section-title">Title for Paragraph 3</div>
+          <p>[Write paragraph 3 here]</p>
+
+        </div>
+      </details>
+
+      <!-- 2) THE COMPLETE MODEL -->
+      <details>
+        <summary>The Complete Model</summary>
+        <div class="panel-body">
+
+          <p>[Paragraph 1 about the full rover model]</p>
+          <p>[Paragraph 2 about what’s included / why it matters]</p>
+          <p>[Paragraph 3 about how it was assembled / verified]</p>
+
+          <div class="image-box">
+            <p><b>Model Image 1</b></p>
+            <img src="model1.png" alt="Model image 1">
+            <div class="hint">Upload an image named <b>model1.png</b> (or change the filename).</div>
+          </div>
+
+          <div class="image-box">
+            <p><b>Model Image 2</b></p>
+            <img src="model2.png" alt="Model image 2">
+            <div class="hint">Upload an image named <b>model2.png</b> (or change the filename).</div>
+          </div>
+
+          <div class="image-box">
+            <p><b>Model Image 3</b></p>
+            <img src="model3.png" alt="Model image 3">
+            <div class="hint">Upload an image named <b>model3.png</b> (or change the filename).</div>
+          </div>
+
+          <p class="hint">Upload your SolidWorks file to the same folder and link it below.</p>
+          <a class="download-btn" href="rover_model.SLDPRT" download>Download Model (SolidWorks)</a>
+
+        </div>
+      </details>
+
+      <!-- 3) BILL OF MATERIALS -->
+      <details>
+        <summary>Bill of Materials</summary>
+        <div class="panel-body">
+
+          <p>[Paragraph 1 about the BOM]</p>
+          <p>[Paragraph 2 about how parts were selected / cost / sourcing]</p>
+
+          <div class="image-box">
+            <p><b>BOM Screenshot</b></p>
+            <img src="bom.png" alt="Bill of Materials screenshot">
+            <div class="hint">Upload a screenshot named <b>bom.png</b> (or change the filename).</div>
+          </div>
+
+          <p>[Sentence/short paragraph 1]</p>
+          <p>[Sentence/short paragraph 2]</p>
+          <p>[Sentence/short paragraph 3]</p>
+          <p>[Sentence/short paragraph 4]</p>
+
+        </div>
+      </details>
+
+      <!-- 4) MAKE VS. BUY -->
+      <details>
+        <summary>Make vs. Buy</summary>
+        <div class="panel-body">
+
+          <p>[Paragraph 1: what parts were considered make vs buy]</p>
+          <p>[Paragraph 2: why you chose make or buy]</p>
+          <p>[Paragraph 3: impacts on cost / time / performance]</p>
+
+          <div class="image-box">
+            <p><b>Drawing / Screenshot</b></p>
+            <img src="make_vs_buy.png" alt="Make vs Buy screenshot">
+            <div class="hint">Upload an image named <b>make_vs_buy.png</b> (or change the filename).</div>
+          </div>
+
+        </div>
+      </details>
+
+      <!-- 5) TEST PLANS -->
+      <details>
+        <summary>Test Plans</summary>
+        <div class="panel-body">
+
+          <div class="section-title">Test Plan 1 Title</div>
+          <p>[Goal:]</p>
+          <p>[Equipment:]</p>
+          <p>[Steps:]</p>
+          <p>[Pass Criteria:]</p>
+
+          <hr>
+
+          <div class="section-title">Test Plan 2 Title</div>
+          <p>[Goal:]</p>
+          <p>[Equipment:]</p>
+          <p>[Steps:]</p>
+          <p>[Pass Criteria:]</p>
+
+          <hr>
+
+          <div class="section-title">Test Plan 3 Title</div>
+          <p>[Goal:]</p>
+          <p>[Equipment:]</p>
+          <p>[Steps:]</p>
+          <p>[Pass Criteria:]</p>
+
+          <p class="hint">Add/remove test plan blocks as needed.</p>
+
+        </div>
+      </details>
+
+    </div>
+  </main>
 </div>
-
 </body>
 </html>
