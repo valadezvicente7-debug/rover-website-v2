@@ -11,13 +11,11 @@
     background: #f6f6fb;
   }
 
-  /* ---- LAYOUT ---- */
   .layout {
     display: flex;
     min-height: 100vh;
   }
 
-  /* ---- SIDEBAR ---- */
   .sidebar {
     width: 240px;
     background: #c9c0f5;
@@ -30,15 +28,6 @@
     font-size: 18px;
     color: #6a4bdc;
     font-weight: 700;
-  }
-
-  .sidebar .nav-title {
-    margin-top: 18px;
-    margin-bottom: 10px;
-    font-size: 12px;
-    color: rgba(60, 40, 140, 0.8);
-    letter-spacing: 0.4px;
-    text-transform: uppercase;
   }
 
   .nav {
@@ -69,11 +58,98 @@
     padding-left: 8px;
   }
 
-  /* ---- MAIN CONTENT ---- */
   .main {
     flex: 1;
     padding: 32px 40px;
     box-sizing: border-box;
+  }
+
+  .page-title {
+    color: #7b5cff;
+    font-size: 42px;
+    margin: 10px 0 8px 0;
+  }
+
+  .page-subtitle {
+    color: #666;
+    margin-bottom: 18px;
+  }
+
+  .panel-wrap {
+    max-width: 1000px;
+  }
+
+  details {
+    margin: 18px 0;
+    border-radius: 10px;
+    border: 1px solid rgba(0,0,0,0.12);
+    background: white;
+  }
+
+  /* --------- TRIANGLE DROPDOWN STYLE (MATCHES YOUR OTHER PAGES) --------- */
+  summary {
+    cursor: pointer;
+    font-weight: 700;
+    padding: 16px 18px;
+    background: linear-gradient(90deg, #7b5cff, #a06bff);
+    color: white;
+    list-style: none;
+    position: relative;
+  }
+
+  /* Hide default marker */
+  summary::-webkit-details-marker {
+    display: none;
+  }
+
+  /* Add our own triangle on the RIGHT */
+  summary::after {
+    content: "▾";
+    position: absolute;
+    right: 16px;
+    top: 14px;
+    font-size: 18px;
+    opacity: 0.9;
+    transform: rotate(0deg);
+    transition: transform 0.2s ease;
+  }
+
+  /* Flip when opened */
+  details[open] summary::after {
+    transform: rotate(180deg);
+  }
+  /* ------------------------------------------------------------ */
+
+  .panel-body {
+    padding: 18px;
+  }
+
+  .image-box {
+    margin-top: 14px;
+    border: 2px dashed rgba(0,0,0,0.22);
+    border-radius: 10px;
+    background: #fafafe;
+    padding: 16px;
+    text-align: center;
+  }
+
+  .download-btn {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 14px;
+    border-radius: 8px;
+    border: none;
+    background: #7b5cff;
+    color: white;
+    font-weight: 700;
+    text-decoration: none;
+  }
+
+  .video-box {
+    margin-top: 14px;
+    border: 2px dashed #7b5cff;
+    padding: 16px;
+    text-align: center;
   }
 </style>
 </head>
@@ -90,9 +166,9 @@
     <a href="page2.html">Defining the Project (Page 2)</a>
     <a href="page3.html">Defining the Product (Page 3)</a>
     <a href="page4.html">Generation and Evaluation of Concepts (Page 4)</a>
-    <a href="page5.html">Concept finalization (Page 5)</a>
+    <a href="page5.html">Concept Finalization (Page 5)</a>
     <a href="page6.html" class="active">Product Development (Page 6)</a>
-    <a href="page7.html">Closing thoughts (Page 7)</a>
+    <a href="page7.html">Closing Thoughts (Page 7)</a>
     <a href="page8.html">Other Projects (Page 8)</a>
     <a href="page9.html">Weekly Team Meeting Summaries (Page 9)</a>
   </nav>
@@ -100,15 +176,117 @@
 
 <main class="main">
 
-<h1>Rover Progress Page 6 (Put actual words in here soon)</h1>
-
-<p>
-This is Page 6 for the Integration II Rover project.  
-This page includes ____ (put actual stuff in here soon).
+<h1 class="page-title">Product Development</h1>
+<p class="page-subtitle">
+Here you will see how our team developed our autonomous rover.
 </p>
 
-</main>
+<div class="panel-wrap">
+
+<!-- TAB 1 -->
+<details>
+<summary>Assembly Manual and Needed Code</summary>
+<div class="panel-body">
+<p>Download the assembly manual and the rover control code below.</p>
+
+<a class="download-btn" href="assembly-manual.pdf" download>
+Download Assembly Manual (PDF)
+</a>
+
+<br><br>
+
+<a class="download-btn" href="rover-code.pdf" download>
+Download Rover Code (PDF)
+</a>
+
+</div>
+</details>
+
+<!-- TAB 2 -->
+<details>
+<summary>Chassis Development</summary>
+<div class="panel-body">
+
+<p>(Paragraph 1)</p>
+<p>(Paragraph 2)</p>
+<p>(Paragraph 3)</p>
+<p>(Paragraph 4)</p>
+
+<div class="image-box">Image Slot #1</div>
+<div class="image-box">Image Slot #2</div>
+<div class="image-box">Image Slot #3</div>
+<div class="image-box">Image Slot #4</div>
+
+</div>
+</details>
+
+<!-- TAB 3 -->
+<details>
+<summary>(Leave blank for now fill in later)</summary>
+<div class="panel-body">
+
+<h3>Title 1</h3>
+<p>(Paragraph 1)</p>
+<div class="image-box">Image 1</div>
+
+<h3>Title 2</h3>
+<p>(Paragraph 2)</p>
+<div class="image-box">Image 2</div>
+
+<h3>Title 3</h3>
+<p>(Paragraph 3)</p>
+<div class="image-box">Image 3</div>
+
+<h3>Title 4</h3>
+<p>(Paragraph 4)</p>
+<div class="image-box">Image 4</div>
+
+<h3>Title 5</h3>
+<p>(Paragraph 5)</p>
+<div class="image-box">Image 5</div>
+
+</div>
+</details>
+
+<!-- TAB 4 -->
+<details>
+<summary>Final Assembly</summary>
+<div class="panel-body">
+
+<p>(Final Assembly Paragraph 1)</p>
+<p>(Final Assembly Paragraph 2)</p>
+
+<div class="image-box">Future Rover Image Here</div>
+
+<div class="video-box">
+<b>Future Rover Video Will Be Embedded Here</b>
 </div>
 
+</div>
+</details>
+
+<!-- TAB 5 -->
+<details>
+<summary>Test Results</summary>
+<div class="panel-body">
+
+<h3>Mission 1 — PASS / FAIL</h3>
+<p>(Write results here)</p>
+
+<h3>Mission 2 — PASS / FAIL</h3>
+<p>(Write results here)</p>
+
+<h3>Mission 3 — PASS / FAIL</h3>
+<p>(Write results here)</p>
+
+<h3>Mission 4 — PASS / FAIL</h3>
+<p>(Write results here)</p>
+
+</div>
+</details>
+
+</div>
+</main>
+</div>
 </body>
 </html>
