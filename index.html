@@ -5,102 +5,179 @@
 <title>A Rover's Tale</title>
 
 <style>
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-}
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f6f6fb;
+  }
 
-/* ---- LAYOUT ---- */
-.layout {
-  display: flex;
-  min-height: 100vh;
-}
+  /* ---- LAYOUT ---- */
+  .layout {
+    display: flex;
+    min-height: 100vh;
+  }
 
-/* ---- SIDEBAR ---- */
-.sidebar {
-  width: 240px;
-  background: #c9c0f5;
-  padding: 16px 12px;
-  box-sizing: border-box;
-}
+  /* ---- SIDEBAR ---- */
+  .sidebar {
+    width: 240px;
+    background: #c9c0f5;
+    padding: 16px 12px;
+    box-sizing: border-box;
+  }
 
-.sidebar h2 {
-  margin: 0 0 14px 0;
-  font-size: 18px;
-  color: #6a4bdc;
-  font-weight: 700;
-}
+  .sidebar h2 {
+    margin: 0 0 14px 0;
+    font-size: 18px;
+    color: #6a4bdc;
+    font-weight: 700;
+  }
 
-.nav {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  margin-top: 10px;
-}
+  .nav {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+  }
 
-.nav a {
-  text-decoration: none;
-  color: #4b3aa5;
-  background: rgba(255, 255, 255, 0.35);
-  border: 1px solid rgba(0,0,0,0.08);
-  border-radius: 10px;
-  padding: 10px 12px;
-  display: block;
-  font-weight: 600;
-}
+  .nav a {
+    text-decoration: none;
+    color: #4b3aa5;
+    background: rgba(255, 255, 255, 0.35);
+    border: 1px solid rgba(0,0,0,0.08);
+    border-radius: 10px;
+    padding: 10px 12px;
+    display: block;
+    font-weight: 600;
+  }
 
-.nav a:hover {
-  background: rgba(255, 255, 255, 0.55);
-}
+  .nav a:hover {
+    background: rgba(255, 255, 255, 0.55);
+  }
 
-.nav a.active {
-  background: white;
-  border-left: 6px solid #7b5cff;
-  padding-left: 8px;
-}
+  .nav a.active {
+    background: white;
+    border-left: 6px solid #7b5cff;
+    padding-left: 8px;
+  }
 
-/* ---- MAIN CONTENT ---- */
-.main {
-  flex: 1;
-  padding: 30px;
-  box-sizing: border-box;
-}
+  /* ---- MAIN CONTENT (MATCH PAGES 4/6/7) ---- */
+  .main {
+    flex: 1;
+    padding: 32px 40px; /* matches your other pages */
+    box-sizing: border-box;
+  }
 
-/* ---- ABOUT BOX ---- */
-.about-box{
-  max-width: 900px;
-  padding: 16px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  background: #fff;
-}
+  .page-title {
+    color: #7b5cff;
+    font-size: 46px;
+    margin: 8px 0 8px 0;
+    font-family: "Trebuchet MS", Arial, sans-serif;
+  }
 
-/* ---- DROPDOWNS (TRIANGLES) ---- */
-details {
-  margin: 10px 0;
-  border-radius: 10px;
-  overflow: hidden;
-  border: 1px solid rgba(0,0,0,0.12);
-}
+  .page-subtitle {
+    max-width: 1100px;  /* same width alignment as dropdowns */
+    margin: 0 0 18px 0;
+    color: #666;
+    font-size: 14px;
+    line-height: 1.6;
+  }
 
-summary {
-  cursor: pointer;
-  font-weight: bold;
-  padding: 14px 16px;
-  background: #8d6bff;
-  color: white;
-}
+  /* Container that controls the “right-side ending distance” */
+  .panel-wrap {
+    max-width: 1100px;
+    margin: 0; /* left-aligned like pages 6/7 */
+  }
 
-details > div {
-  padding: 16px;
-  background: white;
-}
+  /* ---- TEAM SELECT ---- */
+  .team-select {
+    margin: 14px 0 18px 0;
+    color: #444;
+    font-size: 14px;
+  }
 
-.subtext {
-  margin-top: 10px;
-}
+  .team-select select {
+    margin-left: 8px;
+    padding: 8px 10px;
+    border-radius: 8px;
+    border: 1px solid rgba(0,0,0,0.18);
+    background: white;
+  }
+
+  /* ---- ABOUT BOX (same width as dropdowns) ---- */
+  .about-box {
+    margin-top: 18px;
+    padding: 18px;
+    border: 1px solid rgba(0,0,0,0.12);
+    border-radius: 10px;
+    background: white;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  }
+
+  .about-box h2 {
+    margin: 0 0 10px 0;
+    color: #7b5cff;
+    font-family: "Trebuchet MS", Arial, sans-serif;
+  }
+
+  .about-box h3 {
+    margin: 0 0 10px 0;
+    color: #444;
+  }
+
+  .about-box p, .about-box li {
+    color: #444;
+    font-size: 14px;
+    line-height: 1.7;
+  }
+
+  /* ---- DROPDOWN PANELS (MATCH PAGES 4/6/7) ---- */
+  details {
+    margin: 18px 0;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid rgba(0,0,0,0.12);
+    background: white;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  }
+
+  summary {
+    cursor: pointer;
+    font-weight: 700;
+    padding: 16px 18px;
+    background: linear-gradient(90deg, #7b5cff, #a06bff);
+    color: white;
+    list-style: none;
+    position: relative;
+  }
+
+  summary::-webkit-details-marker { display: none; }
+
+  summary::after {
+    content: "▾";
+    position: absolute;
+    right: 16px;
+    top: 14px;
+    font-size: 18px;
+    opacity: 0.95;
+    transform: rotate(0deg);
+    transition: transform 0.2s ease;
+  }
+
+  details[open] summary::after {
+    transform: rotate(180deg);
+  }
+
+  details > div {
+    padding: 18px;
+    color: #444;
+    font-size: 14px;
+    line-height: 1.7;
+    background: white;
+  }
+
+  .subtext {
+    margin-top: 10px;
+  }
 </style>
 
 <script>
@@ -123,149 +200,143 @@ function showContact(name) {
 </head>
 
 <body>
-
 <div class="layout">
 
-<!-- LEFT SIDEBAR -->
-<aside class="sidebar">
-  <h2>Operation Rover Rebuttal</h2>
+  <!-- LEFT SIDEBAR -->
+  <aside class="sidebar">
+    <h2>Operation Rover Rebuttal</h2>
 
-  <nav class="nav">
-    <a href="index.html" class="active">Home (Page 1)</a>
-    <a href="page2.html">Defining the Project (Page 2)</a>
-    <a href="page3.html">Defining the Product (Page 3)</a>
-    <a href="page4.html">Generation and Evaluation of Concepts (Page 4)</a>
-    <a href="page5.html">Concept finalization (Page 5)</a>
-    <a href="page6.html">Product Development (Page 6)</a>
-    <a href="page7.html">Closing thoughts (Page 7)</a>
-    <a href="page8.html">Other Projects (Page 8)</a>
-    <a href="page9.html">Weekly Team Meeting Summaries (Page 9)</a>
-  </nav>
-</aside>
+    <nav class="nav">
+      <a href="index.html" class="active">Home (Page 1)</a>
+      <a href="page2.html">Defining the Project (Page 2)</a>
+      <a href="page3.html">Defining the Product (Page 3)</a>
+      <a href="page4.html">Generation and Evaluation of Concepts (Page 4)</a>
+      <a href="page5.html">Concept finalization (Page 5)</a>
+      <a href="page6.html">Product Development (Page 6)</a>
+      <a href="page7.html">Closing thoughts (Page 7)</a>
+      <a href="page8.html">Other Projects (Page 8)</a>
+      <a href="page9.html">Weekly Team Meeting Summaries (Page 9)</a>
+    </nav>
+  </aside>
 
-<!-- MAIN CONTENT -->
-<main class="main">
+  <!-- MAIN CONTENT -->
+  <main class="main">
 
-<h1 style="color: blue; font-family: 'Times New Roman', Times, serif; font-size: 60px;">
-Integration II class Website for our Rover
-</h1>
+    <h1 class="page-title">Integration II class Website for our Rover</h1>
 
-<p style="color:brown;">
-Hello all, Welcome to page 1 of this website. This group will track the progress of this team's rover for Integration Industries (Dr. Bevill).  
-The students in this project are Bryson Cranmer, Evan Trembley, William Mcglochlin, and Vicente Valadez.
-</p>
+    <p class="page-subtitle">
+      Welcome to page 1 of this website. This group will track the progress of this team's rover for Integration II (Dr. Bevill).
+      The students in this project are Bryson Cranmer, Evan Trembley, William Mcglochlin, and Vicente Valadez.
+    </p>
 
-<br>
+    <div class="panel-wrap">
 
-<!-- TEAM DROPDOWN -->
-<label for="team"><b>Team Contact Info:</b></label>
-<select id="team" onchange="showContact(this.value)">
-  <option value="">-- Select a team member --</option>
-  <option value="Vicente Valadez">Vicente Valadez</option>
-  <option value="Bryson Cranmer">Bryson Cranmer</option>
-  <option value="Evan Trembley">Evan Trembley</option>
-  <option value="William Mcglochlin">William Mcglochlin</option>
-</select>
+      <!-- TEAM DROPDOWN -->
+      <div class="team-select">
+        <label for="team"><b>Team Contact Info:</b></label>
+        <select id="team" onchange="showContact(this.value)">
+          <option value="">-- Select a team member --</option>
+          <option value="Vicente Valadez">Vicente Valadez</option>
+          <option value="Bryson Cranmer">Bryson Cranmer</option>
+          <option value="Evan Trembley">Evan Trembley</option>
+          <option value="William Mcglochlin">William Mcglochlin</option>
+        </select>
+      </div>
 
-<br><br>
+      <!-- ABOUT THIS PROJECT -->
+      <div class="about-box">
 
-<!-- ABOUT THIS PROJECT -->
-<div class="about-box">
+        <h2>About This Project</h2>
+        <h3>Major Design Project: Autonomous Rover</h3>
 
-<h2 style="color: blue;">About This Project</h2>
+        <p>
+          Create an autonomous rover capable of navigating to specified GPS coordinates and delivering a payload.
+          For our missions the payload will be modeled as a cubic wooden block ~1.5”x1.5”x1.5”.
+          The rover should be capable of obstacle avoidance, navigating rough/uneven/sandy terrain, and meeting speed
+          and navigation accuracy requirements.
+        </p>
 
-<h3 style="color: brown;">Major Design Project: Autonomous Rover</h3>
+        <!-- Mission 1 -->
+        <details>
+          <summary>1. Rolling Chassis (two consecutive successful runs)</summary>
+          <div>
+            <ul>
+              <li>
+                <b>a.</b> Drive in a ~10ft square pattern, stop at original location and deliver payload within 3ft, in 60 seconds.
+              </li>
+              <li>
+                <b>b.</b> Drive straight for 15–30ft and place a marker. Must be within ±10% of the target distance in under 30 seconds.
+                <ul>
+                  <li>The distance is sent as a 12-character message like “X15ZZZZZZZZZ”.</li>
+                  <li>The message is transmitted every 5 seconds.</li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </details>
 
-<p>
-Create an autonomous rover capable of navigating to specified GPS coordinates and delivering a
-payload. For your missions the payload will be modeled as a cubic wooden block ~1.5”x1.5”x1.5”.
-The rover should be capable of obstacle avoidance, navigating rough/uneven/sandy terrain, and
-meeting speed and navigation accuracy requirements. Missions your team should meet to
-demonstrate timely progress and project functionality are as follows:
-</p>
+        <!-- Mission 2 -->
+        <details>
+          <summary>2. Obstacle Avoidance (no GPS)</summary>
+          <div>
+            <ul>
+              <li><b>a.</b> Navigate a 6’x6’ enclosed area for 60 seconds without hitting obstacles.</li>
+              <li><b>b.</b> Drive to a waypoint 30’ ahead, avoid one obstacle, and deliver payload within 5ft in under 120 seconds.</li>
+            </ul>
+          </div>
+        </details>
 
-<!-- Mission 1 -->
-<details>
-<summary>1. Rolling Chassis (two consecutive successful runs)</summary>
-<div>
-<ul>
-<li>
-<b>a.</b> Drive in a ~10ft square pattern, stop at original location and deliver payload within 3ft, in 60 seconds.
-</li>
-<li>
-<b>b.</b> Drive straight for 15–30ft and place a marker. Must be within ±10% of the target distance in under 30 seconds.
-<ul>
-<li>The distance is sent as a 12-character message like “X15ZZZZZZZZZ”.</li>
-<li>The message is transmitted every 5 seconds.</li>
-</ul>
-</li>
-</ul>
+        <!-- Mission 3 -->
+        <details>
+          <summary>3. Basic GPS Navigation</summary>
+          <div>
+            <p class="subtext">
+              Point due North within ±20° and complete within 180 seconds. Deliver payload to finish.
+            </p>
+            <p class="subtext">
+              Full credit requires completion on rough or sandy terrain.
+            </p>
+          </div>
+        </details>
+
+        <!-- Mission 4 -->
+        <details>
+          <summary>4. Advanced GPS Navigation</summary>
+          <div>
+            <ul>
+              <li><b>a.</b> Navigate to a hardcoded GPS waypoint and deliver payload within 15 feet.</li>
+              <li>
+                <b>b.</b> Read GPS from RF beacon, place a marker within 15 feet, and return to start.
+                <ul>
+                  <li>Coordinates are sent as a 12-character message like: “N09495W58784”.</li>
+                  <li>Coordinates are transmitted every 5 seconds.</li>
+                </ul>
+              </li>
+            </ul>
+            <p class="subtext">
+              Full credit requires completion on rough or sandy terrain.
+            </p>
+          </div>
+        </details>
+
+        <!-- Other Requirements -->
+        <details>
+          <summary>Other Rover Requirements</summary>
+          <div>
+            <ul>
+              <li><b>Max weight:</b> 2.5 lbs including payload</li>
+              <li><b>Robustness:</b> Must survive an 18” drop</li>
+              <li><b>Weather resistance:</b> Must pass “sprinkler test”</li>
+              <li><b>Original design:</b> Preference for team-built designs</li>
+            </ul>
+          </div>
+        </details>
+
+      </div><!-- end about-box -->
+
+    </div><!-- end panel-wrap -->
+
+  </main>
 </div>
-</details>
-
-<!-- Mission 2 -->
-<details>
-<summary>2. Obstacle Avoidance (no GPS)</summary>
-<div>
-<ul>
-<li><b>a.</b> Navigate a 6’x6’ enclosed area for 60 seconds without hitting obstacles.</li>
-<li><b>b.</b> Drive to a waypoint 30’ ahead, avoid one obstacle, and deliver payload within 5ft in under 120 seconds.</li>
-</ul>
-</div>
-</details>
-
-<!-- Mission 3 -->
-<details>
-<summary>3. Basic GPS Navigation</summary>
-<div>
-<p class="subtext">
-Point due North within ±20° and complete within 180 seconds. Deliver payload to finish.
-</p>
-<p class="subtext">
-Full credit requires completion on rough or sandy terrain.
-</p>
-</div>
-</details>
-
-<!-- Mission 4 -->
-<details>
-<summary>4. Advanced GPS Navigation</summary>
-<div>
-<ul>
-<li>
-<b>a.</b> Navigate to a hardcoded GPS waypoint and deliver payload within 15 feet.
-</li>
-<li>
-<b>b.</b> Read GPS from RF beacon, place a marker within 15 feet, and return to start.
-<ul>
-<li>Coordinates are sent as a 12-character message like: “N09495W58784”.</li>
-<li>Coordinates are transmitted every 5 seconds.</li>
-</ul>
-</li>
-</ul>
-<p class="subtext">
-Full credit requires completion on rough or sandy terrain.
-</p>
-</div>
-</details>
-
-<!-- Other Requirements -->
-<details>
-<summary>Other Rover Requirements</summary>
-<div>
-<ul>
-<li><b>Max weight:</b> 2.5 lbs including payload</li>
-<li><b>Robustness:</b> Must survive an 18” drop</li>
-<li><b>Weather resistance:</b> Must pass “sprinkler test”</li>
-<li><b>Original design:</b> Preference for team-built designs</li>
-</ul>
-</div>
-</details>
-
-</div> <!-- end about-box -->
-
-</main>
-</div>
-
 </body>
 </html>

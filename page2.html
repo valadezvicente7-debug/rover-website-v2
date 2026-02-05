@@ -20,7 +20,7 @@
   /* ---- SIDEBAR ---- */
   .sidebar {
     width: 240px;
-    background: #c9c0f5; /* light purple */
+    background: #c9c0f5;
     padding: 16px 12px;
     box-sizing: border-box;
   }
@@ -30,15 +30,6 @@
     font-size: 18px;
     color: #6a4bdc;
     font-weight: 700;
-  }
-
-  .sidebar .nav-title {
-    margin-top: 18px;
-    margin-bottom: 10px;
-    font-size: 12px;
-    color: rgba(60, 40, 140, 0.8);
-    letter-spacing: 0.4px;
-    text-transform: uppercase;
   }
 
   .nav {
@@ -69,7 +60,7 @@
     padding-left: 8px;
   }
 
-  /* ---- MAIN CONTENT ---- */
+  /* ---- MAIN CONTENT (MATCH PAGES 4/6/7) ---- */
   .main {
     flex: 1;
     padding: 32px 40px;
@@ -77,26 +68,26 @@
   }
 
   .page-title {
-    text-align: center;
     color: #7b5cff;
-    font-size: 42px;
-    margin: 10px 0 8px 0;
+    font-size: 46px;
+    margin: 8px 0 8px 0;
     font-family: "Trebuchet MS", Arial, sans-serif;
+    text-align: left; /* changed */
   }
 
   .page-subtitle {
-    text-align: center;
-    max-width: 900px;
-    margin: 0 auto 18px auto;
+    max-width: 1100px; /* match dropdown width */
+    margin: 0 0 18px 0; /* changed */
     color: #666;
     font-size: 14px;
     line-height: 1.6;
+    text-align: left; /* changed */
   }
 
-  /* ---- DROPDOWN PANELS ---- */
+  /* ---- DROPDOWN PANELS (MATCH WIDTH/ALIGNMENT) ---- */
   .panel-wrap {
-    max-width: 980px;
-    margin: 0 auto;
+    max-width: 1100px;
+    margin: 0; /* left aligned like pages 6/7 */
   }
 
   details {
@@ -105,6 +96,7 @@
     overflow: hidden;
     border: 1px solid rgba(0,0,0,0.12);
     background: white;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
   }
 
   summary {
@@ -117,7 +109,6 @@
     position: relative;
   }
 
-  /* Hide default marker and make our own triangle */
   summary::-webkit-details-marker { display: none; }
 
   summary::after {
@@ -126,7 +117,7 @@
     right: 16px;
     top: 14px;
     font-size: 18px;
-    opacity: 0.9;
+    opacity: 0.95;
     transform: rotate(0deg);
     transition: transform 0.2s ease;
   }
@@ -196,16 +187,16 @@
     <h2>Operation Rover Rebuttal</h2>
 
     <nav class="nav">
-        <a href="index.html">Home (Page 1)</a>
-        <a href="page2.html" class="active">Defining the Project (Page 2)</a>
-        <a href="page3.html">Defining the Product (Page 3)</a>
-        <a href="page4.html">Generation and Evaluation of Concepts (Page 4)</a>
-        <a href="page5.html">Concept finalization (Page 5)</a>
-        <a href="page6.html">Product Development (Page 6)</a>
-        <a href="page7.html">Closing thoughts (Page 7)</a>
-        <a href="page8.html">Other Projects (Page 8)</a>
-        <a href="page9.html">Weekly Team Meeting Summaries (Page 9)</a>
-      </nav>
+      <a href="index.html">Home (Page 1)</a>
+      <a href="page2.html" class="active">Defining the Project (Page 2)</a>
+      <a href="page3.html">Defining the Product (Page 3)</a>
+      <a href="page4.html">Generation and Evaluation of Concepts (Page 4)</a>
+      <a href="page5.html">Concept finalization (Page 5)</a>
+      <a href="page6.html">Product Development (Page 6)</a>
+      <a href="page7.html">Closing thoughts (Page 7)</a>
+      <a href="page8.html">Other Projects (Page 8)</a>
+      <a href="page9.html">Weekly Team Meeting Summaries (Page 9)</a>
+    </nav>
   </aside>
 
   <!-- MAIN CONTENT -->
@@ -221,7 +212,7 @@
 
     <div class="panel-wrap">
 
-      <!-- GANTT CHART (NOW CLOSED) -->
+      <!-- GANTT CHART (CLOSED) -->
       <details>
         <summary>Gantt Chart</summary>
         <div class="panel-body">
@@ -255,7 +246,7 @@
         </div>
       </details>
 
-      <!-- WBS (ALREADY CLOSED) -->
+      <!-- WBS (CLOSED) -->
       <details>
         <summary>Work Breakdown Structure</summary>
         <div class="panel-body">

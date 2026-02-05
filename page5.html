@@ -61,7 +61,7 @@
     padding-left: 8px;
   }
 
-  /* ---- MAIN CONTENT ---- */
+  /* ---- MAIN CONTENT (MATCH PAGES 4/6/7) ---- */
   .main {
     flex: 1;
     padding: 32px 40px;
@@ -69,26 +69,26 @@
   }
 
   .page-title {
-    text-align: center;
+    text-align: left;               /* changed */
     color: #7b5cff;
-    font-size: 42px;
-    margin: 10px 0 8px 0;
+    font-size: 46px;                /* changed to match */
+    margin: 8px 0 8px 0;            /* changed */
     font-family: "Trebuchet MS", Arial, sans-serif;
   }
 
   .page-subtitle {
-    text-align: center;
-    max-width: 900px;
-    margin: 0 auto 18px auto;
+    text-align: left;               /* changed */
+    max-width: 1100px;              /* changed */
+    margin: 0 0 18px 0;             /* changed */
     color: #666;
     font-size: 14px;
     line-height: 1.6;
   }
 
-  /* ---- DROPDOWN PANELS ---- */
+  /* ---- DROPDOWN PANELS (MATCH WIDTH/ALIGNMENT) ---- */
   .panel-wrap {
-    max-width: 980px;
-    margin: 0 auto;
+    max-width: 1100px;              /* changed */
+    margin: 0;                      /* changed */
   }
 
   details {
@@ -97,6 +97,7 @@
     overflow: hidden;
     border: 1px solid rgba(0,0,0,0.12);
     background: white;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
   }
 
   summary {
@@ -117,7 +118,7 @@
     right: 16px;
     top: 14px;
     font-size: 18px;
-    opacity: 0.9;
+    opacity: 0.95;
     transform: rotate(0deg);
     transition: transform 0.2s ease;
   }
@@ -207,11 +208,9 @@
 
     <div class="panel-wrap">
 
-      <!-- 1) FINALIZING THE DETAILS -->
       <details>
         <summary>Finalizing the Details</summary>
         <div class="panel-body">
-
           <div class="section-title">Title for Paragraph 1</div>
           <p>[Write paragraph 1 here]</p>
 
@@ -220,15 +219,12 @@
 
           <div class="section-title">Title for Paragraph 3</div>
           <p>[Write paragraph 3 here]</p>
-
         </div>
       </details>
 
-      <!-- 2) THE COMPLETE MODEL -->
       <details>
         <summary>The Complete Model</summary>
         <div class="panel-body">
-
           <p>[Paragraph 1 about the full rover model]</p>
           <p>[Paragraph 2 about what’s included / why it matters]</p>
           <p>[Paragraph 3 about how it was assembled / verified]</p>
@@ -253,15 +249,12 @@
 
           <p class="hint">Upload your SolidWorks file to the same folder and link it below.</p>
           <a class="download-btn" href="rover_model.SLDPRT" download>Download Model (SolidWorks)</a>
-
         </div>
       </details>
 
-      <!-- 3) BILL OF MATERIALS -->
       <details>
         <summary>Bill of Materials</summary>
         <div class="panel-body">
-
           <p>[Paragraph 1 about the BOM]</p>
           <p>[Paragraph 2 about how parts were selected / cost / sourcing]</p>
 
@@ -275,15 +268,12 @@
           <p>[Sentence/short paragraph 2]</p>
           <p>[Sentence/short paragraph 3]</p>
           <p>[Sentence/short paragraph 4]</p>
-
         </div>
       </details>
 
-      <!-- 4) MAKE VS. BUY -->
       <details>
         <summary>Make vs. Buy</summary>
         <div class="panel-body">
-
           <p>[Paragraph 1: what parts were considered make vs buy]</p>
           <p>[Paragraph 2: why you chose make or buy]</p>
           <p>[Paragraph 3: impacts on cost / time / performance]</p>
@@ -293,15 +283,12 @@
             <img src="make_vs_buy.png" alt="Make vs Buy screenshot">
             <div class="hint">Upload an image named <b>make_vs_buy.png</b> (or change the filename).</div>
           </div>
-
         </div>
       </details>
 
-      <!-- 5) TEST PLANS -->
       <details>
         <summary>Test Plans</summary>
         <div class="panel-body">
-
           <div class="section-title">Test Plan 1 Title</div>
           <p>[Goal:]</p>
           <p>[Equipment:]</p>
@@ -325,7 +312,6 @@
           <p>[Pass Criteria:]</p>
 
           <p class="hint">Add/remove test plan blocks as needed.</p>
-
         </div>
       </details>
 
