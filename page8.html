@@ -127,13 +127,29 @@
     line-height: 1.7;
   }
 
-  .placeholder {
-    margin: 10px 0;
-    padding: 12px 14px;
+  /* ---- IMAGE BOX ---- */
+  .image-box {
+    margin-top: 14px;
+    border: 2px dashed rgba(0,0,0,0.22);
     border-radius: 10px;
     background: #fafafe;
-    border: 1px dashed rgba(0,0,0,0.18);
-    color: #555;
+    padding: 16px;
+    text-align: center;
+  }
+
+  .image-box img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    border: 1px solid rgba(0,0,0,0.12);
+    display: block;
+    margin: 0 auto;
+  }
+
+  .hint {
+    color: #777;
+    font-size: 13px;
+    margin-top: 8px;
   }
 </style>
 </head>
@@ -167,79 +183,88 @@ Learning exercises and preliminary experiments.
 
 <div class="panel-wrap">
 
-<!-- TAB 1 -->
+<!-- TAB 1 (NO BUBBLES NOW) -->
 <details>
-<summary>(Arduino rover module assignment 1)</summary>
-<div class="panel-body">
-  <div class="placeholder">(Paragraph 1)</div>
-  <div class="placeholder">(Paragraph 2)</div>
-</div>
+  <summary>(Arduino rover module assignment 1)</summary>
+  <div class="panel-body">
+    <p>(Paragraph 1)</p>
+    <p>(Paragraph 2)</p>
+  </div>
 </details>
 
-
-<!-- TAB 2 -->
+<!-- TAB 2 (KEEP NORMAL TEXT) -->
 <details>
   <summary>(Arduino rover module assignment 2 ultrasonic)</summary>
   <div class="panel-body">
 
     <p>
-    This tutorial demonstrated the use of an Ultrasonic range finder.
-    The point of this tutorial is to create a sketch that displays the
-    distance to an object on user request.
+      This tutorial demonstrated the use of an Ultrasonic range finder.
+      The point of this tutorial is to create a sketch that displays the
+      distance to an object on user request.
     </p>
 
-    <!-- IMAGE SPACE 1: Physical Arduino + Ultrasonic Setup -->
     <div class="image-box">
       <p><b>Ultrasonic Sensor Physical Setup</b></p>
       <img src="ultrasonic_setup.png" alt="Ultrasonic Arduino Setup">
-      <div class="hint">
-        Upload your actual setup image as <b>ultrasonic_setup.png</b>
-      </div>
+      <div class="hint">Upload as <b>ultrasonic_setup.png</b></div>
     </div>
 
-    <!-- IMAGE SPACE 2: Code Screenshot -->
     <div class="image-box">
       <p><b>Arduino Code (Screenshot)</b></p>
       <img src="ultrasonic_code.png" alt="Ultrasonic Arduino Code">
-      <div class="hint">
-        Upload your code screenshot as <b>ultrasonic_code.png</b>
-      </div>
+      <div class="hint">Upload as <b>ultrasonic_code.png</b></div>
     </div>
 
-    <!-- IMAGE SPACE 3: Hand-Drawn Wiring Sketch -->
     <div class="image-box">
       <p><b>Wiring Diagram / Hand Sketch</b></p>
       <img src="ultrasonic_sketch.png" alt="Ultrasonic Wiring Sketch">
-      <div class="hint">
-        Upload your hand-drawn sketch as <b>ultrasonic_sketch.png</b>
-      </div>
+      <div class="hint">Upload as <b>ultrasonic_sketch.png</b></div>
     </div>
 
-    <p>
-    (Paragraph 2 — write reflections, challenges, or results here.)
-    </p>
+    <p>(Paragraph 2 — write reflections, challenges, or results here.)</p>
 
   </div>
 </details>
 
-  
-
-<!-- TAB 3 -->
+<!-- TAB 3 (ADD 3 PICS + NO BUBBLES) -->
 <details>
-<summary>(Arduino rover module assignment 3)</summary>
-<div class="panel-body">
-  <div class="placeholder">(Paragraph 1)</div>
-  <div class="placeholder">(Paragraph 2)</div>
-</div>
+  <summary>(Arduino rover module assignment 3 - RF)</summary>
+  <div class="panel-body">
+
+    <p>(Paragraph 1)</p>
+    <p>(Paragraph 2)</p>
+
+    <!-- RF IMAGE 1 -->
+    <div class="image-box">
+      <p><b>RF Tutorial Diagram</b></p>
+      <img src="ardinoRFtutorialdiagrampic.png" alt="RF tutorial diagram">
+      <div class="hint">If your file is not .png, change the extension here.</div>
+    </div>
+
+    <!-- RF IMAGE 2 -->
+    <div class="image-box">
+      <p><b>RF Receiver Code</b></p>
+      <img src="RFrecievercodepic.png" alt="RF receiver code screenshot">
+      <div class="hint">If your file is not .png, change the extension here.</div>
+    </div>
+
+    <!-- RF IMAGE 3 -->
+    <div class="image-box">
+      <p><b>RF Transmitter Code</b></p>
+      <img src="RFtransmitorcodepic.png" alt="RF transmitter code screenshot">
+      <div class="hint">If your file is not .png, change the extension here.</div>
+    </div>
+
+  </div>
 </details>
 
-<!-- TAB 4 -->
+<!-- TAB 4 (NO BUBBLES NOW) -->
 <details>
-<summary>(Other Project #4)</summary>
-<div class="panel-body">
-  <div class="placeholder">(Paragraph 1)</div>
-  <div class="placeholder">(Paragraph 2)</div>
-</div>
+  <summary>(Other Project #4)</summary>
+  <div class="panel-body">
+    <p>(Paragraph 1)</p>
+    <p>(Paragraph 2)</p>
+  </div>
 </details>
 
 </div>
