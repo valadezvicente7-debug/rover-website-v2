@@ -60,7 +60,7 @@
     padding-left: 8px;
   }
 
-  /* ---- MAIN CONTENT (MATCH PAGES 4/6/7) ---- */
+  /* ---- MAIN CONTENT ---- */
   .main {
     flex: 1;
     padding: 32px 40px;
@@ -68,26 +68,26 @@
   }
 
   .page-title {
-    text-align: left;              /* changed */
+    text-align: left;
     color: #7b5cff;
-    font-size: 46px;               /* changed */
-    margin: 8px 0 8px 0;           /* changed */
+    font-size: 46px;
+    margin: 8px 0 8px 0;
     font-family: "Trebuchet MS", Arial, sans-serif;
   }
 
   .page-subtitle {
-    text-align: left;              /* changed */
-    max-width: 1100px;             /* changed */
-    margin: 0 0 18px 0;            /* changed */
+    text-align: left;
+    max-width: 1100px;
+    margin: 0 0 18px 0;
     color: #666;
     font-size: 14px;
     line-height: 1.6;
   }
 
-  /* ---- DROPDOWN PANELS (MATCH WIDTH/ALIGNMENT) ---- */
+  /* ---- DROPDOWN PANELS ---- */
   .panel-wrap {
-    max-width: 1100px;             /* changed */
-    margin: 0;                     /* changed */
+    max-width: 1100px;
+    margin: 0;
   }
 
   details {
@@ -138,6 +138,25 @@
     font-size: 13px;
     margin-top: 8px;
   }
+
+  /* ---- IMAGE BOX (shared style) ---- */
+  .image-box {
+    margin-top: 14px;
+    border: 2px dashed rgba(0,0,0,0.22);
+    border-radius: 10px;
+    background: #fafafe;
+    padding: 16px;
+    text-align: center;
+  }
+
+  .image-box img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    border: 1px solid rgba(0,0,0,0.12);
+    display: block;
+    margin: 0 auto;
+  }
 </style>
 </head>
 
@@ -155,7 +174,7 @@
       <a href="page5.html">Concept finalization (Page 5)</a>
       <a href="page6.html">Product Development (Page 6)</a>
       <a href="page7.html">Closing thoughts (Page 7)</a>
-      <a href="page8.html">Arduino Projects/ Other Projects (Page 8)</a>
+      <a href="page8.html">Arduino Projects/Other Projects (Page 8)</a>
       <a href="page9.html" class="active">Weekly Team Meeting Summaries (Page 9)</a>
     </nav>
   </aside>
@@ -181,16 +200,39 @@
       <details>
         <summary>Week 2 Summary</summary>
         <div class="panel-body">
-          <p><b>Summary:</b> (For week 2, the team began brainstorming on what to do in the begining of this project 
-            the tema started to figure out how to work on the website, Product definition, Work Break down structure,
-            decision matricies, and concept generation)</p>
+          <p><b>Summary:</b> For week 2, the team began brainstorming on what to do in the beginning of this project.
+          The team started to figure out how to work on the website, Product definition, Work Breakdown Structure,
+          decision matrices, and concept generation.</p>
+
+          <!-- WEEK 2 IMAGES -->
+          <div class="image-box">
+            <p><b>Week 2 – Photo 1</b></p>
+            <img src="week2pic1of3.png" alt="Week 2 image 1">
+          </div>
+
+          <div class="image-box">
+            <p><b>Week 2 – Photo 2</b></p>
+            <img src="week2pic2of3.png" alt="Week 2 image 2">
+          </div>
+
+          <div class="image-box">
+            <p><b>Week 2 – Photo 3</b></p>
+            <img src="week2pic3of3.png" alt="Week 2 image 3">
+          </div>
+
         </div>
       </details>
 
       <details>
         <summary>Week 3 Summary</summary>
         <div class="panel-body">
-          <p><b>Summary:</b> (Type Week 3 meeting summary here.)</p>
+          <p><b>Summary:</b> For week 3, the team helped Vicente on how to use/find the right tools for making the website!
+          The team also worked on who was going to work on what slides for the SSR/PDR Presentation.</p>
+
+          <div class="image-box">
+            <p><b>Week 3 Notes / Planning</b></p>
+            <img src="week3.png" alt="Week 3 notes / planning image">
+          </div>
         </div>
       </details>
 
