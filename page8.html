@@ -174,6 +174,13 @@
   .spacer {
     height: 8px;
   }
+
+  code {
+    background: #f0f0ff;
+    padding: 2px 6px;
+    border-radius: 6px;
+    border: 1px solid rgba(0,0,0,0.08);
+  }
 </style>
 </head>
 
@@ -263,7 +270,7 @@
             A wiring diagram can be created using tools such as Wokwi or Fritzing.
           </p>
 
-          <!-- IMAGES (same layout as your screenshot) -->
+          <!-- IMAGES -->
           <div class="image-box">
             <div class="image-title">Ultrasonic Sensor Physical Setup</div>
             <img src="ultrasonic_setup.png" alt="Ultrasonic Arduino Setup">
@@ -289,14 +296,59 @@
         </div>
       </details>
 
-      <!-- TAB 3 (RF) -->
+      <!-- TAB 3 (RF) - CLOSED BY DEFAULT (no "open" attribute) -->
       <details>
         <summary>(Arduino rover module assignment 3 - RF)</summary>
         <div class="panel-body">
 
-          <p>(Paragraph 1)</p>
-          <p>(Paragraph 2)</p>
+          <h3 class="section-title">Tutorial Introduction</h3>
+          <p>
+            This tutorial focused on basic RF communication using an Arduino transmitter and receiver. The goal was to
+            send a short message wirelessly (formatted like rover “coordinates”) and confirm that the receiver can read
+            and display the incoming data reliably.
+          </p>
 
+          <h3 class="section-title">Use in an Autonomous Rover Mission</h3>
+          <p>
+            RF communication can be used for waypoint / beacon-style navigation where a remote transmitter repeatedly
+            broadcasts a short coordinate message. A rover can listen for that message, parse the data, and use it as
+            an input for navigation decisions (for example, receiving a GPS waypoint from a fixed beacon).
+          </p>
+
+          <h3 class="section-title">Required Electronics / Hardware</h3>
+          <ul>
+            <li>Arduino board (Uno / Mega / compatible)</li>
+            <li>433 MHz RF Transmitter module</li>
+            <li>433 MHz RF Receiver module</li>
+            <li>Breadboard + jumper wires</li>
+            <li>USB cable for programming and power</li>
+          </ul>
+
+          <h3 class="section-title">Required Libraries</h3>
+          <p>
+            The RF transmitter and receiver sketches use the <b>RadioHead (RH)</b> library to handle RF communication.
+            The library helps convert Arduino data into a radio signal for transmission and decode it on the receiving side.
+          </p>
+
+          <h3 class="section-title">Transmitter</h3>
+          <p>
+            The RF transmitter code for the Arduino tutorials was simple. The code uses the RadioHead library to enable
+            the Arduino board to communicate with the RF devices. The library allows for the conversion of Arduino to radio
+            frequency, which then could be transmitted on the 433hz transmitter. The transmitter was set up to repeatedly
+            send a string of 12 characters (“coords”). The characters it would send are hard coded and for this tutorial
+            were: <code>X69ZZZZZZZZZ</code>.
+          </p>
+
+          <h3 class="section-title">Receiver</h3>
+          <p>
+            The receiver code is similar to the transmitter code in that it uses the RadioHead library. With the library,
+            radio frequency from the transmitter could be converted to something the Arduino could understand. The receiver
+            is set up to be constantly searching for a radio frequency from a transmitter. Once the receiver grabs the info
+            from the transmitter, it places it into a 12 character matrix via means of a for loop. This decision was made
+            due to some signal corruption that would add 3 more characters to the actual code that were unknown of origin.
+          </p>
+
+          <!-- RF IMAGES (same layout as the ultrasonic section) -->
           <div class="image-box">
             <div class="image-title">RF Tutorial Diagram</div>
             <img src="ardinoRFtutorialdiagrampic.png" alt="RF tutorial diagram">
@@ -314,6 +366,10 @@
             <img src="RFtransmitorcodepic.png" alt="RF transmitter code screenshot">
             <div class="image-caption">Upload as RFtransmitorcodepic.png</div>
           </div>
+
+          <div class="spacer"></div>
+
+          <p>(Paragraph — write reflections, challenges, or results here.)</p>
 
         </div>
       </details>
