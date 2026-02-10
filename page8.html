@@ -127,7 +127,6 @@
     line-height: 1.7;
   }
 
-  /* Section headings inside the dropdown */
   .section-title {
     margin: 18px 0 8px 0;
     font-size: 18px;
@@ -139,7 +138,6 @@
     margin: 8px 0 0 20px;
   }
 
-  /* ---- IMAGE BOX (matches your screenshot look) ---- */
   .image-box {
     margin-top: 14px;
     border: 2px dashed rgba(0,0,0,0.22);
@@ -181,6 +179,11 @@
     border-radius: 6px;
     border: 1px solid rgba(0,0,0,0.08);
   }
+
+  .link-list a {
+    color: #7b5cff;
+    font-weight: 600;
+  }
 </style>
 </head>
 
@@ -213,7 +216,7 @@
 
     <div class="panel-wrap">
 
-      <!-- TAB 1 (NO BUBBLES) -->
+      <!-- TAB 1 -->
       <details>
         <summary>(Arduino rover module assignment 1)</summary>
         <div class="panel-body">
@@ -266,11 +269,7 @@
             <li>Trig pin connected to Arduino digital pin 9</li>
             <li>Echo pin connected to Arduino digital pin 8</li>
           </ul>
-          <p>
-            A wiring diagram can be created using tools such as Wokwi or Fritzing.
-          </p>
 
-          <!-- IMAGES -->
           <div class="image-box">
             <div class="image-title">Ultrasonic Sensor Physical Setup</div>
             <img src="ultrasonic_setup.png" alt="Ultrasonic Arduino Setup">
@@ -289,14 +288,12 @@
             <div class="image-caption">Upload as ultrasonic_sketch.png</div>
           </div>
 
-          <div class="spacer"></div>
-
           <p>(Paragraph 2 — write reflections, challenges, or results here.)</p>
 
         </div>
       </details>
 
-      <!-- TAB 3 (RF) - CLOSED BY DEFAULT (no "open" attribute) -->
+      <!-- TAB 3 (RF) — CLOSED BY DEFAULT -->
       <details>
         <summary>(Arduino rover module assignment 3 - RF)</summary>
         <div class="panel-body">
@@ -312,7 +309,7 @@
           <p>
             RF communication can be used for waypoint / beacon-style navigation where a remote transmitter repeatedly
             broadcasts a short coordinate message. A rover can listen for that message, parse the data, and use it as
-            an input for navigation decisions (for example, receiving a GPS waypoint from a fixed beacon).
+            an input for navigation decisions.
           </p>
 
           <h3 class="section-title">Required Electronics / Hardware</h3>
@@ -330,6 +327,21 @@
             The library helps convert Arduino data into a radio signal for transmission and decode it on the receiving side.
           </p>
 
+          <ul class="link-list">
+            <li>
+              RadioHead Library:
+              <a href="https://www.airspayce.com/mikem/arduino/RadioHead/" target="_blank">
+                https://www.airspayce.com/mikem/arduino/RadioHead/
+              </a>
+            </li>
+            <li>
+              Tutorial Video (DroneBot Workshop):
+              <a href="https://www.youtube.com/watch?v=b5C9SPVU4U&t=780s" target="_blank">
+                https://www.youtube.com/watch?v=b5C9SPVU4U&t=780s
+              </a>
+            </li>
+          </ul>
+
           <h3 class="section-title">Transmitter</h3>
           <p>
             The RF transmitter code for the Arduino tutorials was simple. The code uses the RadioHead library to enable
@@ -344,11 +356,9 @@
             The receiver code is similar to the transmitter code in that it uses the RadioHead library. With the library,
             radio frequency from the transmitter could be converted to something the Arduino could understand. The receiver
             is set up to be constantly searching for a radio frequency from a transmitter. Once the receiver grabs the info
-            from the transmitter, it places it into a 12 character matrix via means of a for loop. This decision was made
-            due to some signal corruption that would add 3 more characters to the actual code that were unknown of origin.
+            from the transmitter, it places it into a 12 character matrix via means of a for loop.
           </p>
 
-          <!-- RF IMAGES (same layout as the ultrasonic section) -->
           <div class="image-box">
             <div class="image-title">RF Tutorial Diagram</div>
             <img src="ardinoRFtutorialdiagrampic.png" alt="RF tutorial diagram">
@@ -367,14 +377,12 @@
             <div class="image-caption">Upload as RFtransmitorcodepic.png</div>
           </div>
 
-          <div class="spacer"></div>
-
           <p>(Paragraph — write reflections, challenges, or results here.)</p>
 
         </div>
       </details>
 
-      <!-- TAB 4 (NO BUBBLES) -->
+      <!-- TAB 4 -->
       <details>
         <summary>(Other Project #4)</summary>
         <div class="panel-body">
@@ -389,3 +397,4 @@
 </div>
 </body>
 </html>
+
