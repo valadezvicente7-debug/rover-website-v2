@@ -185,6 +185,18 @@
     text-align: left;
     box-shadow: inset 0 0 0 1px rgba(255,255,255,0.12);
   }
+
+  /* ---- SECTION HEADERS INSIDE PANELS ---- */
+  .section-title {
+    margin: 14px 0 8px 0;
+    font-size: 18px;
+    color: #333;
+    font-weight: 800;
+  }
+
+  .panel-body ul {
+    margin: 8px 0 0 22px;
+  }
 </style>
 </head>
 
@@ -226,15 +238,15 @@
         <div class="panel-body">
 
           <p>
-            The product requirements for our autonomous rover were developed to ensure the system could 
-            successfully complete all mission objectives while remaining practical, reliable, and safe to 
-            operate. The rover must be capable of acting autonomously, meaning it should navigate and make 
-            decisions without continuous human control. It must be an original design, including its mechanical 
-            structure, electrical system, and control software, developed by our team. The rover must be able 
-            to navigate to specified GPS coordinates, avoid obstacles, and travel across rough or sandy 
-            terrain while maintaining reasonable speed and positional accuracy. Additionally, 
-            it must be able to carry and deliver a 1.5-inch cubic wooden payload to designated locations. 
-            These requirements were chosen to align with the course objectives, real-world engineering 
+            The product requirements for our autonomous rover were developed to ensure the system could
+            successfully complete all mission objectives while remaining practical, reliable, and safe to
+            operate. The rover must be capable of acting autonomously, meaning it should navigate and make
+            decisions without continuous human control. It must be an original design, including its mechanical
+            structure, electrical system, and control software, developed by our team. The rover must be able
+            to navigate to specified GPS coordinates, avoid obstacles, and travel across rough or sandy
+            terrain while maintaining reasonable speed and positional accuracy. Additionally,
+            it must be able to carry and deliver a 1.5-inch cubic wooden payload to designated locations.
+            These requirements were chosen to align with the course objectives, real-world engineering
             constraints, and the challenges presented in the rover missions.
           </p>
 
@@ -244,13 +256,13 @@
 
           <div class="tag-list">
             <div class="tag">1. Act autonomously 10%</div>
-            <div class="tag">2. The rover mechanical structure, electrical system, 
-              and control software shall be an original design developed by the project team1-0% </div>
-            <div class="tag">3. Navigate to Specified GPS Coordinates 20% </div>
-            <div class="tag">4. Deliver a 1.5 in^3 wooden block to assigned coordinates as payload 10% </div>
-            <div class="tag">5. Able to avoid obstacles 15% </div>
+            <div class="tag">2. The rover mechanical structure, electrical system,
+              and control software shall be an original design developed by the project team 10%</div>
+            <div class="tag">3. Navigate to Specified GPS Coordinates 20%</div>
+            <div class="tag">4. Deliver a 1.5 in^3 wooden block to assigned coordinates as payload 10%</div>
+            <div class="tag">5. Able to avoid obstacles 15%</div>
             <div class="tag">6. Navigating rough (Grass/sandy) 15%</div>
-            <div class="tag">7. Meet speed and position accuracy requirements - 20%</div>
+            <div class="tag">7. Meet speed and position accuracy requirements 20%</div>
           </div>
 
           <div class="image-box">
@@ -271,13 +283,35 @@
         <div class="panel-body">
 
           <p>
-            Write your Engineering Specifications here. This is where you list measurable specs:
-            weight limit, battery/voltage, speed, accuracy, payload size, durability, sensor range, etc.
+            Our engineering specifications convert our product requirements into measurable, testable targets.
+            These quantitative standards define how the rover should perform in weight, speed, durability,
+            accuracy, protection, obstacle detection, and autonomous navigation.
           </p>
 
-          <p>
-            Add another paragraph here if you want.
-          </p>
+          <h3 class="section-title">Engineering Specifications / Requirements</h3>
+          <ul>
+            <li>Commands must be able to be received by the rover, and the rover must execute the mission without inputs after mission start.</li>
+            <li>Rover mass (including payload) must be <b>≤ 2.5 lb</b>.</li>
+            <li>Straight-line speed target of <b>1 ft/s</b>.</li>
+            <li>Must endure a drop of <b>18 in</b> without mission-critical damage.</li>
+            <li>Must be able to turn at approximately <b>20 degrees per second</b>.</li>
+            <li>Distance travel accuracy must be within <b>±10%</b> of the commanded value.</li>
+            <li>Must meet or exceed <b>IP43</b> protection standards.</li>
+            <li>Ability to avoid obstacles as needed to achieve the mission goal.</li>
+            <li>Autonomously navigate to a received GPS coordinate.</li>
+          </ul>
+
+          <h3 class="section-title">More Quantified Standards</h3>
+          <ul>
+            <li>Total rover mass (including batteries and all onboard electronics) shall be <b>≤ 2.5 lb</b>.</li>
+            <li>The rover shall achieve a straight-line ground speed of <b>1.0 ft/s ±10%</b> on a flat surface.</li>
+            <li>The rover shall withstand a vertical drop of <b>18 inches</b> onto a hard surface with no loss of functionality or mission-critical damage.</li>
+            <li>Commanded turning maneuvers (90° rotation) shall be completed within <b>5.0 s ± 0.5 s</b> with an accuracy of <b>± 5°</b>.</li>
+            <li>The rover shall travel commanded distances with an accuracy of <b>±10%</b> of the commanded value for distances of <b>5 ft</b> or greater.</li>
+            <li>The rover enclosure shall meet or exceed <b>IP43</b> ingress protection standards.</li>
+            <li>The rover shall detect obstacles within <b>12 inches</b> of its path and autonomously alter its trajectory to avoid collisions while continuing toward the mission goal.</li>
+            <li>The rover shall autonomously navigate to received GPS coordinates and stop within <b>± 5 ft</b> of the target location.</li>
+          </ul>
 
           <div class="image-box">
             <p><b>Upload an Engineering Specs Image Here</b></p>
