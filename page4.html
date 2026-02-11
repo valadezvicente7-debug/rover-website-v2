@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8" />
-<title>Generation and Evaluation of Concepts (Page 4)</title>
+<title>Project Management (Page 4)</title>
 
 <style>
   body {
@@ -76,7 +76,7 @@
   }
 
   .page-subtitle {
-    max-width: 980px;
+    max-width: 1100px;
     margin: 0 0 18px 0;
     color: #666;
     font-size: 14px;
@@ -85,7 +85,8 @@
 
   /* ---- DROPDOWN PANELS ---- */
   .panel-wrap {
-    max-width: 980px;
+    max-width: 1100px;
+    margin: 0;
   }
 
   details {
@@ -94,6 +95,7 @@
     overflow: hidden;
     border: 1px solid rgba(0,0,0,0.12);
     background: white;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
   }
 
   summary {
@@ -130,11 +132,6 @@
     line-height: 1.65;
   }
 
-  .panel-body h3 {
-    margin: 0 0 10px 0;
-    color: #4b3aa5;
-  }
-
   .hint {
     color: #777;
     font-size: 13px;
@@ -142,16 +139,8 @@
   }
 
   /* ---- IMAGE PLACEHOLDERS ---- */
-  .image-row {
-    display: flex;
-    gap: 14px;
-    flex-wrap: wrap;
-    margin-top: 14px;
-  }
-
   .image-box {
-    flex: 1;
-    min-width: 260px;
+    margin-top: 14px;
     border: 2px dashed rgba(0,0,0,0.25);
     border-radius: 10px;
     background: #fafafe;
@@ -164,6 +153,8 @@
     height: auto;
     border-radius: 10px;
     border: 1px solid rgba(0,0,0,0.12);
+    display: block;
+    margin: 0 auto;
   }
 
   /* ---- DOWNLOAD BUTTON ---- */
@@ -183,6 +174,51 @@
   .download-btn:hover {
     background: #6a4bdc;
   }
+
+  /* ---- SUB-DROPDOWNS ---- */
+  .subdetails {
+    margin: 14px 0 0 0;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid rgba(0,0,0,0.12);
+    background: white;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  }
+
+  .subdetails > summary {
+    cursor: pointer;
+    font-weight: 700;
+    padding: 14px 16px;
+    background: linear-gradient(90deg, #7b5cff, #a06bff);
+    color: white;
+    list-style: none;
+    position: relative;
+  }
+
+  .subdetails > summary::-webkit-details-marker { display: none; }
+
+  .subdetails > summary::after {
+    content: "▾";
+    position: absolute;
+    right: 16px;
+    top: 12px;
+    font-size: 18px;
+    opacity: 0.9;
+    transform: rotate(0deg);
+    transition: transform 0.2s ease;
+  }
+
+  .subdetails[open] > summary::after {
+    transform: rotate(180deg);
+  }
+
+  .subpanel-body {
+    padding: 16px;
+    color: #444;
+    font-size: 14px;
+    line-height: 1.65;
+    background: white;
+  }
 </style>
 </head>
 
@@ -197,7 +233,7 @@
       <a href="index.html">Home Page (Page 1)</a>
       <a href="page2.html">Project Definiton (Page 2)</a>
       <a href="page3.html">System Design (Page 3)</a>
-      <a href="page4.html"class="active">Project Management(Page 4)</a>
+      <a href="page4.html" class="active">Project Management(Page 4)</a>
       <a href="page5.html">Missions (Page 5)</a>
       <a href="page6.html">Arduino Tutorials/other tutorials (Page 6)</a>
       <a href="page7.html">Weekly Team Meeting Summaries (Page 7)</a>
@@ -208,138 +244,71 @@
 
   <!-- MAIN CONTENT -->
   <main class="main">
-    <h1 class="page-title">Generation and Evaluation of Concepts</h1>
+    <h1 class="page-title">Project Management</h1>
     <p class="page-subtitle">
-      Here you will find the overall concept generation and evaluation process for our team.
+      Here you will find the overall project management process for our team.
     </p>
 
     <div class="panel-wrap">
 
-      <!-- 1) Calculations for Torque and Stress -->
+      <!-- MAIN DROPDOWN: PROJECT SCHEDULE -->
       <details>
-        <summary>Calculations for Torque and Stress</summary>
+        <summary>Project Schedule</summary>
         <div class="panel-body">
-          <p>
-            <!-- WRITE HERE -->
-            <b>Write your summary here:</b> Explain the calculations you used (torque, stress, assumptions, and results).
-          </p>
 
-          <div class="image-row">
-            <div class="image-box">
-              <p><b>Upload Calculation Photo #1</b></p>
-              <img src="calc1.png" alt="Replace calc1.png with your file name">
-              <div class="hint">Upload an image to GitHub (same folder) and name it <b>calc1.png</b> (or change the src).</div>
-            </div>
-
-            <div class="image-box">
-              <p><b>Upload Calculation Photo #2</b></p>
-              <img src="calc2.png" alt="Replace calc2.png with your file name">
-              <div class="hint">Upload an image to GitHub (same folder) and name it <b>calc2.png</b> (or change the src).</div>
-            </div>
-          </div>
-        </div>
-      </details>
-
-      <!-- 2) New Concept for Rover -->
-      <details>
-        <summary>New Concept for Rover</summary>
-        <div class="panel-body">
-          <p>
-            <!-- WRITE HERE -->
-            <b>Write your concept description here:</b> What is the new rover concept? Why did you choose it?
-            What problem does it solve compared to the earlier idea?
-          </p>
-
-          <p>
-            <!-- OPTIONAL: bullet list -->
-            <b>Key features (optional):</b>
-          </p>
-          <ul>
-            <li>Feature 1 (replace)</li>
-            <li>Feature 2 (replace)</li>
-            <li>Feature 3 (replace)</li>
-          </ul>
+          <p>(Put future writing here)</p>
+          <p>(Put future writing here)</p>
 
           <div class="image-box">
-            <p><b>Upload Concept Sketch / CAD Screenshot</b></p>
-            <img src="new-concept.png" alt="Replace new-concept.png with your file name">
-            <div class="hint">Upload your image and name it <b>new-concept.png</b> (or change the src).</div>
-          </div>
-        </div>
-      </details>
-
-      <!-- 3) Promising Concepts -->
-      <details>
-        <summary>Promising Concepts</summary>
-        <div class="panel-body">
-          <p>
-            <b>Write here:</b> List the top promising concepts you considered and why they were strong candidates.
-          </p>
-
-          <p><b>Concept options (example format):</b></p>
-          <ul>
-            <li><b>Concept A:</b> (describe)</li>
-            <li><b>Concept B:</b> (describe)</li>
-          </ul>
-
-          <div class="image-box">
-            <p><b>Upload Image for Promising Concepts</b></p>
-            <img src="promising-concepts.png" alt="Replace promising-concepts.png with your file name">
-            <div class="hint">Upload your image and name it <b>promising-concepts.png</b> (or change the src).</div>
-          </div>
-        </div>
-      </details>
-
-      <!-- 4) Decision Matrices -->
-      <details>
-        <summary>Decision Matrices</summary>
-        <div class="panel-body">
-          <p>
-            <b>Write here:</b> Explain your criteria, how you scored each concept, and what the matrix showed.
-          </p>
-
-          <div class="image-row">
-            <div class="image-box">
-              <p><b>Upload Decision Matrix #1</b></p>
-              <img src="decision-matrix-1.png" alt="Replace decision-matrix-1.png with your file name">
-              <div class="hint">Upload and name it <b>decision-matrix-1.png</b> (or change the src).</div>
-            </div>
-
-            <div class="image-box">
-              <p><b>Upload Decision Matrix #2</b></p>
-              <img src="decision-matrix-2.png" alt="Replace decision-matrix-2.png with your file name">
-              <div class="hint">Upload and name it <b>decision-matrix-2.png</b> (or change the src).</div>
+            <p><b>Upload a Project Schedule Photo Here</b></p>
+            <img src="project-schedule.png" alt="Replace project-schedule.png with your file name">
+            <div class="hint">
+              Upload an image to GitHub (same folder) and name it <b>project-schedule.png</b>
+              (or change the src).
             </div>
           </div>
-        </div>
-      </details>
 
-      <!-- 5) Our Team’s Rough Design -->
-      <details>
-        <summary>Our Team’s Rough Design</summary>
-        <div class="panel-body">
-          <p>
-            <b>Write here:</b> Describe the rough selected design your team decided to move forward with and why.
-          </p>
+          <!-- SUB DROPDOWN 1: GANTT CHART -->
+          <details class="subdetails">
+            <summary>Gantt Chart</summary>
+            <div class="subpanel-body">
+              <p>(Put future writing here)</p>
+              <p>(Put future writing here)</p>
 
-          <div class="image-box">
-            <p><b>Upload Rough Design Image / CAD Render</b></p>
-            <img src="rough-design.png" alt="Replace rough-design.png with your file name">
-            <div class="hint">Upload your image and name it <b>rough-design.png</b> (or change the src).</div>
-          </div>
+              <div class="image-box">
+                <p><b>Upload a Gantt Chart Photo Here</b></p>
+                <img src="gantt-chart.png" alt="Replace gantt-chart.png with your file name">
+                <div class="hint">
+                  Upload an image and name it <b>gantt-chart.png</b> (or change the src).
+                </div>
+              </div>
 
-          <p style="margin-top: 14px;">
-            <i>If you would like to download our rough design file and open it in SolidWorks, feel free!</i>
-          </p>
+              <p style="margin-top: 12px;"><i>Download our Gantt chart (PDF):</i></p>
+              <a class="download-btn" href="gantt.pdf" download>Download Gantt Chart (PDF)</a>
 
-          <!-- Put your file in the repo and update the filename below -->
-          <!-- Example: rough-design.SLDPRT or rough-design.SLDASM -->
-          <a class="download-btn" href="rough-design.SLDPRT" download>Download SolidWorks File (.SLDPRT)</a>
+              <div class="hint">
+                Make sure <b>gantt.pdf</b> is in the same GitHub folder as this page (or change the href).
+              </div>
+            </div>
+          </details>
 
-          <div class="hint">
-            Upload your SolidWorks file into the same GitHub folder and name it <b>rough-design.SLDPRT</b>
-            (or change the href).
-          </div>
+          <!-- SUB DROPDOWN 2: MILESTONES & DELIVERABLES -->
+          <details class="subdetails">
+            <summary>Milestones and Deliverables</summary>
+            <div class="subpanel-body">
+              <p>(Put future writing here)</p>
+              <p>(Put future writing here)</p>
+
+              <div class="image-box">
+                <p><b>Upload a Milestones/Deliverables Photo Here</b></p>
+                <img src="milestones.png" alt="Replace milestones.png with your file name">
+                <div class="hint">
+                  Upload an image and name it <b>milestones.png</b> (or change the src).
+                </div>
+              </div>
+            </div>
+          </details>
+
         </div>
       </details>
 
