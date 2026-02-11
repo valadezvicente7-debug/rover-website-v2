@@ -60,7 +60,7 @@
     padding-left: 8px;
   }
 
-  /* ---- MAIN CONTENT (MATCH PAGES 4/6/7) ---- */
+  /* ---- MAIN CONTENT ---- */
   .main {
     flex: 1;
     padding: 32px 40px;
@@ -103,7 +103,7 @@
     background: white;
   }
 
-  /* ---- ABOUT BOX (same width as dropdowns) ---- */
+  /* ---- ABOUT BOX ---- */
   .about-box {
     margin-top: 18px;
     padding: 18px;
@@ -124,7 +124,7 @@
     color: #444;
   }
 
-  /* NEW: subheaders inside About box */
+  /* Subheaders inside About box */
   .about-subheader {
     margin: 12px 0 6px 0;
     color: #4b3aa5;
@@ -139,7 +139,32 @@
     line-height: 1.7;
   }
 
-  /* ---- DROPDOWN PANELS (MATCH PAGES 4/6/7) ---- */
+  /* NEW: Image placeholder box (matches your site style) */
+  .image-box {
+    margin-top: 14px;
+    border: 2px dashed rgba(0,0,0,0.22);
+    border-radius: 10px;
+    background: #fafafe;
+    padding: 16px;
+    text-align: center;
+  }
+
+  .image-box img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    border: 1px solid rgba(0,0,0,0.12);
+    display: block;
+    margin: 0 auto;
+  }
+
+  .hint {
+    color: #777;
+    font-size: 13px;
+    margin-top: 8px;
+  }
+
+  /* ---- DROPDOWN PANELS ---- */
   details {
     margin: 18px 0;
     border-radius: 10px;
@@ -257,7 +282,7 @@ function showContact(name) {
 
         <h2>About This Project</h2>
 
-        <!-- NEW: Project Summary -->
+        <!-- Project Summary -->
         <div class="about-subheader">Project Summary</div>
         <p>
           Our team is designing and building an autonomous rover capable of navigating real-world terrain, avoiding obstacles,
@@ -275,7 +300,7 @@ function showContact(name) {
           progress through this website.
         </p>
 
-        <!-- NEW: Team Description -->
+        <!-- Team Description -->
         <div class="about-subheader">Team Description</div>
         <p>
           Our team consists of engineering students collaborating across mechanical, electrical, and software disciplines to design
@@ -290,7 +315,6 @@ function showContact(name) {
           that meets our mission objectives while strengthening our engineering problem-solving abilities.
         </p>
 
-        <!-- Keep your mission area exactly as-is below -->
         <h3>Major Design Project: Autonomous Rover</h3>
 
         <p>
@@ -299,6 +323,13 @@ function showContact(name) {
           The rover should be capable of obstacle avoidance, navigating rough/uneven/sandy terrain, and meeting speed
           and navigation accuracy requirements.
         </p>
+
+        <!-- NEW: add your photo here -->
+        <div class="image-box">
+          
+          <img src="picHP.png" alt="Rover screenshot (picHP)">
+          
+        </div>
 
         <!-- Mission 1 -->
         <details>
