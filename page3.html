@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Defining the Product (Page 3)</title>
+<title>System Design (Page 3)</title>
 
 <style>
   body {
@@ -75,7 +75,7 @@
   }
 
   .page-subtitle {
-    max-width: 1000px;
+    max-width: 1100px;
     margin: 0 0 18px 0;
     color: #666;
     font-size: 14px;
@@ -142,10 +142,12 @@
   }
 
   .image-box img {
-    max-width: 95%;
+    max-width: 100%;
     height: auto;
     border-radius: 10px;
     border: 1px solid rgba(0,0,0,0.12);
+    display: block;
+    margin: 0 auto;
   }
 
   .hint {
@@ -167,35 +169,49 @@
     min-width: 320px;
   }
 
-  /* Optional: small “tag list” look */
-  .tag-list {
-    max-width: 380px;
-    margin: 16px auto 0 auto;
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
+  /* ---- SUB-DROPDOWNS ---- */
+  .subdetails {
+    margin: 14px 0;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid rgba(0,0,0,0.12);
+    background: white;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
   }
 
-  .tag {
-    background: #0e6580;
-    color: white;
-    border-radius: 8px;
-    padding: 10px 12px;
+  .subdetails > summary {
+    cursor: pointer;
     font-weight: 700;
-    text-align: left;
-    box-shadow: inset 0 0 0 1px rgba(255,255,255,0.12);
+    padding: 16px 18px; /* match main header padding */
+    background: linear-gradient(90deg, #7b5cff, #a06bff);
+    color: white;
+    list-style: none;
+    position: relative;
   }
 
-  /* ---- SECTION HEADERS INSIDE PANELS ---- */
-  .section-title {
-    margin: 14px 0 8px 0;
+  .subdetails > summary::-webkit-details-marker { display: none; }
+
+  .subdetails > summary::after {
+    content: "▾";
+    position: absolute;
+    right: 16px;
+    top: 14px; /* match main triangle alignment */
     font-size: 18px;
-    color: #333;
-    font-weight: 800;
+    opacity: 0.95;
+    transform: rotate(0deg);
+    transition: transform 0.2s ease;
   }
 
-  .panel-body ul {
-    margin: 8px 0 0 22px;
+  .subdetails[open] > summary::after {
+    transform: rotate(180deg);
+  }
+
+  .subpanel-body {
+    padding: 18px; /* match main body padding */
+    color: #444;
+    font-size: 14px;
+    line-height: 1.7;
+    background: white;
   }
 </style>
 </head>
@@ -210,7 +226,7 @@
     <nav class="nav">
       <a href="index.html">Home Page (Page 1)</a>
       <a href="page2.html">Project Definiton (Page 2)</a>
-      <a href="page3.html"class="active">System Design (Page 3)</a>
+      <a href="page3.html" class="active">System Design (Page 3)</a>
       <a href="page4.html">Project Management(Page 4)</a>
       <a href="page5.html">Missions (Page 5)</a>
       <a href="page6.html">Arduino Tutorials/other tutorials (Page 6)</a>
@@ -223,7 +239,7 @@
   <!-- MAIN CONTENT -->
   <main class="main">
 
-    <h1 class="page-title">Defining the Product</h1>
+    <h1 class="page-title">System Design</h1>
 
     <p class="page-subtitle">
       Here you will find our group’s stages when defining what we are going to build.
@@ -232,134 +248,400 @@
 
     <div class="panel-wrap">
 
-      <!-- 1) PRODUCT REQUIREMENTS (NOW CLOSED) -->
-      <details>
-        <summary>Product Requirements</summary>
-        <div class="panel-body">
-
-          <p>
-            The product requirements for our autonomous rover were developed to ensure the system could
-            successfully complete all mission objectives while remaining practical, reliable, and safe to
-            operate. The rover must be capable of acting autonomously, meaning it should navigate and make
-            decisions without continuous human control. It must be an original design, including its mechanical
-            structure, electrical system, and control software, developed by our team. The rover must be able
-            to navigate to specified GPS coordinates, avoid obstacles, and travel across rough or sandy
-            terrain while maintaining reasonable speed and positional accuracy. Additionally,
-            it must be able to carry and deliver a 1.5-inch cubic wooden payload to designated locations.
-            These requirements were chosen to align with the course objectives, real-world engineering
-            constraints, and the challenges presented in the rover missions.
-          </p>
-
-          <p>
-            (Add more stuff here if we need to.)
-          </p>
-
-          <div class="tag-list">
-            <div class="tag">1. Act autonomously 10%</div>
-            <div class="tag">2. The rover mechanical structure, electrical system,
-              and control software shall be an original design developed by the project team 10%</div>
-            <div class="tag">3. Navigate to Specified GPS Coordinates 20%</div>
-            <div class="tag">4. Deliver a 1.5 in^3 wooden block to assigned coordinates as payload 10%</div>
-            <div class="tag">5. Able to avoid obstacles 15%</div>
-            <div class="tag">6. Navigating rough (Grass/sandy) 15%</div>
-            <div class="tag">7. Meet speed and position accuracy requirements 20%</div>
-          </div>
-
-          <div class="image-box">
-            <p><b>Upload a Product Requirements Image Here</b></p>
-            <img src="product-requirements.png" alt="Product Requirements Image">
-            <div class="hint">
-              Upload an image to GitHub in the same folder and name it <b>product-requirements.png</b>
-              (or change the filename in the code).
-            </div>
-          </div>
-
-        </div>
-      </details>
-
-      <!-- 2) ENGINEERING SPECIFICATIONS -->
+      <!-- 1) ENGINEERING SPECIFICATIONS -->
       <details>
         <summary>Engineering Specifications</summary>
         <div class="panel-body">
 
-          <p>
-            Our engineering specifications convert our product requirements into measurable, testable targets.
-            These quantitative standards define how the rover should perform in weight, speed, durability,
-            accuracy, protection, obstacle detection, and autonomous navigation.
-          </p>
-
-          <h3 class="section-title">Engineering Specifications / Requirements</h3>
-          <ul>
-            <li>Commands must be able to be received by the rover, and the rover must execute the mission without inputs after mission start.</li>
-            <li>Rover mass (including payload) must be <b>≤ 2.5 lb</b>.</li>
-            <li>Straight-line speed target of <b>1 ft/s</b>.</li>
-            <li>Must endure a drop of <b>18 in</b> without mission-critical damage.</li>
-            <li>Must be able to turn at approximately <b>20 degrees per second</b>.</li>
-            <li>Distance travel accuracy must be within <b>±10%</b> of the commanded value.</li>
-            <li>Must meet or exceed <b>IP43</b> protection standards.</li>
-            <li>Ability to avoid obstacles as needed to achieve the mission goal.</li>
-            <li>Autonomously navigate to a received GPS coordinate.</li>
-          </ul>
-
-          <h3 class="section-title">More Quantified Standards</h3>
-          <ul>
-            <li>Total rover mass (including batteries and all onboard electronics) shall be <b>≤ 2.5 lb</b>.</li>
-            <li>The rover shall achieve a straight-line ground speed of <b>1.0 ft/s ±10%</b> on a flat surface.</li>
-            <li>The rover shall withstand a vertical drop of <b>18 inches</b> onto a hard surface with no loss of functionality or mission-critical damage.</li>
-            <li>Commanded turning maneuvers (90° rotation) shall be completed within <b>5.0 s ± 0.5 s</b> with an accuracy of <b>± 5°</b>.</li>
-            <li>The rover shall travel commanded distances with an accuracy of <b>±10%</b> of the commanded value for distances of <b>5 ft</b> or greater.</li>
-            <li>The rover enclosure shall meet or exceed <b>IP43</b> ingress protection standards.</li>
-            <li>The rover shall detect obstacles within <b>12 inches</b> of its path and autonomously alter its trajectory to avoid collisions while continuing toward the mission goal.</li>
-            <li>The rover shall autonomously navigate to received GPS coordinates and stop within <b>± 5 ft</b> of the target location.</li>
-          </ul>
+          <p>(Put future writing here)</p>
+          <p>(Put future writing here)</p>
 
           <div class="image-box">
-            <p><b>Upload an Engineering Specs Image Here</b></p>
-            <img src="engineering-specs.png" alt="Engineering Specifications Image">
-            <div class="hint">
-              Upload an image named <b>engineering-specs.png</b> to GitHub (same folder as this page)
-              or rename it in the code.
-            </div>
+            <p><b>Photo (Engineering Specifications)</b></p>
+            <img src="engineering-specs-main.png" alt="Engineering Specifications main photo">
+            <div class="hint">Replace with your file (example: engineering-specs-main.png)</div>
           </div>
+
+          <!-- Sub 1 -->
+          <details class="subdetails">
+            <summary>Quantitative Specifications</summary>
+            <div class="subpanel-body">
+              <p>(Put future writing here)</p>
+              <p>(Put future writing here)</p>
+
+              <div class="two-images">
+                <div class="image-box">
+                  <p><b>Photo #1</b></p>
+                  <img src="quant-specs-1.png" alt="Quantitative Specifications photo 1">
+                  <div class="hint">Replace with your file (example: quant-specs-1.png)</div>
+                </div>
+                <div class="image-box">
+                  <p><b>Photo #2</b></p>
+                  <img src="quant-specs-2.png" alt="Quantitative Specifications photo 2">
+                  <div class="hint">Replace with your file (example: quant-specs-2.png)</div>
+                </div>
+              </div>
+            </div>
+          </details>
+
+          <!-- Sub 2 -->
+          <details class="subdetails">
+            <summary>Target Values</summary>
+            <div class="subpanel-body">
+              <p>(Put future writing here)</p>
+              <p>(Put future writing here)</p>
+
+              <div class="two-images">
+                <div class="image-box">
+                  <p><b>Photo #1</b></p>
+                  <img src="target-values-1.png" alt="Target Values photo 1">
+                  <div class="hint">Replace with your file (example: target-values-1.png)</div>
+                </div>
+                <div class="image-box">
+                  <p><b>Photo #2</b></p>
+                  <img src="target-values-2.png" alt="Target Values photo 2">
+                  <div class="hint">Replace with your file (example: target-values-2.png)</div>
+                </div>
+              </div>
+            </div>
+          </details>
+
+          <!-- Sub 3 -->
+          <details class="subdetails">
+            <summary>Traceability to Product Requirements</summary>
+            <div class="subpanel-body">
+              <p>(Put future writing here)</p>
+              <p>(Put future writing here)</p>
+
+              <div class="two-images">
+                <div class="image-box">
+                  <p><b>Photo #1</b></p>
+                  <img src="traceability-1.png" alt="Traceability photo 1">
+                  <div class="hint">Replace with your file (example: traceability-1.png)</div>
+                </div>
+                <div class="image-box">
+                  <p><b>Photo #2</b></p>
+                  <img src="traceability-2.png" alt="Traceability photo 2">
+                  <div class="hint">Replace with your file (example: traceability-2.png)</div>
+                </div>
+              </div>
+            </div>
+          </details>
+
+          <!-- Sub 4 -->
+          <details class="subdetails">
+            <summary>Supporting Calculations</summary>
+            <div class="subpanel-body">
+              <p>(Put future writing here)</p>
+              <p>(Put future writing here)</p>
+
+              <div class="two-images">
+                <div class="image-box">
+                  <p><b>Photo #1</b></p>
+                  <img src="supporting-calcs-1.png" alt="Supporting Calculations photo 1">
+                  <div class="hint">Replace with your file (example: supporting-calcs-1.png)</div>
+                </div>
+                <div class="image-box">
+                  <p><b>Photo #2</b></p>
+                  <img src="supporting-calcs-2.png" alt="Supporting Calculations photo 2">
+                  <div class="hint">Replace with your file (example: supporting-calcs-2.png)</div>
+                </div>
+              </div>
+            </div>
+          </details>
 
         </div>
       </details>
 
-      <!-- 3) EARLY DESIGN IDEAS AND THOUGHTS -->
+      <!-- 2) WORK BREAKDOWN STRUCTURE (WBS) -->
       <details>
-        <summary>Early Design Ideas and Thoughts</summary>
+        <summary>Work Breakdown Structure (WBS)</summary>
         <div class="panel-body">
 
-          <p>
-            Write your early design ideas and thoughts here. Explain your first concepts, brainstorming,
-            and why certain layouts or approaches seemed promising.
-          </p>
-
-          <div class="two-images">
-            <div class="image-box">
-              <p><b>Early Idea Photo #1</b></p>
-              <img src="early-idea-1.png" alt="Early Idea 1">
-              <div class="hint">Upload <b>early-idea-1.png</b> (or rename in the code).</div>
-            </div>
-
-            <div class="image-box">
-              <p><b>Early Idea Photo #2</b></p>
-              <img src="early-idea-2.png" alt="Early Idea 2">
-              <div class="hint">Upload <b>early-idea-2.png</b> (or rename in the code).</div>
-            </div>
-          </div>
-
-          <p style="margin-top: 16px;">
-            Add more writing here after the two photos (explain what changed, what you learned, and how your ideas evolved).
-          </p>
+          <p>(Put future writing here)</p>
+          <p>(Put future writing here)</p>
 
           <div class="image-box">
-            <p><b>Additional Early Design Photo</b></p>
-            <img src="early-idea-3.png" alt="Early Idea 3">
-            <div class="hint">
-              Upload <b>early-idea-3.png</b> (or rename in the code).
-            </div>
+            <p><b>Photo (WBS)</b></p>
+            <img src="wbs-main.png" alt="WBS main photo">
+            <div class="hint">Replace with your file (example: wbs-main.png)</div>
           </div>
+
+          <!-- Sub 1 -->
+          <details class="subdetails">
+            <summary>System-level Decomposition</summary>
+            <div class="subpanel-body">
+              <p>(Put future writing here)</p>
+              <p>(Put future writing here)</p>
+
+              <div class="two-images">
+                <div class="image-box">
+                  <p><b>Photo #1</b></p>
+                  <img src="system-decomp-1.png" alt="System-level decomposition photo 1">
+                  <div class="hint">Replace with your file (example: system-decomp-1.png)</div>
+                </div>
+                <div class="image-box">
+                  <p><b>Photo #2</b></p>
+                  <img src="system-decomp-2.png" alt="System-level decomposition photo 2">
+                  <div class="hint">Replace with your file (example: system-decomp-2.png)</div>
+                </div>
+              </div>
+            </div>
+          </details>
+
+          <!-- Sub 2 -->
+          <details class="subdetails">
+            <summary>Subsystems and Components</summary>
+            <div class="subpanel-body">
+              <p>(Put future writing here)</p>
+              <p>(Put future writing here)</p>
+
+              <div class="two-images">
+                <div class="image-box">
+                  <p><b>Photo #1</b></p>
+                  <img src="subsystems-1.png" alt="Subsystems and components photo 1">
+                  <div class="hint">Replace with your file (example: subsystems-1.png)</div>
+                </div>
+                <div class="image-box">
+                  <p><b>Photo #2</b></p>
+                  <img src="subsystems-2.png" alt="Subsystems and components photo 2">
+                  <div class="hint">Replace with your file (example: subsystems-2.png)</div>
+                </div>
+              </div>
+            </div>
+          </details>
+
+          <!-- Sub 3 -->
+          <details class="subdetails">
+            <summary>WBS Diagram or Hierarchy</summary>
+            <div class="subpanel-body">
+              <p>(Put future writing here)</p>
+              <p>(Put future writing here)</p>
+
+              <div class="two-images">
+                <div class="image-box">
+                  <p><b>Photo #1</b></p>
+                  <img src="wbs-diagram-1.png" alt="WBS diagram photo 1">
+                  <div class="hint">Replace with your file (example: wbs-diagram-1.png)</div>
+                </div>
+                <div class="image-box">
+                  <p><b>Photo #2</b></p>
+                  <img src="wbs-diagram-2.png" alt="WBS diagram photo 2">
+                  <div class="hint">Replace with your file (example: wbs-diagram-2.png)</div>
+                </div>
+              </div>
+            </div>
+          </details>
+
+        </div>
+      </details>
+
+      <!-- 3) CONCEPT GENERATION -->
+      <details>
+        <summary>Concept Generation</summary>
+        <div class="panel-body">
+
+          <p>(Put future writing here)</p>
+          <p>(Put future writing here)</p>
+
+          <div class="image-box">
+            <p><b>Photo (Concept Generation)</b></p>
+            <img src="concept-gen-main.png" alt="Concept generation main photo">
+            <div class="hint">Replace with your file (example: concept-gen-main.png)</div>
+          </div>
+
+          <!-- Sub 1 -->
+          <details class="subdetails">
+            <summary>Principle Concepts Developed</summary>
+            <div class="subpanel-body">
+              <p>(Put future writing here)</p>
+              <p>(Put future writing here)</p>
+
+              <div class="two-images">
+                <div class="image-box">
+                  <p><b>Photo #1</b></p>
+                  <img src="principle-concepts-1.png" alt="Principle concepts photo 1">
+                  <div class="hint">Replace with your file (example: principle-concepts-1.png)</div>
+                </div>
+                <div class="image-box">
+                  <p><b>Photo #2</b></p>
+                  <img src="principle-concepts-2.png" alt="Principle concepts photo 2">
+                  <div class="hint">Replace with your file (example: principle-concepts-2.png)</div>
+                </div>
+              </div>
+            </div>
+          </details>
+
+          <!-- Sub 2 -->
+          <details class="subdetails">
+            <summary>Design Alternatives</summary>
+            <div class="subpanel-body">
+              <p>(Put future writing here)</p>
+              <p>(Put future writing here)</p>
+
+              <div class="two-images">
+                <div class="image-box">
+                  <p><b>Photo #1</b></p>
+                  <img src="design-alts-1.png" alt="Design alternatives photo 1">
+                  <div class="hint">Replace with your file (example: design-alts-1.png)</div>
+                </div>
+                <div class="image-box">
+                  <p><b>Photo #2</b></p>
+                  <img src="design-alts-2.png" alt="Design alternatives photo 2">
+                  <div class="hint">Replace with your file (example: design-alts-2.png)</div>
+                </div>
+              </div>
+            </div>
+          </details>
+
+          <!-- Sub 3 -->
+          <details class="subdetails">
+            <summary>Sketches and CAD Models</summary>
+            <div class="subpanel-body">
+              <p>(Put future writing here)</p>
+              <p>(Put future writing here)</p>
+
+              <div class="two-images">
+                <div class="image-box">
+                  <p><b>Photo #1</b></p>
+                  <img src="sketches-cad-1.png" alt="Sketches and CAD photo 1">
+                  <div class="hint">Replace with your file (example: sketches-cad-1.png)</div>
+                </div>
+                <div class="image-box">
+                  <p><b>Photo #2</b></p>
+                  <img src="sketches-cad-2.png" alt="Sketches and CAD photo 2">
+                  <div class="hint">Replace with your file (example: sketches-cad-2.png)</div>
+                </div>
+              </div>
+            </div>
+          </details>
+
+          <!-- Sub 4 -->
+          <details class="subdetails">
+            <summary>Concept Descriptions</summary>
+            <div class="subpanel-body">
+              <p>(Put future writing here)</p>
+              <p>(Put future writing here)</p>
+
+              <div class="two-images">
+                <div class="image-box">
+                  <p><b>Photo #1</b></p>
+                  <img src="concept-desc-1.png" alt="Concept descriptions photo 1">
+                  <div class="hint">Replace with your file (example: concept-desc-1.png)</div>
+                </div>
+                <div class="image-box">
+                  <p><b>Photo #2</b></p>
+                  <img src="concept-desc-2.png" alt="Concept descriptions photo 2">
+                  <div class="hint">Replace with your file (example: concept-desc-2.png)</div>
+                </div>
+              </div>
+            </div>
+          </details>
+
+        </div>
+      </details>
+
+      <!-- 4) CONCEPT EVALUATION -->
+      <details>
+        <summary>Concept Evaluation</summary>
+        <div class="panel-body">
+
+          <p>(Put future writing here)</p>
+          <p>(Put future writing here)</p>
+
+          <div class="image-box">
+            <p><b>Photo (Concept Evaluation)</b></p>
+            <img src="concept-eval-main.png" alt="Concept evaluation main photo">
+            <div class="hint">Replace with your file (example: concept-eval-main.png)</div>
+          </div>
+
+          <!-- Sub 1 -->
+          <details class="subdetails">
+            <summary>Engineering Analysis</summary>
+            <div class="subpanel-body">
+              <p>(Put future writing here)</p>
+              <p>(Put future writing here)</p>
+
+              <div class="two-images">
+                <div class="image-box">
+                  <p><b>Photo #1</b></p>
+                  <img src="eng-analysis-1.png" alt="Engineering analysis photo 1">
+                  <div class="hint">Replace with your file (example: eng-analysis-1.png)</div>
+                </div>
+                <div class="image-box">
+                  <p><b>Photo #2</b></p>
+                  <img src="eng-analysis-2.png" alt="Engineering analysis photo 2">
+                  <div class="hint">Replace with your file (example: eng-analysis-2.png)</div>
+                </div>
+              </div>
+            </div>
+          </details>
+
+          <!-- Sub 2 -->
+          <details class="subdetails">
+            <summary>Decision Matrices / Belief Maps</summary>
+            <div class="subpanel-body">
+              <p>(Put future writing here)</p>
+              <p>(Put future writing here)</p>
+
+              <div class="two-images">
+                <div class="image-box">
+                  <p><b>Photo #1</b></p>
+                  <img src="decision-matrix-1.png" alt="Decision matrices photo 1">
+                  <div class="hint">Replace with your file (example: decision-matrix-1.png)</div>
+                </div>
+                <div class="image-box">
+                  <p><b>Photo #2</b></p>
+                  <img src="decision-matrix-2.png" alt="Decision matrices photo 2">
+                  <div class="hint">Replace with your file (example: decision-matrix-2.png)</div>
+                </div>
+              </div>
+            </div>
+          </details>
+
+          <!-- Sub 3 -->
+          <details class="subdetails">
+            <summary>Concept Comparison</summary>
+            <div class="subpanel-body">
+              <p>(Put future writing here)</p>
+              <p>(Put future writing here)</p>
+
+              <div class="two-images">
+                <div class="image-box">
+                  <p><b>Photo #1</b></p>
+                  <img src="concept-compare-1.png" alt="Concept comparison photo 1">
+                  <div class="hint">Replace with your file (example: concept-compare-1.png)</div>
+                </div>
+                <div class="image-box">
+                  <p><b>Photo #2</b></p>
+                  <img src="concept-compare-2.png" alt="Concept comparison photo 2">
+                  <div class="hint">Replace with your file (example: concept-compare-2.png)</div>
+                </div>
+              </div>
+            </div>
+          </details>
+
+          <!-- Sub 4 -->
+          <details class="subdetails">
+            <summary>Selected Concept(s)</summary>
+            <div class="subpanel-body">
+              <p>(Put future writing here)</p>
+              <p>(Put future writing here)</p>
+
+              <div class="two-images">
+                <div class="image-box">
+                  <p><b>Photo #1</b></p>
+                  <img src="selected-concept-1.png" alt="Selected concept photo 1">
+                  <div class="hint">Replace with your file (example: selected-concept-1.png)</div>
+                </div>
+                <div class="image-box">
+                  <p><b>Photo #2</b></p>
+                  <img src="selected-concept-2.png" alt="Selected concept photo 2">
+                  <div class="hint">Replace with your file (example: selected-concept-2.png)</div>
+                </div>
+              </div>
+            </div>
+          </details>
 
         </div>
       </details>
