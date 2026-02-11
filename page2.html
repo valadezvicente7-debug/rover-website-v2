@@ -60,7 +60,7 @@
     padding-left: 8px;
   }
 
-  /* ---- MAIN CONTENT (MATCH PAGES 4/6/7) ---- */
+  /* ---- MAIN CONTENT ---- */
   .main {
     flex: 1;
     padding: 32px 40px;
@@ -72,22 +72,22 @@
     font-size: 46px;
     margin: 8px 0 8px 0;
     font-family: "Trebuchet MS", Arial, sans-serif;
-    text-align: left; /* changed */
+    text-align: left;
   }
 
   .page-subtitle {
-    max-width: 1100px; /* match dropdown width */
-    margin: 0 0 18px 0; /* changed */
+    max-width: 1100px;
+    margin: 0 0 18px 0;
     color: #666;
     font-size: 14px;
     line-height: 1.6;
-    text-align: left; /* changed */
+    text-align: left;
   }
 
-  /* ---- DROPDOWN PANELS (MATCH WIDTH/ALIGNMENT) ---- */
+  /* ---- DROPDOWN PANELS ---- */
   .panel-wrap {
     max-width: 1100px;
-    margin: 0; /* left aligned like pages 6/7 */
+    margin: 0;
   }
 
   details {
@@ -137,24 +137,7 @@
     margin-top: 10px;
   }
 
-  .download-btn {
-    display: inline-block;
-    margin-top: 14px;
-    padding: 10px 14px;
-    border-radius: 8px;
-    border: none;
-    background: #7b5cff;
-    color: white;
-    font-weight: 700;
-    cursor: pointer;
-    text-decoration: none;
-  }
-
-  .download-btn:hover {
-    background: #6a4bdc;
-  }
-
-  /* ---- WBS IMAGE PLACEHOLDER ---- */
+  /* ---- IMAGE PLACEHOLDER ---- */
   .image-box {
     margin-top: 18px;
     border: 2px dashed rgba(0,0,0,0.25);
@@ -169,12 +152,93 @@
     height: auto;
     border-radius: 10px;
     border: 1px solid rgba(0,0,0,0.12);
+    display: block;
+    margin: 0 auto;
   }
 
   .hint {
     color: #777;
     font-size: 13px;
     margin-top: 8px;
+  }
+
+  /* ---- SUB-DROPDOWNS (MATCH MAIN WIDTH + ALIGN TRIANGLES) ---- */
+  .subdetails {
+    margin: 14px 0;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid rgba(0,0,0,0.12);
+    background: white;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  }
+
+  /* Make sub summaries match the main summary exactly (padding + arrow alignment) */
+  .subdetails > summary {
+    cursor: pointer;
+    font-weight: 700;
+    padding: 16px 18px; /* SAME as main summary */
+    background: linear-gradient(90deg, #7b5cff, #a06bff);
+    color: white;
+    list-style: none;
+    position: relative;
+  }
+
+  .subdetails > summary::-webkit-details-marker { display: none; }
+
+  .subdetails > summary::after {
+    content: "▾";
+    position: absolute;
+    right: 16px; /* SAME as main summary */
+    top: 14px;   /* SAME as main summary */
+    font-size: 18px;
+    opacity: 0.95;
+    transform: rotate(0deg);
+    transition: transform 0.2s ease;
+  }
+
+  .subdetails[open] > summary::after {
+    transform: rotate(180deg);
+  }
+
+  .subpanel-body {
+    padding: 18px; /* match main panel body */
+    color: #444;
+    font-size: 14px;
+    line-height: 1.65;
+    background: white;
+  }
+
+  /* Two-photo row inside sub dropdowns */
+  .two-images {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+    margin-top: 12px;
+  }
+
+  .two-images .image-box {
+    flex: 1;
+    min-width: 320px;
+    margin-top: 0;
+  }
+
+  /* Optional: make the “requirements blocks” look like your screenshot */
+  .req-tags {
+    max-width: 420px;
+    margin: 14px auto 0 auto; /* centered */
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .req-tag {
+    background: #0e6580;
+    color: white;
+    border-radius: 8px;
+    padding: 10px 12px;
+    font-weight: 700;
+    text-align: left;
+    box-shadow: inset 0 0 0 1px rgba(255,255,255,0.12);
   }
 </style>
 </head>
@@ -188,7 +252,7 @@
 
     <nav class="nav">
       <a href="index.html">Home Page (Page 1)</a>
-      <a href="page2.html"class="active">Project Definiton (Page 2)</a>
+      <a href="page2.html" class="active">Project Definiton (Page 2)</a>
       <a href="page3.html">System Design (Page 3)</a>
       <a href="page4.html">Project Management(Page 4)</a>
       <a href="page5.html">Missions (Page 5)</a>
@@ -202,7 +266,7 @@
   <!-- MAIN CONTENT -->
   <main class="main">
 
-    <h1 class="page-title">Defining the Project</h1>
+    <h1 class="page-title">Project Definition</h1>
 
     <p class="page-subtitle">
       Here you will find the building blocks of the overall development process for our autonomous rover.
@@ -212,40 +276,159 @@
 
     <div class="panel-wrap">
 
-      <!-- GANTT CHART (CLOSED) -->
+      <!-- PRODUCT REQUIREMENTS (CLOSED) -->
       <details>
-        <summary>Gantt Chart</summary>
+        <summary>Product Requirements</summary>
         <div class="panel-body">
+
+          <!-- The paragraph from your screenshot -->
           <p>
-            Our team developed and actively uses a Gantt chart to plan, monitor, and manage the engineering process
-            of our autonomous rover project. The Gantt chart serves as a visual timeline that organizes our tasks,
-            milestones, and deadlines, allowing us to clearly see how each phase fits within the overall schedule.
+            The product requirements for our autonomous rover were developed to ensure the system could successfully
+            complete all mission objectives while remaining practical, reliable, and safe to operate. The rover must be
+            capable of acting autonomously, meaning it should navigate and make decisions without continuous human control.
+            It must be an original design, including its mechanical structure, electrical system, and control software,
+            developed by our team. The rover must be able to navigate to specified GPS coordinates, avoid obstacles, and
+            travel across rough or sandy terrain while maintaining reasonable speed and positional accuracy. Additionally,
+            it must be able to carry and deliver a 1.5-inch cubic wooden payload to designated locations. These requirements
+            were chosen to align with the course objectives, real-world engineering constraints, and the challenges presented
+            in the rover missions.
           </p>
 
-          <p><b>By using the Gantt chart, we are able to:</b></p>
-          <ul>
-            <li>Coordinate work across disciplines, ensuring mechanical, electrical, and software tasks progress in sync.</li>
-            <li>Visualize dependencies between subsystems, helping us identify which tasks must be completed before others can begin.</li>
-            <li>Track our progress effectively, so we can adjust priorities and timelines as challenges arise.</li>
-            <li>Improve time management, ensuring that we stay on schedule and meet our project milestones.</li>
-            <li>Enhance teamwork and accountability, as each member can see their responsibilities within the larger timeline.</li>
-          </ul>
+          <p>(Add more stuff here if we need to.)</p>
 
-          <p>
-            In summary, our Gantt chart is a key project management tool that helps us maintain organization,
-            coordination, and efficiency throughout the rover’s design and development stages.
-          </p>
+          <!-- Blue requirement blocks like your example -->
+          <div class="req-tags">
+            <div class="req-tag">1. Act autonomously 10%</div>
+            <div class="req-tag">2. The rover mechanical structure, electrical system, and control software shall be an original design developed by the project team 10%</div>
+            <div class="req-tag">3. Navigate to Specified GPS Coordinates 20%</div>
+            <div class="req-tag">4. Deliver a 1.5 in^3 wooden block to assigned coordinates as payload 10%</div>
+            <div class="req-tag">5. Able to avoid obstacles 15%</div>
+            <div class="req-tag">6. Navigating rough (Grass/sandy) 15%</div>
+            <div class="req-tag">7. Meet speed and position accuracy requirements 20%</div>
+          </div>
 
-          <p><i>If you would like to download it and see it for yourself, feel free!</i></p>
+          <!-- Product requirements image stays BEFORE the 5 sub dropdowns -->
+          <div class="image-box">
+            <p><b>Upload a Product Requirements Image Here</b></p>
+            <img src="product-requirements.png" alt="Product Requirements Image">
+            <div class="hint">
+              Upload an image to GitHub in the same folder and name it <b>product-requirements.png</b>
+              (or change the filename in the code).
+            </div>
+          </div>
 
-          <a class="download-btn" href="gantt.pdf" download>
-            Download Gantt Chart (PDF)
-          </a>
-          
-          <p class="hint">
-           </b>.
-          </p>
-          
+          <!-- 5 Sub Purple Dropdowns (AFTER the image) -->
+
+          <details class="subdetails">
+            <summary>Customer and client needs</summary>
+            <div class="subpanel-body">
+              <p>(Put future writing here)</p>
+              <p>(Put future writing here)</p>
+
+              <div class="two-images">
+                <div class="image-box">
+                  <p><b>Photo #1</b></p>
+                  <img src="client-needs-1.png" alt="Customer/Client needs photo 1">
+                  <div class="hint">Replace with your file (example: client-needs-1.png)</div>
+                </div>
+
+                <div class="image-box">
+                  <p><b>Photo #2</b></p>
+                  <img src="client-needs-2.png" alt="Customer/Client needs photo 2">
+                  <div class="hint">Replace with your file (example: client-needs-2.png)</div>
+                </div>
+              </div>
+            </div>
+          </details>
+
+          <details class="subdetails">
+            <summary>Direct mission statements</summary>
+            <div class="subpanel-body">
+              <p>(Put future writing here)</p>
+              <p>(Put future writing here)</p>
+
+              <div class="two-images">
+                <div class="image-box">
+                  <p><b>Photo #1</b></p>
+                  <img src="direct-mission-1.png" alt="Direct mission statements photo 1">
+                  <div class="hint">Replace with your file (example: direct-mission-1.png)</div>
+                </div>
+
+                <div class="image-box">
+                  <p><b>Photo #2</b></p>
+                  <img src="direct-mission-2.png" alt="Direct mission statements photo 2">
+                  <div class="hint">Replace with your file (example: direct-mission-2.png)</div>
+                </div>
+              </div>
+            </div>
+          </details>
+
+          <details class="subdetails">
+            <summary>Indirect mission statements</summary>
+            <div class="subpanel-body">
+              <p>(Put future writing here)</p>
+              <p>(Put future writing here)</p>
+
+              <div class="two-images">
+                <div class="image-box">
+                  <p><b>Photo #1</b></p>
+                  <img src="indirect-mission-1.png" alt="Indirect mission statements photo 1">
+                  <div class="hint">Replace with your file (example: indirect-mission-1.png)</div>
+                </div>
+
+                <div class="image-box">
+                  <p><b>Photo #2</b></p>
+                  <img src="indirect-mission-2.png" alt="Indirect mission statements photo 2">
+                  <div class="hint">Replace with your file (example: indirect-mission-2.png)</div>
+                </div>
+              </div>
+            </div>
+          </details>
+
+          <details class="subdetails">
+            <summary>Weighted list of requirements</summary>
+            <div class="subpanel-body">
+              <p>(Put future writing here)</p>
+              <p>(Put future writing here)</p>
+
+              <div class="two-images">
+                <div class="image-box">
+                  <p><b>Photo #1</b></p>
+                  <img src="weighted-reqs-1.png" alt="Weighted list photo 1">
+                  <div class="hint">Replace with your file (example: weighted-reqs-1.png)</div>
+                </div>
+
+                <div class="image-box">
+                  <p><b>Photo #2</b></p>
+                  <img src="weighted-reqs-2.png" alt="Weighted list photo 2">
+                  <div class="hint">Replace with your file (example: weighted-reqs-2.png)</div>
+                </div>
+              </div>
+            </div>
+          </details>
+
+          <details class="subdetails">
+            <summary>Requirement importance justification</summary>
+            <div class="subpanel-body">
+              <p>(Put future writing here)</p>
+              <p>(Put future writing here)</p>
+
+              <div class="two-images">
+                <div class="image-box">
+                  <p><b>Photo #1</b></p>
+                  <img src="sub5-1.png" alt="Requirement justification photo 1">
+                  <div class="hint">Replace with your file (example: sub5-1.png)</div>
+                </div>
+
+                <div class="image-box">
+                  <p><b>Photo #2</b></p>
+                  <img src="sub5-2.png" alt="Requirement justification photo 2">
+                  <div class="hint">Replace with your file (example: sub5-2.png)</div>
+                </div>
+              </div>
+            </div>
+          </details>
+
         </div>
       </details>
 
