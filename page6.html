@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Rover Page 6</title>
+<title>Rover Page 8</title>
 
 <style>
   body {
@@ -66,30 +66,33 @@
 
   .page-title {
     color: #7b5cff;
-    font-size: 42px;
-    margin: 10px 0 8px 0;
+    font-size: 46px;
+    margin: 8px 0 8px 0;
+    font-family: "Trebuchet MS", Arial, sans-serif;
   }
 
   .page-subtitle {
+    max-width: 1100px;
+    margin: 0 0 18px 0;
     color: #666;
-    margin-bottom: 18px;
+    font-size: 14px;
+    line-height: 1.6;
   }
 
   .panel-wrap {
-    max-width: 1000px;
+    max-width: 1100px;
+    margin: 0;
   }
 
-  /* ---- ROUNDED DROPDOWN CONTAINERS (MATCHES OTHER PAGES) ---- */
   details {
     margin: 18px 0;
     border-radius: 10px;
-    overflow: hidden;               /* <-- KEY CHANGE */
+    overflow: hidden;
     border: 1px solid rgba(0,0,0,0.12);
     background: white;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.04); /* <-- KEY CHANGE */
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
   }
 
-  /* --------- TRIANGLE DROPDOWN STYLE (MATCHES YOUR OTHER PAGES) --------- */
   summary {
     cursor: pointer;
     font-weight: 700;
@@ -100,31 +103,39 @@
     position: relative;
   }
 
-  /* Hide default marker */
-  summary::-webkit-details-marker {
-    display: none;
-  }
+  summary::-webkit-details-marker { display: none; }
 
-  /* Add our own triangle on the RIGHT */
   summary::after {
     content: "▾";
     position: absolute;
     right: 16px;
     top: 14px;
     font-size: 18px;
-    opacity: 0.9;
+    opacity: 0.95;
     transform: rotate(0deg);
     transition: transform 0.2s ease;
   }
 
-  /* Flip when opened */
   details[open] summary::after {
     transform: rotate(180deg);
   }
-  /* ------------------------------------------------------------ */
 
   .panel-body {
     padding: 18px;
+    color: #444;
+    font-size: 14px;
+    line-height: 1.7;
+  }
+
+  .section-title {
+    margin: 18px 0 8px 0;
+    font-size: 18px;
+    color: #222;
+    font-weight: 800;
+  }
+
+  .panel-body ul {
+    margin: 8px 0 0 20px;
   }
 
   .image-box {
@@ -136,23 +147,42 @@
     text-align: center;
   }
 
-  .download-btn {
-    display: inline-block;
-    margin-top: 10px;
-    padding: 10px 14px;
-    border-radius: 8px;
-    border: none;
-    background: #7b5cff;
-    color: white;
+  .image-title {
+    margin: 0 0 10px 0;
     font-weight: 700;
-    text-decoration: none;
+    color: #333;
+    font-size: 14px;
   }
 
-  .video-box {
-    margin-top: 14px;
-    border: 2px dashed #7b5cff;
-    padding: 16px;
-    text-align: center;
+  .image-box img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    border: 1px solid rgba(0,0,0,0.12);
+    display: block;
+    margin: 0 auto;
+  }
+
+  .image-caption {
+    margin-top: 10px;
+    font-size: 12px;
+    color: #777;
+  }
+
+  .spacer {
+    height: 8px;
+  }
+
+  code {
+    background: #f0f0ff;
+    padding: 2px 6px;
+    border-radius: 6px;
+    border: 1px solid rgba(0,0,0,0.08);
+  }
+
+  .link-list a {
+    color: #7b5cff;
+    font-weight: 600;
   }
 </style>
 </head>
@@ -161,135 +191,210 @@
 
 <div class="layout">
 
-<aside class="sidebar">
-  <h2>Operation Rover Rebuttal</h2>
+  <aside class="sidebar">
+    <h2>Operation Rover Rebuttal</h2>
 
-  <nav class="nav">
-    <a href="index.html">Home Page (Page 1)</a>
-    <a href="page2.html">Project Definiton (Page 2)</a>
-    <a href="page3.html">System Design (Page 3)</a>
-    <a href="page4.html">Project Management(Page 4)</a>
-    <a href="page5.html">Missions (Page 5)</a>
-    <a href="page6.html"class="active">Arduino Tutorials/other tutorials (Page 6)</a>
-    <a href="page7.html">Weekly Team Meeting Summaries (Page 7)</a>
-    <a href="page8.html">Closing Thoughts (Page 8)</a>
-    <a href="page9.html">Resources (Page 9)</a>
-  </nav>
-</aside>
+    <nav class="nav">
+      <a href="index.html">Home Page (Page 1)</a>
+      <a href="page2.html">Project Definiton (Page 2)</a>
+      <a href="page3.html">System Design (Page 3)</a>
+      <a href="page4.html">Project Management (Page 4)</a>
+      <a href="page5.html">Missions (Page 5)</a>
+      <a href="page6.html"class="active">Arduino Tutorials/other tutorials (Page 6)</a>
+      <a href="page7.html">Weekly Team Meeting Summaries (Page 7)</a>
+      <a href="page8.html">Closing Thoughts (Page 8)</a>
+      <a href="page9.html">Resources (Page 9)</a>
+    </nav>
+  </aside>
 
-<main class="main">
+  <main class="main">
 
-<h1 class="page-title">Product Development</h1>
-<p class="page-subtitle">
-Here you will see how our team developed our autonomous rover.
-</p>
+    <h1 class="page-title">Arduino Projects/Other Projects</h1>
+    <p class="page-subtitle">
+      Learning exercises and preliminary experiments.
+    </p>
 
-<div class="panel-wrap">
+    <div class="panel-wrap">
 
-<!-- TAB 1 -->
-<details>
-<summary>Assembly Manual and Needed Code</summary>
-<div class="panel-body">
-<p>Download the assembly manual and the rover control code below.</p>
+      <!-- TAB 1 -->
+      <details>
+        <summary>(Arduino rover module assignment 1)</summary>
+        <div class="panel-body">
+          <p>(Paragraph 1)</p>
+          <p>(Paragraph 2)</p>
+        </div>
+      </details>
 
-<a class="download-btn" href="assembly-manual.pdf" download>
-Download Assembly Manual (PDF)
-</a>
+      <!-- TAB 2 (ULTRASONIC) -->
+      <details>
+        <summary>(Arduino rover module assignment 2 ultrasonic)</summary>
+        <div class="panel-body">
 
-<br><br>
+          <h3 class="section-title">Tutorial Introduction</h3>
+          <p>
+            This tutorial explains how to connect and use an ultrasonic distance sensor (such as the HC-SR04)
+            with an Arduino. By following and completing this tutorial, you will learn how the ultrasonic sensor
+            works, how to wire it correctly, and how to write an Arduino sketch to measure distance. The final
+            result allows distance measurements to be displayed in the Arduino Serial Monitor.
+          </p>
 
-<a class="download-btn" href="rover-code.pdf" download>
-Download Rover Code (PDF)
-</a>
+          <h3 class="section-title">Use in an Autonomous Rover Mission</h3>
+          <p>
+            An ultrasonic sensor is commonly used on autonomous rovers for obstacle detection and avoidance.
+            By continuously measuring the distance to objects in front of the rover, the Arduino can determine
+            when the rover should stop, turn, or change direction. This helps the rover navigate its environment
+            safely and autonomously.
+          </p>
 
-</div>
-</details>
+          <h3 class="section-title">Required Electronics / Hardware</h3>
+          <ul>
+            <li>Arduino Uno (or compatible Arduino board)</li>
+            <li>Ultrasonic sensor (HC-SR04 or similar)</li>
+            <li>Breadboard</li>
+            <li>Jumper wires</li>
+            <li>USB cable for programming and power</li>
+          </ul>
 
-<!-- TAB 2 -->
-<details>
-<summary>Chassis Development</summary>
-<div class="panel-body">
+          <h3 class="section-title">Required Libraries</h3>
+          <p>
+            No external libraries are required for this project. The sketch uses built-in Arduino functions
+            such as <code>pulseIn()</code>, <code>digitalWrite()</code>, and <code>Serial</code>.
+          </p>
 
-<p>(Paragraph 1)</p>
-<p>(Paragraph 2)</p>
-<p>(Paragraph 3)</p>
-<p>(Paragraph 4)</p>
+          <h3 class="section-title">Wiring Diagram Description</h3>
+          <p>The ultrasonic sensor is connected to the Arduino as follows:</p>
+          <ul>
+            <li>VCC pin connected to Arduino 5V</li>
+            <li>GND pin connected to Arduino GND</li>
+            <li>Trig pin connected to Arduino digital pin 9</li>
+            <li>Echo pin connected to Arduino digital pin 8</li>
+          </ul>
 
-<div class="image-box">Image Slot #1</div>
-<div class="image-box">Image Slot #2</div>
-<div class="image-box">Image Slot #3</div>
-<div class="image-box">Image Slot #4</div>
+          <div class="image-box">
+            <div class="image-title">Ultrasonic Sensor Physical Setup</div>
+            <img src="ultrasonic_setup.png" alt="Ultrasonic Arduino Setup">
+            <div class="image-caption">Upload as ultrasonic_setup.png</div>
+          </div>
 
-</div>
-</details>
+          <div class="image-box">
+            <div class="image-title">Arduino Code (Screenshot)</div>
+            <img src="ultrasonic_code.png" alt="Ultrasonic Arduino Code">
+            <div class="image-caption">Upload as ultrasonic_code.png</div>
+          </div>
 
-<!-- TAB 3 -->
-<details>
-<summary>(Leave blank for now fill in later)</summary>
-<div class="panel-body">
+          <div class="image-box">
+            <div class="image-title">Wiring Diagram / Hand Sketch</div>
+            <img src="ultrasonic_sketch.png" alt="Ultrasonic Wiring Sketch">
+            <div class="image-caption">Upload as ultrasonic_sketch.png</div>
+          </div>
 
-<h3>Title 1</h3>
-<p>(Paragraph 1)</p>
-<div class="image-box">Image 1</div>
+          <p>(Paragraph 2 — write reflections, challenges, or results here.)</p>
 
-<h3>Title 2</h3>
-<p>(Paragraph 2)</p>
-<div class="image-box">Image 2</div>
+        </div>
+      </details>
 
-<h3>Title 3</h3>
-<p>(Paragraph 3)</p>
-<div class="image-box">Image 3</div>
+      <!-- TAB 3 (RF) — CLOSED BY DEFAULT -->
+      <details>
+        <summary>(Arduino rover module assignment 3 - RF)</summary>
+        <div class="panel-body">
 
-<h3>Title 4</h3>
-<p>(Paragraph 4)</p>
-<div class="image-box">Image 4</div>
+          <h3 class="section-title">Tutorial Introduction</h3>
+          <p>
+            This tutorial focused on basic RF communication using an Arduino transmitter and receiver. The goal was to
+            send a short message wirelessly (formatted like rover “coordinates”) and confirm that the receiver can read
+            and display the incoming data reliably.
+          </p>
 
-<h3>Title 5</h3>
-<p>(Paragraph 5)</p>
-<div class="image-box">Image 5</div>
+          <h3 class="section-title">Use in an Autonomous Rover Mission</h3>
+          <p>
+            RF communication can be used for waypoint / beacon-style navigation where a remote transmitter repeatedly
+            broadcasts a short coordinate message. A rover can listen for that message, parse the data, and use it as
+            an input for navigation decisions.
+          </p>
 
-</div>
-</details>
+          <h3 class="section-title">Required Electronics / Hardware</h3>
+          <ul>
+            <li>Arduino board (Uno / Mega / compatible)</li>
+            <li>433 MHz RF Transmitter module</li>
+            <li>433 MHz RF Receiver module</li>
+            <li>Breadboard + jumper wires</li>
+            <li>USB cable for programming and power</li>
+          </ul>
 
-<!-- TAB 4 -->
-<details>
-<summary>Final Assembly</summary>
-<div class="panel-body">
+          <h3 class="section-title">Required Libraries</h3>
+          <p>
+            The RF transmitter and receiver sketches use the <b>RadioHead (RH)</b> library to handle RF communication.
+            The library helps convert Arduino data into a radio signal for transmission and decode it on the receiving side.
+          </p>
 
-<p>(Final Assembly Paragraph 1)</p>
-<p>(Final Assembly Paragraph 2)</p>
+          <ul class="link-list">
+            <li>
+              RadioHead Library:
+              <a href="https://www.airspayce.com/mikem/arduino/RadioHead/" target="_blank">
+                https://www.airspayce.com/mikem/arduino/RadioHead/
+              </a>
+            </li>
+            <li>
+              Tutorial Video (DroneBot Workshop):
+              <a href="https://www.youtube.com/watch?v=b5C9SPVU4U&t=780s" target="_blank">
+                https://www.youtube.com/watch?v=b5C9SPVU4U&t=780s
+              </a>
+            </li>
+          </ul>
 
-<div class="image-box">Future Rover Image Here</div>
+          <h3 class="section-title">Transmitter</h3>
+          <p>
+            The RF transmitter code for the Arduino tutorials was simple. The code uses the RadioHead library to enable
+            the Arduino board to communicate with the RF devices. The library allows for the conversion of Arduino to radio
+            frequency, which then could be transmitted on the 433hz transmitter. The transmitter was set up to repeatedly
+            send a string of 12 characters (“coords”). The characters it would send are hard coded and for this tutorial
+            were: <code>X69ZZZZZZZZZ</code>.
+          </p>
 
-<div class="video-box">
-<b>Future Rover Video Will Be Embedded Here</b>
-</div>
+          <h3 class="section-title">Receiver</h3>
+          <p>
+            The receiver code is similar to the transmitter code in that it uses the RadioHead library. With the library,
+            radio frequency from the transmitter could be converted to something the Arduino could understand. The receiver
+            is set up to be constantly searching for a radio frequency from a transmitter. Once the receiver grabs the info
+            from the transmitter, it places it into a 12 character matrix via means of a for loop.
+          </p>
 
-</div>
-</details>
+          <div class="image-box">
+            <div class="image-title">RF Tutorial Diagram</div>
+            <img src="ardinoRFtutorialdiagrampic.png" alt="RF tutorial diagram">
+            <div class="image-caption">Upload as ardinoRFtutorialdiagrampic.png</div>
+          </div>
 
-<!-- TAB 5 -->
-<details>
-<summary>Test Results</summary>
-<div class="panel-body">
+          <div class="image-box">
+            <div class="image-title">RF Receiver Code</div>
+            <img src="RFrecievercodepic.png" alt="RF receiver code screenshot">
+            <div class="image-caption">Upload as RFrecievercodepic.png</div>
+          </div>
 
-<h3>Mission 1 — PASS / FAIL</h3>
-<p>(Write results here)</p>
+          <div class="image-box">
+            <div class="image-title">RF Transmitter Code</div>
+            <img src="RFtransmitorcodepic.png" alt="RF transmitter code screenshot">
+            <div class="image-caption">Upload as RFtransmitorcodepic.png</div>
+          </div>
 
-<h3>Mission 2 — PASS / FAIL</h3>
-<p>(Write results here)</p>
+          <p>(Paragraph — write reflections, challenges, or results here.)</p>
 
-<h3>Mission 3 — PASS / FAIL</h3>
-<p>(Write results here)</p>
+        </div>
+      </details>
 
-<h3>Mission 4 — PASS / FAIL</h3>
-<p>(Write results here)</p>
+      <!-- TAB 4 -->
+      <details>
+        <summary>(Other Project #4)</summary>
+        <div class="panel-body">
+          <p>(Paragraph 1)</p>
+          <p>(Paragraph 2)</p>
+        </div>
+      </details>
 
-</div>
-</details>
+    </div>
+  </main>
 
-</div>
-</main>
 </div>
 </body>
 </html>
+
