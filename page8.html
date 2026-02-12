@@ -72,7 +72,7 @@
   }
 
   .page-subtitle {
-    max-width: 1100px;
+    max-width: 1000px;
     margin: 0 0 18px 0;
     color: #666;
     font-size: 14px;
@@ -127,17 +127,7 @@
     line-height: 1.7;
   }
 
-  .section-title {
-    margin: 18px 0 8px 0;
-    font-size: 18px;
-    color: #222;
-    font-weight: 800;
-  }
-
-  .panel-body ul {
-    margin: 8px 0 0 20px;
-  }
-
+  /* ---- IMAGE BOX ---- */
   .image-box {
     margin-top: 14px;
     border: 2px dashed rgba(0,0,0,0.22);
@@ -145,13 +135,6 @@
     background: #fafafe;
     padding: 16px;
     text-align: center;
-  }
-
-  .image-title {
-    margin: 0 0 10px 0;
-    font-weight: 700;
-    color: #333;
-    font-size: 14px;
   }
 
   .image-box img {
@@ -163,26 +146,10 @@
     margin: 0 auto;
   }
 
-  .image-caption {
-    margin-top: 10px;
-    font-size: 12px;
+  .hint {
     color: #777;
-  }
-
-  .spacer {
-    height: 8px;
-  }
-
-  code {
-    background: #f0f0ff;
-    padding: 2px 6px;
-    border-radius: 6px;
-    border: 1px solid rgba(0,0,0,0.08);
-  }
-
-  .link-list a {
-    color: #7b5cff;
-    font-weight: 600;
+    font-size: 13px;
+    margin-top: 8px;
   }
 </style>
 </head>
@@ -191,210 +158,70 @@
 
 <div class="layout">
 
-  <aside class="sidebar">
-    <h2>Operation Rover Rebuttal</h2>
+<aside class="sidebar">
+  <h2>Operation Rover Rebuttal</h2>
 
-    <nav class="nav">
-      <a href="index.html">Home Page (Page 1)</a>
-      <a href="page2.html">Project Definiton (Page 2)</a>
-      <a href="page3.html">System Design (Page 3)</a>
-      <a href="page4.html">Project Management (Page 4)</a>
-      <a href="page5.html">Missions (Page 5)</a>
-      <a href="page6.html">Arduino Tutorials/other tutorials (Page 6)</a>
-      <a href="page7.html">Weekly Team Meeting Summaries (Page 7)</a>
-      <a href="page8.html"class="active">Closing Thoughts (Page 8)</a>
-      <a href="page9.html">Resources (Page 9)</a>
-    </nav>
-  </aside>
+  <nav class="nav">
+    <a href="index.html">Home Page (Page 1)</a>
+    <a href="page2.html">Project Definiton (Page 2)</a>
+    <a href="page3.html">System Design (Page 3)</a>
+    <a href="page4.html">Project Management (Page 4)</a>
+    <a href="page5.html">Missions (Page 5)</a>
+    <a href="page6.html">Arduino Tutorials/other tutorials (Page 6)</a>
+    <a href="page7.html">Weekly Team Meeting Summaries (Page 7)</a>
+    <a href="page8.html"class="active">Closing Thoughts (Page 8)</a>
+    <a href="page9.html">Resources (Page 9)</a>
+  </nav>
+</aside>
 
-  <main class="main">
+<main class="main">
 
-    <h1 class="page-title">Arduino Projects/Other Projects</h1>
-    <p class="page-subtitle">
-      Learning exercises and preliminary experiments.
-    </p>
+<h1 class="page-title">Closing Thoughts</h1>
+<p class="page-subtitle">
+This is wear the group put their final thoughts of this year long project
+</p>
 
-    <div class="panel-wrap">
+<div class="panel-wrap">
 
-      <!-- TAB 1 -->
-      <details>
-        <summary>(Arduino rover module assignment 1)</summary>
-        <div class="panel-body">
-          <p>(Paragraph 1)</p>
-          <p>(Paragraph 2)</p>
-        </div>
-      </details>
+<!-- TAB 1 (NO BUBBLES NOW) -->
+<details>
+  <summary>(Will's thoughts)</summary>
+  <div class="panel-body">
+    <p>(Paragraph 1)</p>
+    <p>(Paragraph 2)</p>
+  </div>
+</details>
 
-      <!-- TAB 2 (ULTRASONIC) -->
-      <details>
-        <summary>(Arduino rover module assignment 2 ultrasonic)</summary>
-        <div class="panel-body">
+<!-- TAB 2 (KEEP NORMAL TEXT) -->
+<details>
+  <summary>(Evan's thoughts)</summary>
+  <div class="panel-body">
+    <p>(Paragraph 1)</p>
+    <p>(Paragraph 2)</p>
+  </div>
+</details>
 
-          <h3 class="section-title">Tutorial Introduction</h3>
-          <p>
-            This tutorial explains how to connect and use an ultrasonic distance sensor (such as the HC-SR04)
-            with an Arduino. By following and completing this tutorial, you will learn how the ultrasonic sensor
-            works, how to wire it correctly, and how to write an Arduino sketch to measure distance. The final
-            result allows distance measurements to be displayed in the Arduino Serial Monitor.
-          </p>
+<!-- TAB 3 (ADD 3 PICS + NO BUBBLES) -->
+<details>
+  <summary>(Bryson's thoughts)</summary>
+  <div class="panel-body">
+    <p>(Paragraph 1)</p>
+    <p>(Paragraph 2)</p>
+  </div>
+</details>
 
-          <h3 class="section-title">Use in an Autonomous Rover Mission</h3>
-          <p>
-            An ultrasonic sensor is commonly used on autonomous rovers for obstacle detection and avoidance.
-            By continuously measuring the distance to objects in front of the rover, the Arduino can determine
-            when the rover should stop, turn, or change direction. This helps the rover navigate its environment
-            safely and autonomously.
-          </p>
+<!-- TAB 4 (NO BUBBLES NOW) -->
+<details>
+  <summary>(Vicente's Thoughts)</summary>
+  <div class="panel-body">
+    <p>(Paragraph 1)</p>
+    <p>(Paragraph 2)</p>
+  </div>
+</details>
 
-          <h3 class="section-title">Required Electronics / Hardware</h3>
-          <ul>
-            <li>Arduino Uno (or compatible Arduino board)</li>
-            <li>Ultrasonic sensor (HC-SR04 or similar)</li>
-            <li>Breadboard</li>
-            <li>Jumper wires</li>
-            <li>USB cable for programming and power</li>
-          </ul>
-
-          <h3 class="section-title">Required Libraries</h3>
-          <p>
-            No external libraries are required for this project. The sketch uses built-in Arduino functions
-            such as <code>pulseIn()</code>, <code>digitalWrite()</code>, and <code>Serial</code>.
-          </p>
-
-          <h3 class="section-title">Wiring Diagram Description</h3>
-          <p>The ultrasonic sensor is connected to the Arduino as follows:</p>
-          <ul>
-            <li>VCC pin connected to Arduino 5V</li>
-            <li>GND pin connected to Arduino GND</li>
-            <li>Trig pin connected to Arduino digital pin 9</li>
-            <li>Echo pin connected to Arduino digital pin 8</li>
-          </ul>
-
-          <div class="image-box">
-            <div class="image-title">Ultrasonic Sensor Physical Setup</div>
-            <img src="ultrasonic_setup.png" alt="Ultrasonic Arduino Setup">
-            <div class="image-caption">Upload as ultrasonic_setup.png</div>
-          </div>
-
-          <div class="image-box">
-            <div class="image-title">Arduino Code (Screenshot)</div>
-            <img src="ultrasonic_code.png" alt="Ultrasonic Arduino Code">
-            <div class="image-caption">Upload as ultrasonic_code.png</div>
-          </div>
-
-          <div class="image-box">
-            <div class="image-title">Wiring Diagram / Hand Sketch</div>
-            <img src="ultrasonic_sketch.png" alt="Ultrasonic Wiring Sketch">
-            <div class="image-caption">Upload as ultrasonic_sketch.png</div>
-          </div>
-
-          <p>(Paragraph 2 — write reflections, challenges, or results here.)</p>
-
-        </div>
-      </details>
-
-      <!-- TAB 3 (RF) — CLOSED BY DEFAULT -->
-      <details>
-        <summary>(Arduino rover module assignment 3 - RF)</summary>
-        <div class="panel-body">
-
-          <h3 class="section-title">Tutorial Introduction</h3>
-          <p>
-            This tutorial focused on basic RF communication using an Arduino transmitter and receiver. The goal was to
-            send a short message wirelessly (formatted like rover “coordinates”) and confirm that the receiver can read
-            and display the incoming data reliably.
-          </p>
-
-          <h3 class="section-title">Use in an Autonomous Rover Mission</h3>
-          <p>
-            RF communication can be used for waypoint / beacon-style navigation where a remote transmitter repeatedly
-            broadcasts a short coordinate message. A rover can listen for that message, parse the data, and use it as
-            an input for navigation decisions.
-          </p>
-
-          <h3 class="section-title">Required Electronics / Hardware</h3>
-          <ul>
-            <li>Arduino board (Uno / Mega / compatible)</li>
-            <li>433 MHz RF Transmitter module</li>
-            <li>433 MHz RF Receiver module</li>
-            <li>Breadboard + jumper wires</li>
-            <li>USB cable for programming and power</li>
-          </ul>
-
-          <h3 class="section-title">Required Libraries</h3>
-          <p>
-            The RF transmitter and receiver sketches use the <b>RadioHead (RH)</b> library to handle RF communication.
-            The library helps convert Arduino data into a radio signal for transmission and decode it on the receiving side.
-          </p>
-
-          <ul class="link-list">
-            <li>
-              RadioHead Library:
-              <a href="https://www.airspayce.com/mikem/arduino/RadioHead/" target="_blank">
-                https://www.airspayce.com/mikem/arduino/RadioHead/
-              </a>
-            </li>
-            <li>
-              Tutorial Video (DroneBot Workshop):
-              <a href="https://www.youtube.com/watch?v=b5C9SPVU4U&t=780s" target="_blank">
-                https://www.youtube.com/watch?v=b5C9SPVU4U&t=780s
-              </a>
-            </li>
-          </ul>
-
-          <h3 class="section-title">Transmitter</h3>
-          <p>
-            The RF transmitter code for the Arduino tutorials was simple. The code uses the RadioHead library to enable
-            the Arduino board to communicate with the RF devices. The library allows for the conversion of Arduino to radio
-            frequency, which then could be transmitted on the 433hz transmitter. The transmitter was set up to repeatedly
-            send a string of 12 characters (“coords”). The characters it would send are hard coded and for this tutorial
-            were: <code>X69ZZZZZZZZZ</code>.
-          </p>
-
-          <h3 class="section-title">Receiver</h3>
-          <p>
-            The receiver code is similar to the transmitter code in that it uses the RadioHead library. With the library,
-            radio frequency from the transmitter could be converted to something the Arduino could understand. The receiver
-            is set up to be constantly searching for a radio frequency from a transmitter. Once the receiver grabs the info
-            from the transmitter, it places it into a 12 character matrix via means of a for loop.
-          </p>
-
-          <div class="image-box">
-            <div class="image-title">RF Tutorial Diagram</div>
-            <img src="ardinoRFtutorialdiagrampic.png" alt="RF tutorial diagram">
-            <div class="image-caption">Upload as ardinoRFtutorialdiagrampic.png</div>
-          </div>
-
-          <div class="image-box">
-            <div class="image-title">RF Receiver Code</div>
-            <img src="RFrecievercodepic.png" alt="RF receiver code screenshot">
-            <div class="image-caption">Upload as RFrecievercodepic.png</div>
-          </div>
-
-          <div class="image-box">
-            <div class="image-title">RF Transmitter Code</div>
-            <img src="RFtransmitorcodepic.png" alt="RF transmitter code screenshot">
-            <div class="image-caption">Upload as RFtransmitorcodepic.png</div>
-          </div>
-
-          <p>(Paragraph — write reflections, challenges, or results here.)</p>
-
-        </div>
-      </details>
-
-      <!-- TAB 4 -->
-      <details>
-        <summary>(Other Project #4)</summary>
-        <div class="panel-body">
-          <p>(Paragraph 1)</p>
-          <p>(Paragraph 2)</p>
-        </div>
-      </details>
-
-    </div>
-  </main>
+</div>
+</main>
 
 </div>
 </body>
 </html>
-
