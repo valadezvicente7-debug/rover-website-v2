@@ -341,19 +341,18 @@
                 these measurable limits, the team can ensure the rover meets mission needs 
                 while staying within practical engineering constraints</p>
 
-                <h3 class="section-title">Quantitative Specifications</h3>  
+                <h3 class="section-title">Quantitative Specifications/More Quantified Standards</h3>  
             <ul>
-              <li>Commands able to be received by rover, and execute mission
-                without inputs after mission start </li>
-              <li>Less than 2.5 lbs. </li>
-              <li>Strait line Speed of 1 ft/s</li>
-              <li>Able to endure a drop of 18 in without damage.</li>
-              <li>Able to turn 20 degrees per second.</li>
-              <li>Distance of travel accuracy must be ±10% of initial driver commands </li>
-              <li>Meet or exceed IP43 </li>
-              <li>Less than 2 to-purpose components implemented. </li>
-              <li>Ability to avoid any number of obstacles to achieve mission goal </li>
-              <li>Navigate to received GPS coordinate </li>
+              <li>Total rover mass, including batteries and all onboard electronics, 
+                shall be less than or equal to 2.5 lb.</li>
+              <li>The rover shall achieve a straight-line ground speed of 1.0 ft/s ± 10% on a flat surface. </li>
+              <li>The rover shall withstand a vertical drop of 18 inches onto a hard surface with no loss of functionality or mission-critical damage.</li>
+              <li>Component turning maneuvers (90° rotation) shall be completed within 5.0 seconds ± 0.5 seconds with an accuracy of ± 5 deg</li>
+              <li>The rover shall travel commanded distances with an accuracy of ±10% of the commanded value for distances of 5 ft or greater.</li>
+              <li>The rover enclosure shall meet or exceed IP43 ingress protection standards.</li>
+              <li>The rover shall detect obstacles within 12 inches of its path and autonomously alter its trajectory to avoid collisions while continuing toward the mission goal.</li>
+              <li>The rover shall autonomously navigate to received GPS coordinates and stop within ±5 ft. of the target location. </li>
+              
             </ul>
 
               <div class="two-images">
@@ -378,6 +377,19 @@
               <p>(Put future writing here)</p>
               <p>(Put future writing here)</p>
 
+              <h3 class="section-title">Target Values</h3>  
+            <ul>
+              <li>Pessimistic Current Requirement= 3.125A</li>
+              <li>(Write stuff in here ofr the future)</li>
+              <li>(Write stuff in here ofr the future)</li>
+              <li>(Write stuff in here ofr the future)</li>
+              <li>(Write stuff in here ofr the future)</li>
+              <li>(Write stuff in here ofr the future)</li>
+              <li>(Write stuff in here ofr the future)</li>
+              <li>(Write stuff in here ofr the future)</li>
+              
+            </ul>
+
               <div class="two-images">
                 <div class="image-box">
                   <p><b>Photo #1</b></p>
@@ -399,6 +411,61 @@
             <div class="subpanel-body">
               <p>(Put future writing here)</p>
               <p>(Put future writing here)</p>
+
+              <h3 class="section-title">Power Supply Analysis</h3>  
+            <ul>
+              <li>Motors Geartisan A6207 X 2, the Rated Current = 1.1A</li>
+              <li>Arduino Mega 2560, the Max Current is = 0.2A </li>
+              <li>HC-SR04 Ultrasonic Sensor, the Max Current is = 0.015A</li>
+              <li>Neo-6M GPS, the Max current(startup) is = 0.045-0.05A</li>
+              <li>RF Receiver Module, the Current Draw is = 0.01A</li>
+              <li>QMC5883L Magnometer, the Current Draw(high data) is = 0.0026A</li>
+              <li>The SG-90 Servo Motor, the current is Stall Current = 0.65A</li>
+              </ul>
+
+              
+
+
+            <h3 class="section-title">Requirements for Motor Drivers</h3>  
+            <ul>
+              <li>Independent PWM Control for each motor</li>
+              <li>More than 1.1A per motor socket output</li>
+              <li>12V</li>
+              <li>Preferably a voltage regulator built in</li>
+              <li>RF Receiver Module, the Current Draw is = 0.01A</li>
+            
+            </ul>
+
+            <p>Selection L298N Motor Driver. This will require a Power Supply</p>
+
+            <h3 class="section-title">Power Supply Requirements</h3>  
+            <ul>
+              <li>1A draw capability</li>
+              <li>12v in</li>
+              <li>-3v-9v out</li>
+
+            </ul>
+
+            <p>Selection: LM2596 Buck Converter</p>
+
+            <h3 class="section-title">Motor Requirements</h3>  
+            <ul>
+              <li>Given Weight W = 2.5 lbf</li>
+              <li>Given Wheel diameter = 5 in → radius r = 2.5 in</li>
+              <li>Given Drive configuration = 2 wheel drive with rear skid</li>
+              
+            </ul>
+
+            <p>Selection: Geartisan A6207 X 2</p>
+
+            <h3 class="section-title">Battery Requirements:</h3>  
+            <ul>
+              <li>10-12v nominal Voltage</li>
+              <li>Light Weight</li>
+              <li>Capable of sustaining a 2.5A draw for 0.5 hours(min cap 1300mph)</li>
+              
+            </ul>
+            <p>Selection: 1300 3s 11.1V lipo 20c</p>
 
               <div class="two-images">
                 <div class="image-box">
