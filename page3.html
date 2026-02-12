@@ -213,6 +213,32 @@
     line-height: 1.7;
     background: white;
   }
+
+  /* =========================================================
+     BAR-ONLY STYLE (matches the “small purple bars” look)
+     Use on Concept Generation + Concept Evaluation
+     ========================================================= */
+  details.bar-only {
+    border: none;
+    background: transparent;
+    box-shadow: none;
+    margin: 18px 0;
+    overflow: visible;
+  }
+
+  details.bar-only > summary {
+    border-radius: 10px;
+    border: 1px solid rgba(0,0,0,0.12);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  }
+
+  details.bar-only[open] > .panel-body {
+    margin-top: 10px;
+    border-radius: 10px;
+    border: 1px solid rgba(0,0,0,0.12);
+    background: white;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  }
 </style>
 </head>
 
@@ -357,36 +383,16 @@
       <details>
         <summary>Work Breakdown Structure</summary>
         <div class="panel-body">
-          <p>
-            The Work Breakdown Structure (WBS) provides a clear and organized overview of the key components involved
-            in the engineering development of our autonomous rover project.
-          </p>
 
-          <p>
-            Having this WBS is essential in engineering development because it:
-          </p>
-
-          <ul>
-            <li>Clarifies the project scope, ensuring every necessary component is identified.</li>
-            <li>Improves planning and coordination between mechanical, electrical, and software teams.</li>
-            <li>Supports task allocation and scheduling, allowing efficient resource management.</li>
-            <li>Enhances risk management, since each subsystem can be analyzed and tested independently.</li>
-            <li>Provides a foundation for progress tracking and performance evaluation.</li>
-          </ul>
-
-          <p>
-            In summary, this WBS transforms a complex engineering project into a structured, step-by-step plan that makes
-            development more efficient, organized, and easier to control from design to implementation.
-          </p>
+          <p>(Put future writing here)</p>
+          <p>(Put future writing here)</p>
 
           <div class="image-box">
+            <p><b>Photo (WBS)</b></p>
             <img src="wbs.png" alt="WBS Screenshot (replace wbs.png with your file)">
+            <div class="hint">Replace with your file (example: wbs.png)</div>
           </div>
 
-        </div>
-      </details>
-
-          <!-- Sub 2 -->
           <details class="subdetails">
             <summary>Subsystems and Components</summary>
             <div class="subpanel-body">
@@ -408,7 +414,6 @@
             </div>
           </details>
 
-          <!-- Sub 3 -->
           <details class="subdetails">
             <summary>WBS Diagram or Hierarchy</summary>
             <div class="subpanel-body">
@@ -433,8 +438,8 @@
         </div>
       </details>
 
-      <!-- 3) CONCEPT GENERATION -->
-      <details>
+      <!-- 3) CONCEPT GENERATION (BAR-ONLY LOOK, WITH SUBDROPDOWNS INSIDE) -->
+      <details class="bar-only">
         <summary>Concept Generation</summary>
         <div class="panel-body">
 
@@ -447,7 +452,6 @@
             <div class="hint">Replace with your file (example: concept-gen-main.png)</div>
           </div>
 
-          <!-- Sub 1 -->
           <details class="subdetails">
             <summary>Principle Concepts Developed</summary>
             <div class="subpanel-body">
@@ -469,7 +473,6 @@
             </div>
           </details>
 
-          <!-- Sub 2 -->
           <details class="subdetails">
             <summary>Design Alternatives</summary>
             <div class="subpanel-body">
@@ -491,7 +494,6 @@
             </div>
           </details>
 
-          <!-- Sub 3 -->
           <details class="subdetails">
             <summary>Sketches and CAD Models</summary>
             <div class="subpanel-body">
@@ -513,7 +515,6 @@
             </div>
           </details>
 
-          <!-- Sub 4 -->
           <details class="subdetails">
             <summary>Concept Descriptions</summary>
             <div class="subpanel-body">
@@ -538,8 +539,8 @@
         </div>
       </details>
 
-      <!-- 4) CONCEPT EVALUATION -->
-      <details>
+      <!-- 4) CONCEPT EVALUATION (BAR-ONLY LOOK, WITH SUBDROPDOWNS INSIDE) -->
+      <details class="bar-only">
         <summary>Concept Evaluation</summary>
         <div class="panel-body">
 
@@ -552,7 +553,6 @@
             <div class="hint">Replace with your file (example: concept-eval-main.png)</div>
           </div>
 
-          <!-- Sub 1 -->
           <details class="subdetails">
             <summary>Engineering Analysis</summary>
             <div class="subpanel-body">
@@ -574,7 +574,6 @@
             </div>
           </details>
 
-          <!-- Sub 2 -->
           <details class="subdetails">
             <summary>Decision Matrices / Belief Maps</summary>
             <div class="subpanel-body">
@@ -596,7 +595,6 @@
             </div>
           </details>
 
-          <!-- Sub 3 -->
           <details class="subdetails">
             <summary>Concept Comparison</summary>
             <div class="subpanel-body">
@@ -618,7 +616,6 @@
             </div>
           </details>
 
-          <!-- Sub 4 -->
           <details class="subdetails">
             <summary>Selected Concept(s)</summary>
             <div class="subpanel-body">
