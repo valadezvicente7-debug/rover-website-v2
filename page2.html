@@ -413,24 +413,118 @@
           <details class="subdetails">
             <summary>Weighted list of requirements</summary>
             <div class="subpanel-body">
-              <p>(Put future writing here)</p>
-              <p>(Put future writing here)</p>
-
+          
+              <p>
+                This weighted list helps our team prioritize the most important rover requirements first (autonomy, GPS navigation,
+                obstacle avoidance, accuracy, etc.). Assigning weights keeps our design decisions focused on what matters most for
+                the missions and grading criteria.
+              </p>
+          
+              <p>
+                A major constraint is total rover weight (must be under 2.5 lb including payload). The table below is our current
+                electronics + motors + battery weight estimate to confirm we are safely under the limit.
+              </p>
+          
+              <!-- Weight Estimation Table -->
+              <div style="margin-top: 14px; overflow-x: auto;">
+                <h3 style="margin: 0 0 10px 0; color:#333; font-size: 18px; font-weight: 800;">Weight Estimation</h3>
+          
+                <table style="width: 100%; border-collapse: collapse; font-size: 14px;">
+                  <thead>
+                    <tr style="background: #f0f0ff;">
+                      <th style="text-align:left; padding:10px; border:1px solid rgba(0,0,0,0.12);">Component</th>
+                      <th style="text-align:center; padding:10px; border:1px solid rgba(0,0,0,0.12); width:120px;">Quantity</th>
+                      <th style="text-align:left; padding:10px; border:1px solid rgba(0,0,0,0.12); width:180px;">Typical Weight</th>
+                      <th style="text-align:left; padding:10px; border:1px solid rgba(0,0,0,0.12);">Notes</th>
+                    </tr>
+                  </thead>
+          
+                  <tbody>
+                    <tr>
+                      <td style="padding:10px; border:1px solid rgba(0,0,0,0.12);">Geartisan A6207 Motor</td>
+                      <td style="text-align:center; padding:10px; border:1px solid rgba(0,0,0,0.12);">2</td>
+                      <td style="padding:10px; border:1px solid rgba(0,0,0,0.12);">90 g each → 180 g</td>
+                      <td style="padding:10px; border:1px solid rgba(0,0,0,0.12);">Typical small DC gear motor</td>
+                    </tr>
+          
+                    <tr>
+                      <td style="padding:10px; border:1px solid rgba(0,0,0,0.12);">Arduino Mega 2560</td>
+                      <td style="text-align:center; padding:10px; border:1px solid rgba(0,0,0,0.12);">1</td>
+                      <td style="padding:10px; border:1px solid rgba(0,0,0,0.12);">37 g</td>
+                      <td style="padding:10px; border:1px solid rgba(0,0,0,0.12);">Board only, no case</td>
+                    </tr>
+          
+                    <tr>
+                      <td style="padding:10px; border:1px solid rgba(0,0,0,0.12);">HC-SR04 Ultrasonic Sensor</td>
+                      <td style="text-align:center; padding:10px; border:1px solid rgba(0,0,0,0.12);">1</td>
+                      <td style="padding:10px; border:1px solid rgba(0,0,0,0.12);">3 g</td>
+                      <td style="padding:10px; border:1px solid rgba(0,0,0,0.12);">Standard module</td>
+                    </tr>
+          
+                    <tr>
+                      <td style="padding:10px; border:1px solid rgba(0,0,0,0.12);">Neo-6M GPS Module</td>
+                      <td style="text-align:center; padding:10px; border:1px solid rgba(0,0,0,0.12);">1</td>
+                      <td style="padding:10px; border:1px solid rgba(0,0,0,0.12);">6 g</td>
+                      <td style="padding:10px; border:1px solid rgba(0,0,0,0.12);">With breakout board</td>
+                    </tr>
+          
+                    <tr>
+                      <td style="padding:10px; border:1px solid rgba(0,0,0,0.12);">RF Receiver Module</td>
+                      <td style="text-align:center; padding:10px; border:1px solid rgba(0,0,0,0.12);">1</td>
+                      <td style="padding:10px; border:1px solid rgba(0,0,0,0.12);">5 g</td>
+                      <td style="padding:10px; border:1px solid rgba(0,0,0,0.12);">Small 433 MHz module</td>
+                    </tr>
+          
+                    <tr>
+                      <td style="padding:10px; border:1px solid rgba(0,0,0,0.12);">QMC5883L Magnetometer</td>
+                      <td style="text-align:center; padding:10px; border:1px solid rgba(0,0,0,0.12);">1</td>
+                      <td style="padding:10px; border:1px solid rgba(0,0,0,0.12);">1 g</td>
+                      <td style="padding:10px; border:1px solid rgba(0,0,0,0.12);">Tiny breakout board</td>
+                    </tr>
+          
+                    <tr>
+                      <td style="padding:10px; border:1px solid rgba(0,0,0,0.12);">SG-90 Servo Motor</td>
+                      <td style="text-align:center; padding:10px; border:1px solid rgba(0,0,0,0.12);">1</td>
+                      <td style="padding:10px; border:1px solid rgba(0,0,0,0.12);">9 g</td>
+                      <td style="padding:10px; border:1px solid rgba(0,0,0,0.12);">Standard micro servo</td>
+                    </tr>
+          
+                    <tr>
+                      <td style="padding:10px; border:1px solid rgba(0,0,0,0.12);">LiPo Battery 3S 1300 mAh</td>
+                      <td style="text-align:center; padding:10px; border:1px solid rgba(0,0,0,0.12);">1</td>
+                      <td style="padding:10px; border:1px solid rgba(0,0,0,0.12);">105 g</td>
+                      <td style="padding:10px; border:1px solid rgba(0,0,0,0.12);">Small 3S pack</td>
+                    </tr>
+                  </tbody>
+                </table>
+          
+                <div style="margin-top: 12px; padding: 12px; border-radius: 10px; background: #fafafe; border: 1px solid rgba(0,0,0,0.12);">
+                  <b>Total weight (electronics + motors + battery):</b>
+                  <span style="font-weight: 800;">346 g</span> =
+                  <span style="font-weight: 800;">0.76 lb</span>
+                  <span style="margin-left: 8px; font-weight: 800; color: #2b7a2b;">(This is good)</span>
+                </div>
+              </div>
+          
+              <!-- Keep your image placeholders if you still want them -->
               <div class="two-images">
                 <div class="image-box">
                   <p><b>Photo #1</b></p>
                   <img src="weighted-reqs-1.png" alt="Weighted list photo 1">
                   <div class="hint">Replace with your file (example: weighted-reqs-1.png)</div>
                 </div>
-
+          
                 <div class="image-box">
                   <p><b>Photo #2</b></p>
                   <img src="weighted-reqs-2.png" alt="Weighted list photo 2">
                   <div class="hint">Replace with your file (example: weighted-reqs-2.png)</div>
                 </div>
               </div>
+          
             </div>
           </details>
+          
+          
 
           <details class="subdetails">
             <summary>Requirement importance justification</summary>
