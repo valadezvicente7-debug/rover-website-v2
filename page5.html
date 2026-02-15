@@ -211,17 +211,13 @@
       <details>
         <summary>Missions Overview</summary>
         <div class="panel-body">
-          <div class="section-title">Title for Paragraph 1</div>
-          <p>[Write paragraph 1 here]</p>
+          <div class="section-title">Major Design Project: Autonomous Rover</div>
+          <p>Create an autonomous rover capable of navigating to specified GPS coordinates and delivering a
+            payload. For your missions the payload will be modeled as a cubic wooden block ~1.5”x1.5”x1.5”.
+            The rover should be capable of obstacle avoidance, navigating rough/uneven/sandy terrain, and
+            meeting speed and navigation accuracy requirements. Missions your team should meet to
+            demonstrate timely progress and project functionality are as follows:</p>
 
-          <div class="section-title">Title for Paragraph 2</div>
-          <p>[Write paragraph 2 here]</p>
-
-          <div class="section-title">Title for Paragraph 3</div>
-          <p>[Write paragraph 3 here]</p>
-
-          <div class="section-title">Title for Paragraph 4</div>
-          <p>[Write paragraph 4 here]</p>
         </div>
       </details>
 
@@ -229,10 +225,27 @@
         <summary>Mission 1</summary>
         <div class="panel-body">
 
-          <div class="section-title">Title for Paragraph 1</div>
+          <div class="section-title">Mission 1: Rolling Chassis  (will require two consecutive successful runs)</div>
 
-          <p>[write stuff here]</p>
-          <p>[write stuff here]</p>
+          <p>A. Rolling Chassis: drive in a ~10ft square pattern, stop at original location and deliver
+            payload. The marker should be within 3ft of the rover’s original location and the
+            mission should be completed within 60 seconds.</p>
+
+          <p>B. Rolling Chassis: drive straight for 15-30ft and place physical marker. The rover will
+            read the specific intended distance from an RF transmitter beacon at the starting
+            location. The marker should be within +/- 10% of the specified drive distance and the
+            task should be completed in less than 30 seconds.</p>
+
+          <p>
+          • The distance to drive will be transmitted as a 12-character message. The
+            distance will be two digits preceded by an ‘X’. The remainder of the message
+            will be padded with ‘Z’ characters. For example, the message for the rover to
+            travel 15 feet would be “X15ZZZZZZZZZ”.
+
+          </p>
+          • The distance to be traveled will be continuously transmitted from the RF
+            beacon at 5 second intervals.</p>
+
           <p>[write stuff here]</p>
 
           <div class="image-box">
@@ -259,35 +272,46 @@
       </details>
 
       <details>
-        <summary>Mission 2</summary>
+        <summary>Mission 2 </summary>
         <div class="panel-body">
-          <p>[Paragraph 1 about the BOM]</p>
-          <p>[Paragraph 2 about how parts were selected / cost / sourcing]</p>
+
+          <div class="section-title">Mission 2: Obstacle avoidance (Without GPS Navigation) (will require two consecutive successful runs)</div>
+
+          <p>A. Drive in an enclosed area (approx 6’x6’) without contacting walls or obstacles. The
+            mission will last 60 seconds.</p>
+
+
+          <p>B. Drive forward to waypoint 30’ directly ahead of robot. Demonstrate avoidance
+            algorithm by continuing to original waypoint after navigating around a single
+            obstacle. The rover should deliver payload within 5ft of the marked waypoint and
+            complete the mission in under 120 seconds.</p>
+
 
           <div class="image-box">
-            <p><b>BOM Screenshot</b></p>
-            <img src="bom.png" alt="Bill of Materials screenshot">
-            <div class="hint">Upload a screenshot named <b>bom.png</b> (or change the filename).</div>
+            <p><b>mission2pic</b></p>
+            <img src="mission2pic.png" alt="mission-2pic">
+            <div class="hint">Upload a screenshot named <b>mission2pic.png</b> (or change the filename).</div>
           </div>
 
-          <p>[write stuff here]</p>
-          <p>[write stuff here]</p>
-          <p>[write stuff here]</p>
-          <p>[write stuff here]</p>
+         
         </div>
       </details>
 
       <details>
         <summary>Mission 3</summary>
         <div class="panel-body">
-          <p>[write stuff here]</p>
-          <p>[write stuff here]</p>
-          <p>[write stuff here]</p>
+
+          <div class="section-title">Mission 3: Basic GPS navigation (will require two consecutive successful runs)</div>
+          <p>Point due North. From an arbitrary start location and heading, navigate so that the
+            rover is pointing due North. Point north within +/- 20° and complete the mission
+            within 180 seconds. Deliver payload to signify mission completion.
+            Full credit will require completion of the mission on rough or sandy terrain.</p>
+
 
           <div class="image-box">
-            <p><b>Drawing / Screenshot</b></p>
-            <img src="make_vs_buy.png" alt="Make vs Buy screenshot">
-            <div class="hint">Upload an image named <b>make_vs_buy.png</b> (or change the filename).</div>
+            <p><b>mission3pic</b></p>
+            <img src="mmission3pic.png" alt="mission-3pic">
+            <div class="hint">Upload an image named <b>mission3pic.png</b> (or change the filename).</div>
           </div>
         </div>
       </details>
@@ -295,16 +319,56 @@
       
       <details>
           <summary>Mission 4</summary>
-          <div class="panel-body">
-            <p>[write stuff here]</p>
-            <p>[write stuff here]</p>
-            <p>[write stuff here]</p>
+        <div class="panel-body">
+
+
+          <div class="section-title">Mission 4: Advanced GPS Navigation</div>
+
+          <p>A. Navigate to specified GPS waypoint that will be provided to you. You may hardcode
+            the GPS waypoint coordinates for this mission. The rover should deliver payload
+            within 15 feet of the marked GPS waypoint.</p>
+
+          <p>B. The rover should read the GPS coordinates from an RF transmitter beacon placed at
+            the starting location, place a physical marker within 15 feet of the specified waypoint,
+            and return to original start location. The distance between the physical marker and
+            the marked waypoint will be measured along with the distance between start and end
+            positions of the rover. The cumulative error should not exceed 25 feet.</p>
+
+          <p>
+
+          • The GPS coordinates of the waypoint will be transmitted as a 12-character
+          message. The latitude coordinate will be 5 digits preceded by an ‘N’, the
+          longitude will be 5 digits preceded by a ‘W’. The 5 digits of the latitude
+          represent the decimals that would be appended to 39; the five digits following
+          W represent the decimals that would be appended to -108 to form the
+          longitude. For example, the message for the rover to travel to 39.09495N by
+          -108.58784W would be “N09495W58784”.
+
+          </p>
+          • Coordinates will be continuously transmitted by the RF beacon at 5 second
+          intervals.</p>
+
+          </p>
+          • Using this coding algorithm will allow your rover to travel in the shaded
+          region indicated below. Travel outside of this region would require additional
+          digits to be transmitted.</p>
+
+          <p>[write stuff here]</p>
+
+          <div class="image-box">
+            <p><b>Mission 4 Map</b></p>
+            <img src="mission4map.png" alt="Mission 4 map">
+            <div class="hint">Upload an image named <b>mission4map</b> (or change the filename).</div>
+          </div>
+
+          
+          
+
+          
+
+          
   
-            <div class="image-box">
-              <p><b>Mission four pic</b></p>
-              <img src="missionfourpic.png" alt="Missionfourpicscreenshot">
-              <div class="hint">Upload an image named <b>missionfourpic.png</b> (or change the filename).</div>
-            </div>
+            
           </div>
       </details>
       
