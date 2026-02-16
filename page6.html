@@ -218,38 +218,109 @@
 
       <!-- TAB 1 -->
       <details>
-        <summary>(Arduino rover module assignment 1)</summary>
+        <summary>(Arduino rover module assignment 1 Arduino  GPS)</summary>
         <div class="panel-body">
 
           <h3 class="section-title">Tutorial Introduction</h3>
-          <p>(Paragraph 1)</p>
+          <p>This tutorial is how to link up an Adafruit Ultimate GPS 
+          Breakout - 66 channel w/10 Hz updates module to an Arduino 
+          and have it display your current GPS coordinates on request, 
+          and to make a program where it guides you to 
+          specified GPS coordinates. Both user interfaces will be used with the Arduino IDE Serial Monitor</p>
 
           <h3 class="section-title">Use in an Autonomous Rover Mission</h3>
 
-          <p>(Paragraph 2)</p>
+          <p>This GPS module can be used to have our rover achieve GPS 
+          coordinates, and program movement and maneuver commands to 
+          reach them successfully. This can also be used to functionality 
+          point to the rover at true north</p>
 
           <h3 class="section-title">Required Electronics / Hardware</h3>
           <ul>
-            <li>(Write stuff here)</li>
-            <li>(Write stuff here)</li>
-            <li>(Write stuff here)</li>
-            <li>(Write stuff here)</li>
-            <li>(Write stuff here)</li>
-          </ul>
+          <li>Adafruit Ultimate GPS Breakout - 66 channel
+              w/10 Hz updates</li>
+          <li>Arduino Uno Rev3 (R3) or similar microcontroller</li>
+          <li>Arduino USB Cable</li>
+          <li>4 jumper wires</li>
+          <li>External Antenna</li>
+        </ul>
 
           <h3 class="section-title">Required Libraries</h3>
-          <p>
-            (Write Stuff here.)
-          </p>
+          <ul>
+            <li>TinyGPSPlus https://github.com/mikalhart/TinyGPSPlus
+            </li>
+            <li>SoftwareSerial.h (Included with Arduino IDE)</li>
+            <li>Arduino IDE</li>
+            
+          </ul>
+
+
+          <h3 class="section-title">Instructions:</h3>
+
+          <p>1. Connect 5V on Arduino to VIN on module.</p>
+          <p>2. Connect GND on Arduino to GND on module.</p>
+          <p>3. Connect Pin 2 on Arduino to RX on module.</p>
+          <p>4. Connect Pin 3 on Arduino to TX on module.</p>
+          <p>5. Insert sketches from figures 2-4 for different GPS module functionalities</p>
+
+          <p>(all Arduino Sketches written by Mikal Hart).</p>
+
 
           <h3 class="section-title">Wiring Diagram Description</h3>
-          <p>Write description here</p>
-          <ul>
-            <li>Write description here</li>
-            <li>Write description here</li>
-            <li>Write description here</li>
-            <li>Write description here</li>
-          </ul>
+          
+
+          <div class="image-box">
+            <div class="image-title">Arduino GPS Tutorial Diagram pic 1 </div>
+            <img src="arduinotutorial1pic1.png" alt="arduinoturoial1pic1">
+            <div class="image-caption">Upload as arduinotutorial1pic1.png</div>
+          </div>
+
+          <p>Figure 1. Wiring Diagram of GPS Module to Arduino for GPS Module (made at
+            https://wokwi.com/projects/new/arduino-uno)</p>
+
+
+          <div class="image-box">
+            <div class="image-title">Arduino GPS Tutorial Diagram pic 2 </div>
+            <img src="arduinotutorial1pic2.png" alt="arduinoturoial1pic2">
+            <div class="image-caption">Upload as arduinotutorial1pic2.png</div>
+          </div>
+
+          <p>Figure 2. Sketch that displays raw NMEA data on serial monitor. Available as Sketch1GPS
+            on website. (Mikal Hart).</p>
+          
+          <div class="image-box">
+            <div class="image-title">Arduino GPS Tutorial Diagram pic 3 </div>
+            <img src="arduinotutorial1pic3.png" alt="arduinoturoial1pic3">
+            <div class="image-caption">Upload as arduinotutorial1pic3.png</div>
+          </div>
+
+          <p>Figure 3. Sketch that allows real time positional information of GPS module 
+            Begins on power up of Arduino. Available as Sketch2GPS on website. (Mikal Hart).</p>
+
+            <div class="image-box">
+            <div class="image-title">Arduino GPS Tutorial Diagram pic 4 part 1 </div>
+            <img src="arduinotutorial1pic4part1.png" alt="arduinoturoial1pic4part1">
+            <div class="image-caption">Upload as arduinotutorial1pic4part1.png</div>
+          </div>
+
+          <p>Figure 4, part 1. Arduino sketch that guides you to inputted destination in the 
+            Serial Monitor via GPS Coordinates. Available as Sketch3GPS on website. 
+            (Mikal Hart).</p>
+
+          <div class="image-box">
+            <div class="image-title">Arduino GPS Tutorial Diagram pic 4 part 2 </div>
+            <img src="arduinotutorial1pic4part2.png" alt="arduinoturoial1pic4part2">
+            <div class="image-caption">Upload as arduinotutorial1pic4part2.png</div>
+          </div>
+
+          <p>Figure 4, part 2. Arduino sketch that guides you to inputted destination in the 
+            Serial Monitor via GPS Coordinates. Available as Sketch3GPS on website. 
+            (Mikal Hart).</p>
+
+            
+
+            
+
         </div>
       </details>
 
