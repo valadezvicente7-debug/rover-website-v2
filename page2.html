@@ -11,6 +11,12 @@
     background: #f6f6fb;
   }
 
+  .section-title {
+    font-weight: 800;
+    color: #111;
+    margin: 10px 0 6px 0;
+  }
+
   /* ---- LAYOUT ---- */
   .layout {
     display: flex;
@@ -276,12 +282,11 @@
 
     <div class="panel-wrap">
 
-      <!-- PRODUCT REQUIREMENTS (CLOSED) -->
+      <!-- PRODUCT REQUIREMENTS -->
       <details>
         <summary>Product Requirements</summary>
         <div class="panel-body">
-
-          <!-- The paragraph from your screenshot -->
+    
           <p>
             The product requirements for our autonomous rover were developed to ensure the system could successfully
             complete all mission objectives while remaining practical, reliable, and safe to operate. The rover must be
@@ -289,274 +294,67 @@
             It must be an original design, including its mechanical structure, electrical system, and control software,
             developed by our team. The rover must be able to navigate to specified GPS coordinates, avoid obstacles, and
             travel across rough or sandy terrain while maintaining reasonable speed and positional accuracy. Additionally,
-            it must be able to carry and deliver a 1.5-inch cubic wooden payload to designated locations. These requirements
-            were chosen to align with the course objectives, real-world engineering constraints, and the challenges presented
-            in the rover missions.
+            it must be able to carry and deliver a 1.5-inch cubic wooden payload to designated locations.
           </p>
-
+    
           <p>(Add more stuff here if we need to.)</p>
-
-          <!-- Blue requirement blocks like your example -->
+    
           <div class="req-tags">
             <div class="req-tag">1. Act autonomously 10%</div>
-            <div class="req-tag">2. The rover mechanical structure, electrical system, and control software shall be an original design developed by the project team 10%</div>
+            <div class="req-tag">2. Original mechanical, electrical, and control system design 10%</div>
             <div class="req-tag">3. Navigate to Specified GPS Coordinates 20%</div>
-            <div class="req-tag">4. Deliver a 1.5 in^3 wooden block to assigned coordinates as payload 10%</div>
-            <div class="req-tag">5. Able to avoid obstacles 15%</div>
-            <div class="req-tag">6. Navigating rough (Grass/sandy) 15%</div>
-            <div class="req-tag">7. Meet speed and position accuracy requirements 20%</div>
+            <div class="req-tag">4. Deliver 1.5 in³ wooden payload 10%</div>
+            <div class="req-tag">5. Avoid obstacles 15%</div>
+            <div class="req-tag">6. Navigate rough terrain 15%</div>
+            <div class="req-tag">7. Meet speed and positional accuracy requirements 20%</div>
           </div>
-
-          <!-- Product requirements image stays BEFORE the 5 sub dropdowns -->
+    
           <div class="image-box">
-            <p><b>Upload a Product Requirements Image Here</b></p>
+            <p><b>Product Requirements Image</b></p>
             <img src="product-requirements.png" alt="Product Requirements Image">
             <div class="hint">
-              Upload an image to GitHub in the same folder and name it <b>product-requirements.png</b>
-              (or change the filename in the code).
+              Upload your image into the same folder and name it <b>product-requirements.png</b>
             </div>
           </div>
-
-          <!-- 5 Sub Purple Dropdowns (AFTER the image) -->
-
-          <details class="subdetails">
-            <summary>Customer and client needs</summary>
-            <div class="subpanel-body">
-              <p>Our “customer” is Integration II / Dr. Bevill, and the “client need” 
-                is a rover that can reliably complete the four course missions. That 
-                means the rover must be safe, consistent, and easy to start/operate during testing, 
-                with clear documentation so anyone can understand how it works and how it was built.
-              </p>
-              <p>The rover also needs to perform in real conditions (rough, sandy, uneven ground)
-                while carrying the 1.5-inch wooden cube payload. From a user standpoint, it 
-                should be durable (survive drops), weather-resistant enough for the sprinkler test, 
-                and designed as an original build from our team (mechanical, electrical, and software).</p>
-
-              <div class="two-images">
-                <div class="image-box">
-                  <p><b>Photo #1</b></p>
-                  <img src="client-needs-1.png" alt="Customer/Client needs photo 1">
-                  <div class="hint">Replace with your file (example: client-needs-1.png)</div>
-                </div>
-
-                <div class="image-box">
-                  <p><b>Photo #2</b></p>
-                  <img src="client-needs-2.png" alt="Customer/Client needs photo 2">
-                  <div class="hint">Replace with your file (example: client-needs-2.png)</div>
-                </div>
-              </div>
-            </div>
-          </details>
-
-          <details class="subdetails">
-            <summary>Direct mission statements</summary>
-            <div class="subpanel-body">
-              <p>Our rover must complete the Rolling Chassis mission by driving a ~10 ft 
-                square pattern, returning to the start, and delivering the payload within
-                the time limit. It must also drive a commanded straight-line distance 
-                (15–30 ft) and place a marker with accuracy (within ±10%) in the required time.</p>
-
-              <p>Our rover must complete Obstacle Avoidance by navigating in a 6’x6’ enclosed
-                 area without contacting obstacles and reaching the forward waypoint while 
-                 avoiding a single obstacle. It must complete Basic GPS by pointing due 
-                 North within the allowed error, and complete Advanced GPS by navigating 
-                 to a specified waypoint, delivering the payload within 15 ft, and 
-                 (when required) reading coordinates from an RF beacon and returning to the start.</p>
-
-              <div class="two-images">
-                <div class="image-box">
-                  <p><b>Photo #1</b></p>
-                  <img src="direct-mission-1.png" alt="Direct mission statements photo 1">
-                  <div class="hint">Replace with your file (example: direct-mission-1.png)</div>
-                </div>
-
-                <div class="image-box">
-                  <p><b>Photo #2</b></p>
-                  <img src="direct-mission-2.png" alt="Direct mission statements photo 2">
-                  <div class="hint">Replace with your file (example: direct-mission-2.png)</div>
-                </div>
-              </div>
-            </div>
-          </details>
-
-          <details class="subdetails">
-            <summary>Indirect mission statements</summary>
-            <div class="subpanel-body">
-              <p>To succeed on every mission, the rover must act autonomously after mission 
-                start, meaning sensors and control code must make decisions without continuous 
-                human input. The rover also needs stable motion control so it can drive 
-                straight, turn predictably, and stop accurately, especially when placing 
-                the payload or marker.</p>
-
-              <p>The rover must be built for reliability and repeatability, since many 
-                missions require consecutive successful runs. That indirectly means 
-                strong wiring and mounting, enough battery power for a full run, clean 
-                code that doesn’t crash, and a chassis that can handle bumps, grass, 
-                and sand while staying under the 2.5 lb limit.</p>
-
-              <div class="two-images">
-                <div class="image-box">
-                  <p><b>Photo #1</b></p>
-                  <img src="indirect-mission-1.png" alt="Indirect mission statements photo 1">
-                  <div class="hint">Replace with your file (example: indirect-mission-1.png)</div>
-                </div>
-
-                <div class="image-box">
-                  <p><b>Photo #2</b></p>
-                  <img src="indirect-mission-2.png" alt="Indirect mission statements photo 2">
-                  <div class="hint">Replace with your file (example: indirect-mission-2.png)</div>
-                </div>
-              </div>
-            </div>
-          </details>
-
-          <details class="subdetails">
-            <summary>Weighted list of requirements</summary>
-            <div class="subpanel-body">
-          
-              <p>
-                This weighted list helps our team prioritize the most important rover requirements first (autonomy, GPS navigation,
-                obstacle avoidance, accuracy, etc.). Assigning weights keeps our design decisions focused on what matters most for
-                the missions and grading criteria.
-              </p>
-          
-              <p>
-                A major constraint is total rover weight (must be under 2.5 lb including payload). The table below is our current
-                electronics + motors + battery weight estimate to confirm we are safely under the limit.
-              </p>
-          
-              <!-- Weight Estimation Table -->
-              <div style="margin-top: 14px; overflow-x: auto;">
-                <h3 style="margin: 0 0 10px 0; color:#333; font-size: 18px; font-weight: 800;">Weight Estimation</h3>
-          
-                <table style="width: 100%; border-collapse: collapse; font-size: 14px;">
-                  <thead>
-                    <tr style="background: #f0f0ff;">
-                      <th style="text-align:left; padding:10px; border:1px solid rgba(0,0,0,0.12);">Component</th>
-                      <th style="text-align:center; padding:10px; border:1px solid rgba(0,0,0,0.12); width:120px;">Quantity</th>
-                      <th style="text-align:left; padding:10px; border:1px solid rgba(0,0,0,0.12); width:180px;">Typical Weight</th>
-                      <th style="text-align:left; padding:10px; border:1px solid rgba(0,0,0,0.12);">Notes</th>
-                    </tr>
-                  </thead>
-          
-                  <tbody>
-                    <tr>
-                      <td style="padding:10px; border:1px solid rgba(0,0,0,0.12);">Geartisan A6207 Motor</td>
-                      <td style="text-align:center; padding:10px; border:1px solid rgba(0,0,0,0.12);">2</td>
-                      <td style="padding:10px; border:1px solid rgba(0,0,0,0.12);">90 g each → 180 g</td>
-                      <td style="padding:10px; border:1px solid rgba(0,0,0,0.12);">Typical small DC gear motor</td>
-                    </tr>
-          
-                    <tr>
-                      <td style="padding:10px; border:1px solid rgba(0,0,0,0.12);">Arduino Mega 2560</td>
-                      <td style="text-align:center; padding:10px; border:1px solid rgba(0,0,0,0.12);">1</td>
-                      <td style="padding:10px; border:1px solid rgba(0,0,0,0.12);">37 g</td>
-                      <td style="padding:10px; border:1px solid rgba(0,0,0,0.12);">Board only, no case</td>
-                    </tr>
-          
-                    <tr>
-                      <td style="padding:10px; border:1px solid rgba(0,0,0,0.12);">HC-SR04 Ultrasonic Sensor</td>
-                      <td style="text-align:center; padding:10px; border:1px solid rgba(0,0,0,0.12);">1</td>
-                      <td style="padding:10px; border:1px solid rgba(0,0,0,0.12);">3 g</td>
-                      <td style="padding:10px; border:1px solid rgba(0,0,0,0.12);">Standard module</td>
-                    </tr>
-          
-                    <tr>
-                      <td style="padding:10px; border:1px solid rgba(0,0,0,0.12);">Neo-6M GPS Module</td>
-                      <td style="text-align:center; padding:10px; border:1px solid rgba(0,0,0,0.12);">1</td>
-                      <td style="padding:10px; border:1px solid rgba(0,0,0,0.12);">6 g</td>
-                      <td style="padding:10px; border:1px solid rgba(0,0,0,0.12);">With breakout board</td>
-                    </tr>
-          
-                    <tr>
-                      <td style="padding:10px; border:1px solid rgba(0,0,0,0.12);">RF Receiver Module</td>
-                      <td style="text-align:center; padding:10px; border:1px solid rgba(0,0,0,0.12);">1</td>
-                      <td style="padding:10px; border:1px solid rgba(0,0,0,0.12);">5 g</td>
-                      <td style="padding:10px; border:1px solid rgba(0,0,0,0.12);">Small 433 MHz module</td>
-                    </tr>
-          
-                    <tr>
-                      <td style="padding:10px; border:1px solid rgba(0,0,0,0.12);">QMC5883L Magnetometer</td>
-                      <td style="text-align:center; padding:10px; border:1px solid rgba(0,0,0,0.12);">1</td>
-                      <td style="padding:10px; border:1px solid rgba(0,0,0,0.12);">1 g</td>
-                      <td style="padding:10px; border:1px solid rgba(0,0,0,0.12);">Tiny breakout board</td>
-                    </tr>
-          
-                    <tr>
-                      <td style="padding:10px; border:1px solid rgba(0,0,0,0.12);">SG-90 Servo Motor</td>
-                      <td style="text-align:center; padding:10px; border:1px solid rgba(0,0,0,0.12);">1</td>
-                      <td style="padding:10px; border:1px solid rgba(0,0,0,0.12);">9 g</td>
-                      <td style="padding:10px; border:1px solid rgba(0,0,0,0.12);">Standard micro servo</td>
-                    </tr>
-          
-                    <tr>
-                      <td style="padding:10px; border:1px solid rgba(0,0,0,0.12);">LiPo Battery 3S 1300 mAh</td>
-                      <td style="text-align:center; padding:10px; border:1px solid rgba(0,0,0,0.12);">1</td>
-                      <td style="padding:10px; border:1px solid rgba(0,0,0,0.12);">105 g</td>
-                      <td style="padding:10px; border:1px solid rgba(0,0,0,0.12);">Small 3S pack</td>
-                    </tr>
-                  </tbody>
-                </table>
-          
-                <div style="margin-top: 12px; padding: 12px; border-radius: 10px; background: #fafafe; border: 1px solid rgba(0,0,0,0.12);">
-                  <b>Total weight (electronics + motors + battery):</b>
-                  <span style="font-weight: 800;">346 g</span> =
-                  <span style="font-weight: 800;">0.76 lb</span>
-                  <span style="margin-left: 8px; font-weight: 800; color: #2b7a2b;">(This is good)</span>
-                </div>
-              </div>
-          
-              <!-- Keep your image placeholders if you still want them -->
-              <div class="two-images">
-                <div class="image-box">
-                  <p><b>Photo #1</b></p>
-                  <img src="weighted-reqs-1.png" alt="Weighted list photo 1">
-                  <div class="hint">Replace with your file (example: weighted-reqs-1.png)</div>
-                </div>
-          
-                <div class="image-box">
-                  <p><b>Photo #2</b></p>
-                  <img src="weighted-reqs-2.png" alt="Weighted list photo 2">
-                  <div class="hint">Replace with your file (example: weighted-reqs-2.png)</div>
-                </div>
-              </div>
-          
-            </div>
-          </details>
-          
-          
-
-          <details class="subdetails">
-            <summary>Requirement importance justification</summary>
-            <div class="subpanel-body">
-              <p>(Put future writing here)</p>
-              <p>(Put future writing here)</p>
-
-              <div class="two-images">
-                <div class="image-box">
-                  <p><b>Photo #1</b></p>
-                  <img src="sub5-1.png" alt="Requirement justification photo 1">
-                  <div class="hint">Replace with your file (example: sub5-1.png)</div>
-                </div>
-
-                <div class="image-box">
-                  <p><b>Photo #2</b></p>
-                  <img src="sub5-2.png" alt="Requirement justification photo 2">
-                  <div class="hint">Replace with your file (example: sub5-2.png)</div>
-                </div>
-              </div>
-            </div>
-          </details>
-
+    
         </div>
       </details>
-
-      <!-- WBS (CLOSED) -->
-      
-
+    
+    
+      <!-- GANTT CHART (NOW ITS OWN TAB) -->
+      <details>
+        <summary>Gantt Chart</summary>
+        <div class="panel-body">
+    
+          <p>
+            The team decided to use Google Calendar as there platform to use for the Gantt Chart
+            The Gantt chart outlines the full timeline of our rover project, including design,
+            prototyping, testing, and final validation phases. It helps ensure tasks are completed
+            in a structured sequence while meeting project deadlines.
+          </p>
+    
+          <p>
+            By organizing responsibilities and milestones visually, the team can track progress,
+            adjust scheduling if necessary, and maintain accountability throughout the semester.
+          </p>
+    
+          <div class="image-box">
+            <p><b>Gantt Chart Image</b></p>
+            <img src="gantt-chart.png" alt="Gantt Chart Image">
+            <div class="hint">
+              Upload your Gantt image and name it <b>gantt.png</b>
+            </div>
+          </div>
+    
+          <a class="download-btn" href="gantt.pdf" download>
+            Download Gantt Chart PDF
+          </a>
+    
+          <div class="hint">
+            Make sure <b>gantt.pdf</b> is in the same folder as this HTML file.
+          </div>
+    
+        </div>
+      </details>
+    
     </div>
-
-  </main>
-</div>
-</body>
-</html>
