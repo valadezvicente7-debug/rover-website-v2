@@ -306,17 +306,24 @@
 
             <h3 class="section-title">Engineering Specifications</h3>  
             <ul>
-              <li>Commands able to be received by rover, and execute mission
-                without inputs after mission start </li>
-              <li>Less than 2.5 lbs. </li>
-              <li>Strait line Speed of 1 ft/s</li>
-              <li>Able to endure a drop of 18 in without damage.</li>
-              <li>Able to turn 20 degrees per second.</li>
-              <li>Distance of travel accuracy must be ±10% of initial driver commands </li>
-              <li>Meet or exceed IP43 </li>
-              <li>Less than 2 to-purpose components implemented. </li>
-              <li>Ability to avoid any number of obstacles to achieve mission goal </li>
-              <li>Navigate to received GPS coordinate </li>
+              <li>Total rover mass, including batteries and all onboard electronics,
+                shall be less than or equal to 2.5 lb.​ </li>
+              <li>The rover shall achieve a straight-line ground speed of 1.0 ft/s ±
+                10% on a flat surface.​. </li>
+              <li>-The rover shall withstand a vertical drop of 18 inches onto a hard
+                surface with no loss of functionality or mission-critical damage</li>
+              <li>-Commanded turning maneuvers (90° rotation) shall be completed
+                within 5.0 seconds ± 0.5 seconds with an accuracy of ± 5 deg.​</li>
+              <li>-The rover shall travel commanded distances with an accuracy
+                of ±10% of the commanded value for distances of 5 ft or greater.​.</li>
+              <li>The rover enclosure shall meet or exceed IP43 ingress protection
+                standards.​</li>
+              <li>The rover shall detect obstacles within 12 inches of its path and
+                autonomously alter its trajectory to avoid collisions while
+                continuing toward the mission goal.​</li>
+              <li>The rover shall autonomously navigate to received GPS
+                coordinates and stop within ±5 ft. of the target location.​ </li>
+              
             </ul>
 
 
@@ -327,162 +334,11 @@
             <div class="hint">Replace with your file (example: engineering-specs-main.png)</div>
           </div>
 
+         
+
+          
+
           <!-- Sub 1 -->
-          <details class="subdetails">
-            <summary>Quantitative Specifications</summary>
-            <div class="subpanel-body">
-              <p>The quantitative specifications define clear, measurable performance targets 
-                for the rover so the team can design, test, and verify its capabilities. These 
-                numbers turn broad product requirements into specific engineering goals that 
-                can be evaluated through calculations and physical testing.</p>
-                
-              <p>These specifications focus on key aspects such as weight, speed, durability, 
-                turning ability, navigation accuracy, and obstacle detection. By setting 
-                these measurable limits, the team can ensure the rover meets mission needs 
-                while staying within practical engineering constraints</p>
-
-                <h3 class="section-title">Quantitative Specifications/More Quantified Standards</h3>  
-            <ul>
-              <li>Total rover mass, including batteries and all onboard electronics, 
-                shall be less than or equal to 2.5 lb.</li>
-              <li>The rover shall achieve a straight-line ground speed of 1.0 ft/s ± 10% on a flat surface. </li>
-              <li>The rover shall withstand a vertical drop of 18 inches onto a hard surface with no loss of functionality or mission-critical damage.</li>
-              <li>Component turning maneuvers (90° rotation) shall be completed within 5.0 seconds ± 0.5 seconds with an accuracy of ± 5 deg</li>
-              <li>The rover shall travel commanded distances with an accuracy of ±10% of the commanded value for distances of 5 ft or greater.</li>
-              <li>The rover enclosure shall meet or exceed IP43 ingress protection standards.</li>
-              <li>The rover shall detect obstacles within 12 inches of its path and autonomously alter its trajectory to avoid collisions while continuing toward the mission goal.</li>
-              <li>The rover shall autonomously navigate to received GPS coordinates and stop within ±5 ft. of the target location. </li>
-              
-            </ul>
-
-              <div class="two-images">
-                <div class="image-box">
-                  <p><b>Photo #1</b></p>
-                  <img src="quant-specs-1.png" alt="Quantitative Specifications photo 1">
-                  <div class="hint">Replace with your file (example: quant-specs-1.png)</div>
-                </div>
-                <div class="image-box">
-                  <p><b>Photo #2</b></p>
-                  <img src="quant-specs-2.png" alt="Quantitative Specifications photo 2">
-                  <div class="hint">Replace with your file (example: quant-specs-2.png)</div>
-                </div>
-              </div>
-            </div>
-          </details>
-
-          <!-- Sub 2 -->
-          <details class="subdetails">
-            <summary>Target Values</summary>
-            <div class="subpanel-body">
-              <p>(Put future writing here)</p>
-              <p>(Put future writing here)</p>
-
-              <h3 class="section-title">Target Values</h3>  
-            <ul>
-              <li>Pessimistic Current Requirement= 3.125A</li>
-              <li>(Write stuff in here ofr the future)</li>
-              <li>(Write stuff in here ofr the future)</li>
-              <li>(Write stuff in here ofr the future)</li>
-              <li>(Write stuff in here ofr the future)</li>
-              <li>(Write stuff in here ofr the future)</li>
-              <li>(Write stuff in here ofr the future)</li>
-              <li>(Write stuff in here ofr the future)</li>
-              
-            </ul>
-
-              <div class="two-images">
-                <div class="image-box">
-                  <p><b>Photo #1</b></p>
-                  <img src="target-values-1.png" alt="Target Values photo 1">
-                  <div class="hint">Replace with your file (example: target-values-1.png)</div>
-                </div>
-                <div class="image-box">
-                  <p><b>Photo #2</b></p>
-                  <img src="target-values-2.png" alt="Target Values photo 2">
-                  <div class="hint">Replace with your file (example: target-values-2.png)</div>
-                </div>
-              </div>
-            </div>
-          </details>
-
-          <!-- Sub 3 -->
-          <details class="subdetails">
-            <summary>Traceability to Product Requirements</summary>
-            <div class="subpanel-body">
-              <p>(Put future writing here)</p>
-              <p>(Put future writing here)</p>
-
-              <h3 class="section-title">Power Supply Analysis</h3>  
-            <ul>
-              <li>Motors Geartisan A6207 X 2, the Rated Current = 1.1A</li>
-              <li>Arduino Mega 2560, the Max Current is = 0.2A </li>
-              <li>HC-SR04 Ultrasonic Sensor, the Max Current is = 0.015A</li>
-              <li>Neo-6M GPS, the Max current(startup) is = 0.045-0.05A</li>
-              <li>RF Receiver Module, the Current Draw is = 0.01A</li>
-              <li>QMC5883L Magnometer, the Current Draw(high data) is = 0.0026A</li>
-              <li>The SG-90 Servo Motor, the current is Stall Current = 0.65A</li>
-              </ul>
-
-              
-
-
-            <h3 class="section-title">Requirements for Motor Drivers</h3>  
-            <ul>
-              <li>Independent PWM Control for each motor</li>
-              <li>More than 1.1A per motor socket output</li>
-              <li>12V</li>
-              <li>Preferably a voltage regulator built in</li>
-              <li>RF Receiver Module, the Current Draw is = 0.01A</li>
-            
-            </ul>
-
-            <p>Selection L298N Motor Driver. This will require a Power Supply</p>
-
-            <h3 class="section-title">Power Supply Requirements</h3>  
-            <ul>
-              <li>1A draw capability</li>
-              <li>12v in</li>
-              <li>-3v-9v out</li>
-
-            </ul>
-
-            <p>Selection: LM2596 Buck Converter</p>
-
-            <h3 class="section-title">Motor Requirements</h3>  
-            <ul>
-              <li>Given Weight W = 2.5 lbf</li>
-              <li>Given Wheel diameter = 5 in → radius r = 2.5 in</li>
-              <li>Given Drive configuration = 2 wheel drive with rear skid</li>
-              
-            </ul>
-
-            <p>Selection: Geartisan A6207 X 2</p>
-
-            <h3 class="section-title">Battery Requirements:</h3>  
-            <ul>
-              <li>10-12v nominal Voltage</li>
-              <li>Light Weight</li>
-              <li>Capable of sustaining a 2.5A draw for 0.5 hours(min cap 1300mph)</li>
-              
-            </ul>
-            <p>Selection: 1300 3s 11.1V lipo 20c</p>
-
-              <div class="two-images">
-                <div class="image-box">
-                  <p><b>Photo #1</b></p>
-                  <img src="traceability-1.png" alt="Traceability photo 1">
-                  <div class="hint">Replace with your file (example: traceability-1.png)</div>
-                </div>
-                <div class="image-box">
-                  <p><b>Photo #2</b></p>
-                  <img src="traceability-2.png" alt="Traceability photo 2">
-                  <div class="hint">Replace with your file (example: traceability-2.png)</div>
-                </div>
-              </div>
-            </div>
-          </details>
-
-          <!-- Sub 4 -->
           <details class="subdetails">
             <summary>Supporting Calculations</summary>
             <div class="subpanel-body">
@@ -515,7 +371,10 @@
         <div class="panel-body">
 
           <p>This tab will show what are work breakdown structure will look like. </p>
-         <h3 class="section-title">Work Breakdown Strucutre Subssections</h3>  
+          <p>Our WBS will contain the following parts:</p>
+         <h3 class="section-title">Work Breakdown Strucutre with Subsystems</h3>  
+
+         
             <ul>
               <li>1.Mechanical System</li>
               <li>2.Electrical System</li>
@@ -535,6 +394,8 @@
 
         </div>
       </details>
+
+      
 
       <!-- 3) CONCEPT GENERATION (BAR-ONLY LOOK, WITH SUBDROPDOWNS INSIDE) -->
       <details class="bar-only">
@@ -557,158 +418,179 @@
             <div class="hint">Replace with your file (example: concept-gen-main.png)</div>
           </div>
 
-          <details class="subdetails">
-            <summary>Principle Concepts Developed, and Concept Evaluation</summary>
-            <div class="subpanel-body">
-              <p>For the priciple concepts the group decided on the following.</p>
-              <p>(Put future writing here)</p>
+          
 
-              <h3 class="section-title">Payload delivery</h3>  
-            <ul>
-              <li>The Payload Delivery will be a claw/band grip</li>
-            </ul>
+          
 
-            <h3 class="section-title">Drive Type</h3>
-            <ul>
-              <li>The Drive Type will be a Foward/Skid Type</li>
-            </ul>
+          
 
-            <h3 class="section-title">Motor driver</h3>
-            <ul>
-              <li>The motor driver will be a l298N Motor Driver</li>
-            </ul>
+        </div>
+      </details>
 
-            <h3 class="section-title">Power Supply</h3>
-            <ul>
-              <li>The Power supply will be a Lm2596 Buck Converter</li>
-            </ul>
+      <details>
+        <summary>Principle Concepts Developed, and Concept Evaluation</summary>
+        <div class="panel-body">
 
-            <h3 class="section-title">Battery Requirements</h3>
-            <ul>
-              <li>The Batter will be a 1300 3s 11.1V Tipo</li>
-            </ul>
+          <p>This tab will show what are work breakdown structure will look like.(PCD) </p>
 
-            <h3 class="section-title">Motor Selection</h3>
-            <ul>
-              <li>The Motor selection will be a Geartsian A6207 X 2</li>
-            </ul>
+          <p>For the priciple concepts the group decided on the following.</p>
+          <p>(Put future writing here)</p>
 
-            <h3 class="section-title">Weight Concept</h3>
-            <ul>
-              <li>The group beleives that the overall weight will be 
-                about 346 grams/0.76 pounds.
-              </li>
-            </ul>
+          <h3 class="section-title">Payload delivery</h3>  
+        <ul>
+          <li>The Payload Delivery will be a claw/band grip</li>
+        </ul>
 
+        <h3 class="section-title">Drive Type</h3>
+        <ul>
+          <li>The Drive Type will be a Foward/Skid Type</li>
+        </ul>
 
+        <h3 class="section-title">Motor driver</h3>
+        <ul>
+          <li>The motor driver will be a l298N Motor Driver</li>
+        </ul>
 
+        <h3 class="section-title">Power Supply</h3>
+        <ul>
+          <li>The Power supply will be a Lm2596 Buck Converter</li>
+        </ul>
 
-              <div class="six-images">
-                <div class="image-box">
-                  <p><b>Photo #1</b></p>
-                  <img src="principle-conceptspayloadpic.png" alt="Principle concepts Payload ">
-                  <div class="hint">Replace with your file (example: principle-conceptspayloadpic.png)</div>
-                </div>
-                <div class="image-box">
-                  <p><b>Photo #2</b></p>
-                  <img src="principle-conceptsdrivetype.png" alt="Principle concepts Drive Type">
-                  <div class="hint">Replace with your file (example: principle-conceptsdrivetype.png)</div>
-                </div>
-                <div class="image-box">
-                  <p><b>Photo #3</b></p>
-                  <img src="principle-3powersupply.png" alt="Principle 3 Powersupply ">
-                  <div class="hint">Replace with your file (example: principle-3powersupply.png)</div>
-                </div>
-                <div class="image-box">
-                  <p><b>Photo #4</b></p>
-                  <img src="principle-4motordriver.png" alt="Principle concepts 4 MotorDriver ">
-                  <div class="hint">Replace with your file (example: principle-4motordriver.png)</div>
-                </div>
-                <div class="image-box">
-                  <p><b>Photo #5</b></p>
-                  <img src="principle-5PowerSupply.png" alt="Principle concepts 5 PowerSupply ">
-                  <div class="hint">Replace with your file (example: principle-5PowerSupply.png)</div>
-                </div>
-                <div class="image-box">
-                  <p><b>Photo #6</b></p>
-                  <img src="principle-6batteryrequirements.png" alt="Principle concepts 6 batteryrequirements">
-                  <div class="hint">Replace with your file (example: principle-6batteryrequirements.png)</div>
-                </div>
-                <div class="image-box">
-                  <p><b>Photo #7</b></p>
-                  <img src="principle-7motorrequiremnts.png" alt="Principle concepts 6 batteryrequirements">
-                  <div class="hint">Replace with your file (example: principle-7motorrequiremnts.png)</div>
-                </div>
-                <div class="image-box">
-                  <p><b>Photo #8</b></p>
-                  <img src="principle-8weight.png" alt="Principle concepts 6 batteryrequirements">
-                  <div class="hint">Replace with your file (example: principle-8weight.png)</div>
-                </div>
-                
-              </div>
+        <h3 class="section-title">Battery Requirements</h3>
+        <ul>
+          <li>The Batter will be a 1300 3s 11.1V Tipo</li>
+        </ul>
+
+        <h3 class="section-title">Motor Selection</h3>
+        <ul>
+          <li>The Motor selection will be a Geartsian A6207 X 2</li>
+        </ul>
+
+        <h3 class="section-title">Weight Concept</h3>
+        <ul>
+          <li>The group beleives that the overall weight will be 
+            about 346 grams/0.76 pounds.
+          </li>
+        </ul>
+          
+        <div class="six-images">
+          <div class="image-box">
+            <p><b>Photo #1</b></p>
+            <img src="principle-conceptspayloadpic.png" alt="Principle concepts Payload ">
+            <div class="hint">Replace with your file (example: principle-conceptspayloadpic.png)</div>
+          </div>
+          <div class="image-box">
+            <p><b>Photo #2</b></p>
+            <img src="principle-conceptsdrivetype.png" alt="Principle concepts Drive Type">
+            <div class="hint">Replace with your file (example: principle-conceptsdrivetype.png)</div>
+          </div>
+          <div class="image-box">
+            <p><b>Photo #3</b></p>
+            <img src="principle-3powersupply.png" alt="Principle 3 Powersupply ">
+            <div class="hint">Replace with your file (example: principle-3powersupply.png)</div>
+          </div>
+          <div class="image-box">
+            <p><b>Photo #4</b></p>
+            <img src="principle-4motordriver.png" alt="Principle concepts 4 MotorDriver ">
+            <div class="hint">Replace with your file (example: principle-4motordriver.png)</div>
+          </div>
+          <div class="image-box">
+            <p><b>Photo #5</b></p>
+            <img src="principle-5PowerSupply.png" alt="Principle concepts 5 PowerSupply ">
+            <div class="hint">Replace with your file (example: principle-5PowerSupply.png)</div>
+          </div>
+          <div class="image-box">
+            <p><b>Photo #6</b></p>
+            <img src="principle-6batteryrequirements.png" alt="Principle concepts 6 batteryrequirements">
+            <div class="hint">Replace with your file (example: principle-6batteryrequirements.png)</div>
+          </div>
+          <div class="image-box">
+            <p><b>Photo #7</b></p>
+            <img src="principle-7motorrequiremnts.png" alt="Principle concepts 6 batteryrequirements">
+            <div class="hint">Replace with your file (example: principle-7motorrequiremnts.png)</div>
+          </div>
+          <div class="image-box">
+            <p><b>Photo #8</b></p>
+            <img src="principle-8weight.png" alt="Principle concepts 6 batteryrequirements">
+            <div class="hint">Replace with your file (example: principle-8weight.png)</div>
+          </div>
+          
+        </div>
+
+         
+
+        </div>
+      </details>
+
+      <details>
+        <summary>Design Alternatives</summary>
+        <div class="panel-body">
+
+          <p>- Some design alternatives included for Payload: Dump truck style, 
+            Trap door, abd spring loaded.
+          </p>
+          <p>- Some Alternative designs for drive type included AWD (A wheel Drive),
+            Tank Style, and RWD Car style.
+          </p>
+
+          <p>- Some Alternative designs for Navigation are, using Google API, 
+            using group memeber's Vicente's Phone since it's a droid, or use a 
+            magnometer.
+          </p> 
+
+         
+          <div class="two-images">
+            <div class="image-box">
+              <p><b>Photo #1</b></p>
+              <img src="design-alts-1.png" alt="Design alternatives photo 1">
+              <div class="hint">Replace with your file (example: design-alts-1.png)</div>
             </div>
-          </details>
-
-          <details class="subdetails">
-            <summary>Design Alternatives</summary>
-            <div class="subpanel-body">
-              <p>- Some design alternatives included for Payload: Dump truck style, 
-                Trap door, abd spring loaded.
-              </p>
-              <p>- Some Alternative designs for drive type included AWD (A wheel Drive),
-                Tank Style, and RWD Car style.
-              </p>
-
-              <p>- Some Alternative designs for Navigation are, using Google API, 
-                using group memeber's Vicente's Phone since it's a droid, or use a 
-                magnometer.
-              </p>
-
-              <div class="two-images">
-                <div class="image-box">
-                  <p><b>Photo #1</b></p>
-                  <img src="design-alts-1.png" alt="Design alternatives photo 1">
-                  <div class="hint">Replace with your file (example: design-alts-1.png)</div>
-                </div>
-                <div class="image-box">
-                  <p><b>Photo #2</b></p>
-                  <img src="design-alts-2.png" alt="Design alternatives photo 2">
-                  <div class="hint">Replace with your file (example: design-alts-2.png)</div>
-                </div>
-              </div>
+            <div class="image-box">
+              <p><b>Photo #2</b></p>
+              <img src="design-alts-2.png" alt="Design alternatives photo 2">
+              <div class="hint">Replace with your file (example: design-alts-2.png)</div>
             </div>
-          </details>
+          </div>
 
-          <details class="subdetails">
-            <summary>Sketches and CAD Models</summary>
-            <div class="subpanel-body">
-              <p>Team memeber William made a rough idea on solidworks for a protoype of 
-                the rover </p>
-              <p>(Put future writing here)</p>
+          
 
-              <div class="two-images">
-                <div class="image-box">
-                  <p><b>Photo #1 rough idea</b></p>
-                  <img src="sketches-cad-1.png" alt="Sketches and CAD photo 1">
-                  <div class="hint">Replace with your file (example: sketches-cad-1.png)</div>
-                </div>
-                <div class="image-box">
-                  <p><b>Photo #2</b></p>
-                  <img src="sketches-cad-2.png" alt="Sketches and CAD photo 2">
-                  <div class="hint">Replace with your file (example: sketches-cad-2.png)</div>
-                </div>
-              </div>
+         
+
+        </div>
+      </details>
+
+      <details>
+        <summary>Sketches and CAD Models</summary>
+        <div class="panel-body">
+
+          <p>Team memeber William made a rough idea on solidworks for a protoype of 
+            the rover </p>
+          <p>(Put future writing here)</p>
+
+          <div class="two-images">
+            <div class="image-box">
+              <p><b>Photo #1 rough idea</b></p>
+              <img src="sketches-cad-1.png" alt="Sketches and CAD photo 1">
+              <div class="hint">Replace with your file (example: sketches-cad-1.png)</div>
             </div>
-          </details>
+            <div class="image-box">
+              <p><b>Photo #2</b></p>
+              <img src="sketches-cad-2.png" alt="Sketches and CAD photo 2">
+              <div class="hint">Replace with your file (example: sketches-cad-2.png)</div>
+            </div>
+          </div>
 
-          <details class="subdetails">
-            <summary>Concept Descriptions</summary>
-            <div class="subpanel-body">
+         
 
-              
+        </div>
+      </details>
 
+      <details>
+        <summary>Concept Descriptions</summary>
+        <div class="panel-body">
 
-                <div class="section-title">Concept part 1:Payload Delivery – Claw/Band Grip  </div>
+          <p>This tab will give brief descriptions for are concepts </p>
+          <div class="section-title">Concept part 1:Payload Delivery – Claw/Band Grip  </div>
       
                 <p>The rover will use a claw or band-style gripping mechanism to securely hold 
                   and transport the payload. This design allows for controlled release while keeping
@@ -763,9 +645,8 @@
                   <img src="concept-desc-2.png" alt="Concept descriptions photo 2">
                   <div class="hint">Replace with your file (example: concept-desc-2.png)</div>
                 </div>
-              </div>
-            </div>
-          </details>
+
+         
 
         </div>
       </details>
@@ -855,47 +736,9 @@
             </div>
           </details>
 
-          <details class="subdetails">
-            <summary>Concept Comparison</summary>
-            <div class="subpanel-body">
-              <p>(Put future writing here)</p>
-              <p>(Put future writing here)</p>
+          
 
-              <div class="two-images">
-                <div class="image-box">
-                  <p><b>Photo #1</b></p>
-                  <img src="concept-compare-1.png" alt="Concept comparison photo 1">
-                  <div class="hint">Replace with your file (example: concept-compare-1.png)</div>
-                </div>
-                <div class="image-box">
-                  <p><b>Photo #2</b></p>
-                  <img src="concept-compare-2.png" alt="Concept comparison photo 2">
-                  <div class="hint">Replace with your file (example: concept-compare-2.png)</div>
-                </div>
-              </div>
-            </div>
-          </details>
-
-          <details class="subdetails">
-            <summary>Selected Concept(s)</summary>
-            <div class="subpanel-body">
-              <p>(Put future writing here)</p>
-              <p>(Put future writing here)</p>
-
-              <div class="two-images">
-                <div class="image-box">
-                  <p><b>Photo #1</b></p>
-                  <img src="selected-concept-1.png" alt="Selected concept photo 1">
-                  <div class="hint">Replace with your file (example: selected-concept-1.png)</div>
-                </div>
-                <div class="image-box">
-                  <p><b>Photo #2</b></p>
-                  <img src="selected-concept-2.png" alt="Selected concept photo 2">
-                  <div class="hint">Replace with your file (example: selected-concept-2.png)</div>
-                </div>
-              </div>
-            </div>
-          </details>
+          
 
         </div>
       </details>
