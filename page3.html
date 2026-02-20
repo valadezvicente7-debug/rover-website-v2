@@ -452,21 +452,125 @@
       
 
       <!-- 3) CONCEPT GENERATION (BAR-ONLY LOOK, WITH SUBDROPDOWNS INSIDE) -->
-      <details class="bar-only">
+      <details>
         <summary>Concept Generation</summary>
         <div class="panel-body">
 
-          <p>Concept generation involved brainstorming multiple mechanical 
-            and navigation approaches to meet the rover’s mission requirements.</p>
-          <p>The group explored different drivetrain styles, payload delivery 
-            methods, and navigation systems before narrowing down the most 
-            practical and feasible concepts for development</p>
+          <p>This is the Concept Generation Tab. This Concept Generation tab will include, 
+            and talk about <b>Principle Concepts, Concept Evaluation, Design Alternatives</b> from said concepts. 
+            and<b> description for said concepts.</b> All these following Parts make up/form the overall processes
+            of <b>Concept Generation</b> and <b>Concept Evaluation.</b>
+              
 
-          <p> The group thought of conceptts for 3 main parts, which included
-            payload delivery, drive type, and Navigation.
-          </p>
 
-          <p> The Group made concepts for Chasis ideas</p>
+              <p>The group decided on the following <b>Principle Concepts.</b>
+              Each of the <b>Principle Concepts</b> will have it's own <b>Principle Concept
+              Description.</b> <p>
+
+          
+
+          <h3 class="section-title">Payload delivery</h3>  
+        <ul>
+          <li>The Payload Delivery will be a claw/band grip.
+            The rover will use a claw or band-style gripping mechanism to securely hold and 
+            transport the payload. This design allows for controlled release while keeping the 
+            system lightweight and simple.
+          </li>
+
+        </ul>
+
+        <h3 class="section-title">Drive Type</h3>
+        <ul>
+          <li>The Drive Type will be a Foward/Skid Type.
+            The rover will use a forward skid-steer drive configuration for improved turning 
+            and maneuverability. This system allows tight turns and better control during 
+            obstacle avoidance.
+          </li>
+        </ul>
+
+        <h3 class="section-title">Motor Driver</h3>
+        <ul>
+          <li>The motor driver will be a l298N Motor Driver.
+            The L298N motor driver will control the direction and speed of the DC motors. 
+                  It allows independent control of each motor, enabling precise steering 
+                  and movement.
+          </li>
+        </ul>
+
+        <h3 class="section-title">Power Supply</h3>
+        <ul>
+          <li>An LM2596 buck converter will regulate voltage from the battery to safely power
+              sensitive electronics. This ensures stable operation of the Arduino and sensors.</li>
+        </ul>
+
+        <h3 class="section-title">Battery Requirements</h3>
+        <ul>
+          <li>The Batter will be a 1300 3s 11.1V Lipo. The rover will use a 3S 11.1V LiPo 
+            battery to provide sufficient power for motors and electronics. This battery 
+            balances weight, capacity, and performance for mission duration.</li>
+        </ul>
+
+        <h3 class="section-title">Motor Selection</h3>
+        <ul>
+          <li>The Motor selection will be a Geartsian A6207 X 2. Two Gearstian A6207 gear 
+            motors will provide the torque required for movement and obstacle navigation. 
+            Their gear reduction improves efficiency and ensures reliable traction.</li>
+        </ul>
+
+        <h3 class="section-title">Weight</h3>
+        <ul>
+          <li>The group beleives that the overall weight will be 
+            about 346 grams/0.76 pounds. The estimated total weight of the rover is 
+            approximately 346 grams (0.76 lb), staying well under the 2.5 lb requirement. 
+            Keeping the rover lightweight improves efficiency, durability, and overall 
+            performance.
+          </li>
+        </ul>
+
+
+
+          
+        <div class="six-images">
+          <div class="image-box">
+            <p><b>Photo #1</b></p>
+            <img src="principle-conceptspayloadpic.png" alt="Principle concepts Payload ">
+            
+          </div>
+          <div class="image-box">
+            <p><b>Photo #2</b></p>
+            <img src="principle-conceptsdrivetype.png" alt="Principle concepts Drive Type">
+          </div>
+          <div class="image-box">
+            <p><b>Photo #3 Concept Evaluation- Hardwear selction part 1 </b></p>
+            <img src="principle-3powersupply.png" alt="Principle 3 Powersupply ">
+            <div class="hint">Replace with 1-2 sentences of text for this design calculation context</div>
+          </div>
+          <div class="image-box">
+            <p><b>Photo #4 Concept Evaluation- Hardwear selction part 2</b></p>
+            <img src="principle-4motordriver.png" alt="Principle concepts 4 MotorDriver ">
+            <div class="hint">Replace with 1-2 sentences of text for this design calculation context</div>
+          </div>
+          <div class="image-box">
+            <p><b>Photo #5 Concept Evaluation- Hardwear selction part 3</b></p>
+            <img src="principle-5PowerSupply.png" alt="Principle concepts 5 PowerSupply ">
+            <div class="hint">Replace with 1-2 sentences of text for this design calculation context</div>
+          </div>
+          <div class="image-box">
+            <p><b>Photo #6 Concept Evaluation- Hardwear selction part 4</b></p>
+            <img src="principle-6batteryrequirements.png" alt="Principle concepts 6 batteryrequirements">
+            <div class="hint">Replace with 1-2 sentences of text for this design calculation context</div>
+          </div>
+          <div class="image-box">
+            <p><b>Photo #7 Concept Evaluation- Hardwear selction part 5</b></p>
+            <img src="principle-7motorrequiremnts.png" alt="Principle concepts 6 batteryrequirements">
+            <div class="hint">Replace with 1-2 sentences of text for this design calculation context</div>
+          </div>
+          <div class="image-box">
+            <p><b>Photo #8 Photo #7 Concept Evaluation- Weight Analysis</b></p>
+            <img src="principle-8weight.png" alt="Principle concepts 6 batteryrequirements">
+            <div class="hint">Replace with 1-2 sentences of text for this design calculation context</div>
+          </div>
+              (Put writing of principle onceots here)
 
           <div class="image-box">
             <p><b>Photo (Concept Generation)</b></p>
@@ -520,7 +624,7 @@
 
         <h3 class="section-title">Battery Requirements</h3>
         <ul>
-          <li>The Batter will be a 1300 3s 11.1V Tipo</li>
+          <li>The Batter will be a 1300 3s 11.1V Lipo</li>
         </ul>
 
         <h3 class="section-title">Motor Selection</h3>
@@ -647,71 +751,7 @@
         </div>
       </details>
 
-      <details>
-        <summary>Concept Descriptions</summary>
-        <div class="panel-body">
-
-          <p>This tab will give brief descriptions for are concepts </p>
-          <div class="section-title">Concept part 1: Payload Delivery – Claw/Band Grip  </div>
       
-                <p>The rover will use a claw or band-style gripping mechanism to securely hold 
-                  and transport the payload. This design allows for controlled release while keeping
-                   the system lightweight and simple.</p>
-
-                <div class="section-title">Concept part 2: Drive Type – Forward/Skid Type </div>
-      
-                <p>The rover will use a forward skid-steer drive configuration for improved turning 
-                  and maneuverability. This system allows tight turns and better control during 
-                  obstacle avoidance.</p>
-
-                <div class="section-title">Concept part 3: Motor Driver – L298N </div>
-      
-                <p>The L298N motor driver will control the direction and speed of the DC motors. 
-                  It allows independent control of each motor, enabling precise steering and movement.</p>
-    
-                <div class="section-title">Concept part 4: Power Supply – LM2596 Buck Converter </div>
-          
-                <p>An LM2596 buck converter will regulate voltage from the battery to safely power
-                   sensitive electronics. This ensures stable operation of the Arduino and sensors.</p>
-
-                <div class="section-title">Concept part 5: Battery – 1300mAh 3S 11.1V LiPo</div>
-    
-                <p>The rover will use a 3S 11.1V LiPo battery to provide sufficient power for 
-                  motors and electronics. This battery balances weight, capacity, and performance 
-                  for mission duration.</p>
-  
-                <div class="section-title">Concept part 6: Motor Selection – Gearstian A6207 (x2)</div>
-        
-                <p>Two Gearstian A6207 gear motors will provide the torque required for movement 
-                  and obstacle navigation. Their gear reduction improves efficiency and ensures 
-                  reliable traction..</p>
-      
-                <div class="section-title">Concept part 7: Weight</div>
-            
-                <p>The estimated total weight of the rover is approximately 346 grams (0.76 lb),
-                  staying well under the 2.5 lb requirement. Keeping the rover lightweight 
-                  improves efficiency, durability, and overall performance.</p>
-
-                
-              <p>(Put future writing here)</p>
-              <p>(Put future writing here)</p>
-
-              <div class="two-images">
-                <div class="image-box">
-                  <p><b>Photo #1</b></p>
-                  <img src="concept-desc-1.png" alt="Concept descriptions photo 1">
-                  <div class="hint">Replace with your file (example: concept-desc-1.png)</div>
-                </div>
-                <div class="image-box">
-                  <p><b>Photo #2</b></p>
-                  <img src="concept-desc-2.png" alt="Concept descriptions photo 2">
-                  <div class="hint">Replace with your file (example: concept-desc-2.png)</div>
-                </div>
-
-         
-
-        </div>
-      </details>
 
       <!-- 4) CONCEPT EVALUATION (BAR-ONLY LOOK, WITH SUBDROPDOWNS INSIDE) -->
       <details class="bar-only">
