@@ -808,33 +808,153 @@
       </details>
 
       <details>
-        <summary>Test Plan Documentation</summary>
-        <div class="panel-body">
+<summary>Test Plan Documentation</summary>
+<div class="panel-body">
 
-         
+<h3 class="section-title">Test Plan Documentation</h3>
 
-          <h3 class="section-title">Test Plan Documentaion</h3>
-           <p><b>At least five test plans are documented including test
-            procedure, statement of associated engineering specification and target value, and
-            pass/fail criteria.</b></p>
-          
-          <p><h3 class="section-title">Test Plan 1 Speed </h3></p>
-          <p>Objective. 
-            - Verify that the rover spped is between 0.9-1.1ft/s
-          </p>
+<p>
+At least five test plans are documented during the course of the semester. 
+Each test includes the engineering specification being tested, the target value, 
+test procedure, and pass/fail criteria.
+</p>
 
-          <p>Test Plan 2</p>
 
-          <p>Test Plan 3</p>
+<h3 class="section-title">Test Plan 1 – Speed</h3>
 
-          <p>Test Plan 4</p>
+<p><b>Engineering Specification:</b><br>
+The rover shall travel at <b>1.0 ft/s ±10%</b> on a flat surface.
+</p>
 
-          <p>Test Plan 5</p>
+<p><b>Target Value:</b><br>
+0.9 – 1.1 ft/s
+</p>
 
-         
+<p><b>Test Procedure:</b></p>
+<ul>
+<li>Place rover at start of a 10 ft flat test track</li>
+<li>Start stopwatch when rover begins moving</li>
+<li>Stop timing when rover reaches the 10 ft mark</li>
+<li>Calculate velocity using distance ÷ time</li>
+<li>Repeat test 5 trials</li>
+</ul>
 
-        </div>
-      </details>
+<p><b>Pass / Fail Criteria:</b></p>
+<ul>
+<li>Speed must be between 0.9 – 1.1 ft/s</li>
+<li>Rover moves smoothly without stopping</li>
+<li>At least 4 of 5 trials meet requirement</li>
+</ul>
+
+
+
+<h3 class="section-title">Test Plan 2 – Turn Time & Accuracy</h3>
+
+<p><b>Engineering Specification:</b><br>
+The rover shall complete a 90° turn within 5 seconds with ±5° accuracy.
+</p>
+
+<p><b>Target Value:</b><br>
+Turn time ≤ 5 seconds<br>
+Heading between 85° – 95°
+</p>
+
+<p><b>Test Procedure:</b></p>
+<ul>
+<li>Align rover to 0° starting heading</li>
+<li>Command rover to execute a 90° turn</li>
+<li>Measure time required for the maneuver</li>
+<li>Measure final heading angle</li>
+<li>Repeat 5 trials</li>
+</ul>
+
+<p><b>Pass / Fail Criteria:</b></p>
+<ul>
+<li>Final heading between 85° – 95°</li>
+<li>Turn completed in under 5 seconds</li>
+<li>Smooth continuous motion</li>
+</ul>
+
+
+
+<h3 class="section-title">Test Plan 3 – Object Detection</h3>
+
+<p><b>Engineering Specification:</b><br>
+The rover shall detect and avoid an obstacle within 1 ft ±0.5 ft.
+</p>
+
+<p><b>Target Value:</b><br>
+Detection distance between 0.5 – 1.5 ft
+</p>
+
+<p><b>Test Procedure:</b></p>
+<ul>
+<li>Place obstacle in rover path</li>
+<li>Drive rover toward obstacle</li>
+<li>Record detection distance</li>
+<li>Observe avoidance behavior</li>
+<li>Repeat 5 trials</li>
+</ul>
+
+<p><b>Pass / Fail Criteria:</b></p>
+<ul>
+<li>Obstacle detected between 0.5 – 1.5 ft</li>
+<li>No collision with obstacle</li>
+<li>Rover continues operation after avoidance</li>
+</ul>
+
+
+
+<h3 class="section-title">Test Plan 4 – Weight</h3>
+
+<p><b>Engineering Specification:</b><br>
+The rover mass including batteries and electronics shall be ≤ 2.5 lb.
+</p>
+
+<p><b>Target Value:</b><br>
+≤ 2.5 lb
+</p>
+
+<p><b>Test Procedure:</b></p>
+<ul>
+<li>Place rover on digital scale</li>
+<li>Ensure all components and battery are installed</li>
+<li>Record measured mass</li>
+</ul>
+
+<p><b>Pass / Fail Criteria:</b></p>
+<ul>
+<li>Total rover mass must be ≤ 2.5 lb</li>
+</ul>
+
+
+
+<h3 class="section-title">Test Plan 5 – Drop Test</h3>
+
+<p><b>Engineering Specification:</b><br>
+The rover shall withstand an 18 inch drop without functional damage.
+</p>
+
+<p><b>Target Value:</b><br>
+18 inch vertical drop
+</p>
+
+<p><b>Test Procedure:</b></p>
+<ul>
+<li>Hold rover 18 inches above hard surface</li>
+<li>Release rover</li>
+<li>Inspect structure and electronics</li>
+<li>Run rover to verify operation</li>
+</ul>
+
+<p><b>Pass / Fail Criteria:</b></p>
+<ul>
+<li>No structural failure</li>
+<li>Rover remains fully operational</li>
+</ul>
+
+</div>
+</details>
 
       <details>
         <summary>Leave blank for now in case we need to write more future stuff</summary>
