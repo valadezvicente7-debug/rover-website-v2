@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>System Design (Page 3)</title>
+
+<style>
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f6f6fb;
+  }
+
+  .section-title {
+    margin: 18px 0 8px 0;
+    font-size: 18px;
+    color: #222;
+    font-weight: 800;
+  }
+
+  .panel-body ul {
+    margin: 8px 0 0 20px;
+  }
+
+  /* ---- LAYOUT ---- */
+  .layout {
+    display: flex;
+    min-height: 100vh;
+  }
+
+  /* ---- SIDEBAR ---- */
+  .sidebar {
+    width: 240px;
+    background: #c9c0f5;
+    padding: 16px 12px;
+    box-sizing: border-box;
+  }
+
+  .sidebar h2 {
+    margin: 0 0 14px 0;
+    font-size: 18px;
+    color: #6a4bdc;
+    font-weight: 700;
+  }
+
+  .nav {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+  }
+
+  .nav a {
+    text-decoration: none;
+    color: #4b3aa5;
+    background: rgba(255, 255, 255, 0.35);
+    border: 1px solid rgba(0,0,0,0.08);
+    border-radius: 10px;
+    padding: 10px 12px;
+    display: block;
+    font-weight: 600;
+  }
+
+  .nav a:hover {
+    background: rgba(255, 255, 255, 0.55);
+  }
+
+  .nav a.active {
+    background: white;
+    border-left: 6px solid #7b5cff;
+    padding-left: 8px;
+  }
+
+  /* ---- MAIN CONTENT ---- */
+  .main {
+    flex: 1;
+    padding: 32px 40px;
+    box-sizing: border-box;
+  }
+
+  .page-title {
+    color: #7b5cff;
+    font-size: 46px;
+    margin: 8px 0 8px 0;
+    font-family: "Trebuchet MS", Arial, sans-serif;
+  }
+
+  .page-subtitle {
+    max-width: 1100px;
+    margin: 0 0 18px 0;
+    color: #666;
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  /* ---- DROPDOWN PANELS ---- */
+  .panel-wrap {
+    max-width: 1100px;
+    margin: 0;
+  }
+
+  details {
+    margin: 18px 0;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid rgba(0,0,0,0.12);
+    background: white;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  }
+
+  summary {
+    cursor: pointer;
+    font-weight: 700;
+    padding: 16px 18px;
+    background: linear-gradient(90deg, #7b5cff, #a06bff);
+    color: white;
+    list-style: none;
+    position: relative;
+  }
+
+  summary::-webkit-details-marker { display: none; }
+
+  summary::after {
+    content: "▾";
+    position: absolute;
+    right: 16px;
+    top: 14px;
+    font-size: 18px;
+    opacity: 0.95;
+    transform: rotate(0deg);
+    transition: transform 0.2s ease;
+  }
+
+  details[open] summary::after {
+    transform: rotate(180deg);
+  }
+
+  .panel-body {
+    padding: 18px;
+    color: #444;
+    font-size: 14px;
+    line-height: 1.7;
+  }
+
+  /* ---- IMAGE PLACEHOLDERS ---- */
+  .image-box {
+    margin-top: 14px;
+    border: 2px dashed rgba(0,0,0,0.22);
+    border-radius: 10px;
+    background: #fafafe;
+    padding: 16px;
+    text-align: center;
+  }
+
+  .image-box img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    border: 1px solid rgba(0,0,0,0.12);
+    display: block;
+    margin: 0 auto;
+  }
+
+  .hint {
+    color: #777;
+    font-size: 13px;
+    margin-top: 8px;
+  }
+
+  /* Two-image row */
+  .two-images {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+    margin-top: 12px;
+  }
+
+  .two-images .image-box {
+    flex: 1;
+    min-width: 320px;
+  }
+
+  /* ---- SUB-DROPDOWNS ---- */
+  .subdetails {
+    margin: 14px 0;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid rgba(0,0,0,0.12);
+    background: white;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  }
+
+  .subdetails > summary {
+    cursor: pointer;
+    font-weight: 700;
+    padding: 16px 18px; /* match main header padding */
+    background: linear-gradient(90deg, #7b5cff, #a06bff);
+    color: white;
+    list-style: none;
+    position: relative;
+  }
+
+  .subdetails > summary::-webkit-details-marker { display: none; }
+
+  .subdetails > summary::after {
+    content: "▾";
+    position: absolute;
+    right: 16px;
+    top: 14px; /* match main triangle alignment */
+    font-size: 18px;
+    opacity: 0.95;
+    transform: rotate(0deg);
+    transition: transform 0.2s ease;
+  }
+
+  .subdetails[open] > summary::after {
+    transform: rotate(180deg);
+  }
+
+  .subpanel-body {
+    padding: 18px; /* match main body padding */
+    color: #444;
+    font-size: 14px;
+    line-height: 1.7;
+    background: white;
+  }
+
+  /* =========================================================
+     BAR-ONLY STYLE (matches the “small purple bars” look)
+     Use on Concept Generation + Concept Evaluation
+     ========================================================= */
+  details.bar-only {
+    border: none;
+    background: transparent;
+    box-shadow: none;
+    margin: 18px 0;
+    overflow: visible;
+  }
+
+  details.bar-only > summary {
+    border-radius: 10px;
+    border: 1px solid rgba(0,0,0,0.12);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  }
+
+  details.bar-only[open] > .panel-body {
+    margin-top: 10px;
+    border-radius: 10px;
+    border: 1px solid rgba(0,0,0,0.12);
+    background: white;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  }
+</style>
+</head>
+
+<body>
+<div class="layout">
+
+  <!-- LEFT SIDEBAR -->
+  <aside class="sidebar">
+    <h2>Operation Rover Rebuttal</h2>
+
+    <nav class="nav">
+      <a href="index.html" >Home Page (Page 1)</a>
+      <a href="page2.html">Project Definiton (Page 2)</a>
+      <a href="page3.html" class="active">System Design (Page 3)</a>
+      <a href="page4.html">Empty Page leave for now (Page 4)</a>
+      <a href="page5.html">Missions (Page 5)</a>
+      <a href="page6.html">Arduino Tutorials/other tutorials (Page 6)</a>
+      <a href="page7.html">Weekly Team Meeting Summaries (Page 7)</a>
+      <a href="page8.html">Closing Thoughts (Page 8)</a>
+      <a href="page9.html">Resources (Page 9)</a>
+    </nav>
+  </aside>
+
+  <!-- MAIN CONTENT -->
+  <main class="main">
+
+    <h1 class="page-title">System Design</h1>
+
+    <p class="page-subtitle">
+      Here you will find our group’s stages when defining what we are going to build.
+      Consider this to be us finding our footing on how exactly we plan to make <b>our rover</b>.
+    </p>
+
+    <div class="panel-wrap">
+
+      <!-- 1) ENGINEERING SPECIFICATIONS -->
+      <details>
+        <summary>Engineering Specifications</summary>
+        <div class="panel-body">
+
+          <p>Our engineering specifications translate our product requirements into clear, 
+            measurable, and testable performance targets for the rover. These 
+            specifications define how the rover should behave in terms of weight, speed, 
+            durability, navigation accuracy, and obstacle avoidance. By setting 
+            quantitative limits and targets, we ensure our design can be objectively 
+            evaluated through testing rather than only judged qualitatively.</p>
+
+          <p>These specifications also guide our design decisions and help us choose 
+            appropriate components, materials, and control strategies. They serve as 
+            a bridge between what the customer wants (product requirements) and how the 
+            rover must technically perform. As we develop and test the rover, we will 
+            compare its actual performance against these specifications to verify that 
+            our design meets the project goals.</p>
+
+            <h3 class="section-title">Engineering Specifications</h3>  
+            <ul>
+              <li>Total rover mass, including batteries and all onboard electronics,
+                shall be less than or equal to 2.5 lb.​ </li>
+              <li>The rover shall achieve a straight-line ground speed of 1.0 ft/s ±
+                10% on a flat surface.​. </li>
+              <li>-The rover shall withstand a vertical drop of 18 inches onto a hard
+                surface with no loss of functionality or mission-critical damage</li>
+              <li>-Commanded turning maneuvers (90° rotation) shall be completed
+                within 5.0 seconds ± 0.5 seconds with an accuracy of ± 5 deg.​</li>
+              <li>-The rover shall travel commanded distances with an accuracy
+                of ±10% of the commanded value for distances of 5 ft or greater.​.</li>
+              <li>The rover enclosure shall meet or exceed IP43 ingress protection
+                standards.​</li>
+              <li>The rover shall detect obstacles within 12 inches of its path and
+                autonomously alter its trajectory to avoid collisions while
+                continuing toward the mission goal.​</li>
+              <li>The rover shall autonomously navigate to received GPS
+                coordinates and stop within ±5 ft. of the target location.​ </li>
+              
+            </ul>
+
+
+
+          <div class="image-box">
+            <p><b>Photo (Engineering Specifications)</b></p>
+            <img src="engineering-specs-main.png" alt="Engineering Specifications main photo">
+            <div class="hint">Replace with your file (example: engineering-specs-main.png)</div>
+          </div>
+
+         
+
+          
+
+          <!-- Sub 1 -->
+          <details class="subdetails">
+            <summary>Supporting Calculations</summary>
+            <div class="subpanel-body">
+              
+              <p>The following is a photo, that shows the claculation of are Motor Requirment,
+                that made us choose the Selection: Geartisan A6207 X 2
+              </p>
+
+              <div class="two-images">
+                <div class="image-box">
+                  <p><b>Photo #1</b></p>
+                  <img src="supporting-calcs-1.png" alt="Supporting Calculations photo 1">
+                  <div class="hint">Replace with your file (example: supporting-calcs-1.png)</div>
+                </div>
+                <div class="image-box">
+                  <p><b>Photo #2</b></p>
+                  <img src="supporting-calcs-2.png" alt="Supporting Calculations photo 2">
+                  <div class="hint">Replace with your file (example: supporting-calcs-2.png)</div>
+                </div>
+              </div>
+            </div>
+          </details>
+
+        </div>
+      </details>
+
+      <!-- 2) WORK BREAKDOWN STRUCTURE (WBS) -->
+      <details>
+        <summary>Work Breakdown Structure</summary>
+        <div class="panel-body">
+      
+          <p>This tab will show what our work breakdown structure will look like.</p>
+          <p>Our WBS will contain the following parts:</p>
+      
+          <h3 class="section-title">Work Breakdown Structure with Subsystems</h3>
+      
+          <ul>
+      
+            <li>
+              <b>1. Mechanical System</b>
+              <ul>
+                <li><b>A.</b> Chassis and off-road wheels</li>
+                <li><b>B.</b> Payload mount</li>
+                <li><b>C.</b> Water-resistant enclosure</li>
+              </ul>
+            </li>
+      
+            <li>
+              <b>2. Electrical System</b>
+              <ul>
+                <li><b>A.</b> Battery and power regulation</li>
+                <li><b>B.</b> Motors and motor drivers</li>
+                <li><b>C.</b> GPS module</li>
+                <li><b>D.</b> RF receiver</li>
+                <li><b>E.</b> Obstacle sensors</li>
+              </ul>
+            </li>
+      
+            <li>
+              <b>3. Software</b>
+              <ul>
+                <li><b>A.</b> Firmware setup</li>
+                <li><b>B.</b> GPS processing</li>
+                <li><b>C.</b> RF message decoding</li>
+                <li><b>D.</b> Obstacle avoidance logic</li>
+              </ul>
+            </li>
+      
+            <li>
+              <b>4. Integration</b>
+              <ul>
+                <li><b>A.</b> Assemble rover</li>
+                <li><b>B.</b> Connect electronics</li>
+                <li><b>C.</b> Load software</li>
+              </ul>
+            </li>
+      
+            <li>
+              <b>5. Missions</b>
+              <ul>
+                <li><b>A.</b> Mission planning</li>
+                <li><b>B.</b> Mission execution</li>
+                <li><b>C.</b> Mission performance evaluation</li>
+              </ul>
+            </li>
+      
+            <li>
+              <b>6. Testing</b>
+              <ul>
+                <li><b>A.</b> Drive and mobility test</li>
+                <li><b>B.</b> GPS navigation test</li>
+                <li><b>C.</b> RF communication test</li>
+                <li><b>D.</b> Obstacle avoidance test</li>
+                <li><b>E.</b> Water resistance check</li>
+              </ul>
+            </li>
+      
+          </ul>
+      
+          <div class="image-box">
+            <p><b>Photo of full WBS</b></p>
+            <img src="wbsreal.png" alt="WBS Screenshot">
+            <div class="hint">Replace with your file (example: wbsreal.png)</div>
+          </div>
+      
+        </div>
+      </details>
+      
+      
+
+      
+
+      <!-- 3) CONCEPT GENERATION (BAR-ONLY LOOK, WITH SUBDROPDOWNS INSIDE) -->
+      <details class="bar-only">
+        <summary>Concept Generation</summary>
+        <div class="panel-body">
+
+          <p>This is the Concept Generation Tab. This Concept Generation tab will include, 
+            and talk about <b> PrtincipleConcepts, design alternatives</b> from said concepts. 
+              <b>and descrptions for said concepts.</b> <p> The Group made concepts for Chasis ideas</p>
+
+              (Put stuff on the bottom last).
+
+          <div class="image-box">
+            <p><b>Photo (Concept Generation)</b></p>
+            <img src="concept-gen-main.png" alt="Concept generation main photo">
+            <div class="hint">Replace with your file (example: concept-gen-main.png)</div>
+          </div>
+
+          <div class="image-box">
+            <p><b>Photo (Concept Generation chasis)</b></p>
+            <img src="chassisconceptpic.png" alt="chassisconceptpic_.png">
+            <div class="hint">Replace with your file (example:chassisconceptpic.png)</div>
+          </div>
+
+          
+
+          
+
+          
+
+        </div>
+      </details>
+
+      <details>
+        <summary>Principle Concepts Developed,Concept Evaluation/Engineering Analysis</summary>
+        <div class="panel-body">
+
+          
+
+          <p>For the priciple concepts the group decided on the following.</p>
+          <p>(Put future writing here)</p>
+
+          <h3 class="section-title">Payload delivery</h3>  
+        <ul>
+          <li>The Payload Delivery will be a claw/band grip</li>
+        </ul>
+
+        <h3 class="section-title">Drive Type</h3>
+        <ul>
+          <li>The Drive Type will be a Foward/Skid Type</li>
+        </ul>
+
+        <h3 class="section-title">Motor driver</h3>
+        <ul>
+          <li>The motor driver will be a l298N Motor Driver</li>
+        </ul>
+
+        <h3 class="section-title">Power Supply</h3>
+        <ul>
+          <li>The Power supply will be a Lm2596 Buck Converter</li>
+        </ul>
+
+        <h3 class="section-title">Battery Requirements</h3>
+        <ul>
+          <li>The Batter will be a 1300 3s 11.1V Tipo</li>
+        </ul>
+
+        <h3 class="section-title">Motor Selection</h3>
+        <ul>
+          <li>The Motor selection will be a Geartsian A6207 X 2</li>
+        </ul>
+
+        <h3 class="section-title">Weight Concept</h3>
+        <ul>
+          <li>The group beleives that the overall weight will be 
+            about 346 grams/0.76 pounds.
+          </li>
+        </ul>
+          
+        <div class="six-images">
+          <div class="image-box">
+            <p><b>Photo #1</b></p>
+            <img src="principle-conceptspayloadpic.png" alt="Principle concepts Payload ">
+            <div class="hint">Replace with your file (example: principle-conceptspayloadpic.png)</div>
+          </div>
+          <div class="image-box">
+            <p><b>Photo #2</b></p>
+            <img src="principle-conceptsdrivetype.png" alt="Principle concepts Drive Type">
+            <div class="hint">Replace with your file (example: principle-conceptsdrivetype.png)</div>
+          </div>
+          <div class="image-box">
+            <p><b>Photo #3 Concept Evaluation- Hardwear selction part 1 </b></p>
+            <img src="principle-3powersupply.png" alt="Principle 3 Powersupply ">
+            <div class="hint">Replace with your file (example: principle-3powersupply.png)</div>
+          </div>
+          <div class="image-box">
+            <p><b>Photo #4 Concept Evaluation- Hardwear selction part 2</b></p>
+            <img src="principle-4motordriver.png" alt="Principle concepts 4 MotorDriver ">
+            <div class="hint">Replace with your file (example: principle-4motordriver.png)</div>
+          </div>
+          <div class="image-box">
+            <p><b>Photo #5 Concept Evaluation- Hardwear selction part 3</b></p>
+            <img src="principle-5PowerSupply.png" alt="Principle concepts 5 PowerSupply ">
+            <div class="hint">Replace with your file (example: principle-5PowerSupply.png)</div>
+          </div>
+          <div class="image-box">
+            <p><b>Photo #6 Concept Evaluation- Hardwear selction part 4</b></p>
+            <img src="principle-6batteryrequirements.png" alt="Principle concepts 6 batteryrequirements">
+            <div class="hint">Replace with your file (example: principle-6batteryrequirements.png)</div>
+          </div>
+          <div class="image-box">
+            <p><b>Photo #7 Concept Evaluation- Hardwear selction part 5</b></p>
+            <img src="principle-7motorrequiremnts.png" alt="Principle concepts 6 batteryrequirements">
+            <div class="hint">Replace with your file (example: principle-7motorrequiremnts.png)</div>
+          </div>
+          <div class="image-box">
+            <p><b>Photo #8 Photo #7 Concept Evaluation- Weight Analysis</b></p>
+            <img src="principle-8weight.png" alt="Principle concepts 6 batteryrequirements">
+            <div class="hint">Replace with your file (example: principle-8weight.png)</div>
+          </div>
+          
+        </div>
+
+         
+
+        </div>
+      </details>
+
+      <details>
+        <summary>Design Alternatives</summary>
+        <div class="panel-body">
+
+          <p>- Some design alternatives included for Payload: Dump truck style, 
+            Trap door, abd spring loaded.
+          </p>
+          <p>- Some Alternative designs for drive type included AWD (A wheel Drive),
+            Tank Style, and RWD Car style.
+          </p>
+
+          <p>- Some Alternative designs for Navigation are, using Google API, 
+            using group member's Vicente's Phone since it's a droid, or use a 
+            magnometer.
+          </p> 
+
+         
+          <div class="two-images">
+            <div class="image-box">
+              <p><b>Photo #1</b></p>
+              <img src="design-alts-1.png" alt="Design alternatives photo 1">
+              <div class="hint">Replace with your file (example: design-alts-1.png)</div>
+            </div>
+            <div class="image-box">
+              <p><b>Photo #2</b></p>
+              <img src="design-alts-2.png" alt="Design alternatives photo 2">
+              <div class="hint">Replace with your file (example: design-alts-2.png)</div>
+            </div>
+          </div>
+
+          
+
+         
+
+        </div>
+      </details>
+
+      <details>
+        <summary>Sketches and CAD Models</summary>
+        <div class="panel-body">
+
+          <p>Team member William made a rough idea on solidworks for a protoype of 
+            the rover </p>
+          <p>(Put future writing here)</p>
+
+          <div class="two-images">
+            <div class="image-box">
+              <p><b>Photo #1 rough idea</b></p>
+              <img src="sketches-cad-1.png" alt="Sketches and CAD photo 1">
+              <div class="hint">Replace with your file (example: sketches-cad-1.png)</div>
+            </div>
+            <div class="image-box">
+              <p><b>Photo #2</b></p>
+              <img src="sketches-cad-2.png" alt="Sketches and CAD photo 2">
+              <div class="hint">Replace with your file (example: sketches-cad-2.png)</div>
+            </div>
+          </div>
+
+         
+
+        </div>
+      </details>
+
+      <details>
+        <summary>Concept Descriptions</summary>
+        <div class="panel-body">
+
+          <p>This tab will give brief descriptions for are concepts </p>
+          <div class="section-title">Concept part 1: Payload Delivery – Claw/Band Grip  </div>
+      
+                <p>The rover will use a claw or band-style gripping mechanism to securely hold 
+                  and transport the payload. This design allows for controlled release while keeping
+                   the system lightweight and simple.</p>
+
+                <div class="section-title">Concept part 2: Drive Type – Forward/Skid Type </div>
+      
+                <p>The rover will use a forward skid-steer drive configuration for improved turning 
+                  and maneuverability. This system allows tight turns and better control during 
+                  obstacle avoidance.</p>
+
+                <div class="section-title">Concept part 3: Motor Driver – L298N </div>
+      
+                <p>The L298N motor driver will control the direction and speed of the DC motors. 
+                  It allows independent control of each motor, enabling precise steering and movement.</p>
+    
+                <div class="section-title">Concept part 4: Power Supply – LM2596 Buck Converter </div>
+          
+                <p>An LM2596 buck converter will regulate voltage from the battery to safely power
+                   sensitive electronics. This ensures stable operation of the Arduino and sensors.</p>
+
+                <div class="section-title">Concept part 5: Battery – 1300mAh 3S 11.1V LiPo</div>
+    
+                <p>The rover will use a 3S 11.1V LiPo battery to provide sufficient power for 
+                  motors and electronics. This battery balances weight, capacity, and performance 
+                  for mission duration.</p>
+  
+                <div class="section-title">Concept part 6: Motor Selection – Gearstian A6207 (x2)</div>
+        
+                <p>Two Gearstian A6207 gear motors will provide the torque required for movement 
+                  and obstacle navigation. Their gear reduction improves efficiency and ensures 
+                  reliable traction..</p>
+      
+                <div class="section-title">Concept part 7: Weight</div>
+            
+                <p>The estimated total weight of the rover is approximately 346 grams (0.76 lb),
+                  staying well under the 2.5 lb requirement. Keeping the rover lightweight 
+                  improves efficiency, durability, and overall performance.</p>
+
+                
+              <p>(Put future writing here)</p>
+              <p>(Put future writing here)</p>
+
+              <div class="two-images">
+                <div class="image-box">
+                  <p><b>Photo #1</b></p>
+                  <img src="concept-desc-1.png" alt="Concept descriptions photo 1">
+                  <div class="hint">Replace with your file (example: concept-desc-1.png)</div>
+                </div>
+                <div class="image-box">
+                  <p><b>Photo #2</b></p>
+                  <img src="concept-desc-2.png" alt="Concept descriptions photo 2">
+                  <div class="hint">Replace with your file (example: concept-desc-2.png)</div>
+                </div>
+
+         
+
+        </div>
+      </details>
+
+      <!-- 4) CONCEPT EVALUATION (BAR-ONLY LOOK, WITH SUBDROPDOWNS INSIDE) -->
+      <details class="bar-only">
+        <summary>Concept Evaluation Videos/prototyping videos</summary>
+        <div class="panel-body">
+
+      
+          <p>
+            The group evaluated the concepts of Payload Delivery, Drive Type,
+            Motor Driver, Power Supply, Battery Requirements, Motor Selection,
+            and overall Weight Concept. Then decided to make a prototype
+          </p>
+          
+          <p>The group made a prototype for functionality of holding the block 
+            with a hairtie and then and releasing it using a lever
+          </p>
+
+          
+          <!-- VIDEO SECTION -->
+          <div class="image-box" style="margin-top: 18px;">
+            <p><b>Prototype / Concept Evaluation Video</b></p>
+          
+            <video width="100%" controls>
+              <source src="blockvideo1.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          
+            <div class="hint">
+              Make sure blockvideo1.mp4 is in the same folder as this HTML file.
+            </div>
+          </div>
+          
+
+          <div class="image-box">
+            <p><b>Photo (Concept Evaluation)</b></p>
+            <img src="concept-eval-main.png" alt="Concept evaluation main photo">
+            <div class="hint">Replace with your file (example: concept-eval-main.png)</div>
+          </div>
+
+          
+
+          
+
+
+          
+
+        </div>
+      </details>
+
+      
+
+
+      <details>
+        <summary>Decision Matrices / Belief Maps</summary>
+        <div class="panel-body">
+
+          <p>The team made a matrix for what they beleived was the right option
+            for the Drive Type. FWD + Skid was the overall pick.
+          </p>
+          <p>(Put future writing here)</p>
+
+          <div class="two-images">
+            <div class="image-box">
+              <p><b>Photo #1</b></p>
+              <img src="decision-matrix-1.png" alt="Decision matrices photo 1">
+              <div class="hint">Replace with your file (example: decision-matrix-1.png)</div>
+            </div>
+            <div class="image-box">
+              <p><b>Photo #2</b></p>
+              <img src="decision-matrix-2.png" alt="Decision matrices photo 2 (if we need to put another photo)">
+              <div class="hint">Replace with your file (example: decision-matrix-2.png)</div>
+            </div>
+          </div>
+
+         
+
+        </div>
+      </details>
+
+      <details>
+        <summary>Leave blank for now in case we need another tab for future stuff</summary>
+        <div class="panel-body">
+
+          <p>Leave blank for now in case we need another tab for future stuff </p>
+          <p>Leave blank for now in case we need another tab for future stuff</p>
+
+          
+
+         
+
+        </div>
+      </details>
+
+    </div>
+  </main>
+</div>
+</body>
+</html>

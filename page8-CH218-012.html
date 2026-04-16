@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Rover Page 8</title>
+
+<style>
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f6f6fb;
+  }
+
+  .layout {
+    display: flex;
+    min-height: 100vh;
+  }
+
+  .sidebar {
+    width: 240px;
+    background: #c9c0f5;
+    padding: 16px 12px;
+    box-sizing: border-box;
+  }
+
+  .sidebar h2 {
+    margin: 0 0 14px 0;
+    font-size: 18px;
+    color: #6a4bdc;
+    font-weight: 700;
+  }
+
+  .nav {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+  }
+
+  .nav a {
+    text-decoration: none;
+    color: #4b3aa5;
+    background: rgba(255, 255, 255, 0.35);
+    border: 1px solid rgba(0,0,0,0.08);
+    border-radius: 10px;
+    padding: 10px 12px;
+    display: block;
+    font-weight: 600;
+  }
+
+  .nav a:hover {
+    background: rgba(255, 255, 255, 0.55);
+  }
+
+  .nav a.active {
+    background: white;
+    border-left: 6px solid #7b5cff;
+    padding-left: 8px;
+  }
+
+  .main {
+    flex: 1;
+    padding: 32px 40px;
+    box-sizing: border-box;
+  }
+
+  .page-title {
+    color: #7b5cff;
+    font-size: 46px;
+    margin: 8px 0 8px 0;
+    font-family: "Trebuchet MS", Arial, sans-serif;
+  }
+
+  .page-subtitle {
+    max-width: 1000px;
+    margin: 0 0 18px 0;
+    color: #666;
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  .panel-wrap {
+    max-width: 1100px;
+    margin: 0;
+  }
+
+  details {
+    margin: 18px 0;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid rgba(0,0,0,0.12);
+    background: white;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  }
+
+  summary {
+    cursor: pointer;
+    font-weight: 700;
+    padding: 16px 18px;
+    background: linear-gradient(90deg, #7b5cff, #a06bff);
+    color: white;
+    list-style: none;
+    position: relative;
+  }
+
+  summary::-webkit-details-marker { display: none; }
+
+  summary::after {
+    content: "▾";
+    position: absolute;
+    right: 16px;
+    top: 14px;
+    font-size: 18px;
+    opacity: 0.95;
+    transform: rotate(0deg);
+    transition: transform 0.2s ease;
+  }
+
+  details[open] summary::after {
+    transform: rotate(180deg);
+  }
+
+  .panel-body {
+    padding: 18px;
+    color: #444;
+    font-size: 14px;
+    line-height: 1.7;
+  }
+
+  /* ---- IMAGE BOX ---- */
+  .image-box {
+    margin-top: 14px;
+    border: 2px dashed rgba(0,0,0,0.22);
+    border-radius: 10px;
+    background: #fafafe;
+    padding: 16px;
+    text-align: center;
+  }
+
+  .image-box img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    border: 1px solid rgba(0,0,0,0.12);
+    display: block;
+    margin: 0 auto;
+  }
+
+  .hint {
+    color: #777;
+    font-size: 13px;
+    margin-top: 8px;
+  }
+</style>
+</head>
+
+<body>
+
+<div class="layout">
+
+<aside class="sidebar">
+  <h2>Operation Rover Rebuttal</h2>
+
+  <nav class="nav">
+    <a href="index.html">Home Page (Page 1)</a>
+    <a href="page2.html">Project Definiton (Page 2)</a>
+    <a href="page3.html">System Design (Page 3)</a>
+    <a href="page4.html">Project Management (Page 4)</a>
+    <a href="page5.html">Missions (Page 5)</a>
+    <a href="page6.html">Arduino Tutorials/other tutorials (Page 6)</a>
+    <a href="page7.html">Weekly Team Meeting Summaries (Page 7)</a>
+    <a href="page8.html"class="active">Closing Thoughts (Page 8)</a>
+    <a href="page9.html">Resources (Page 9)</a>
+  </nav>
+</aside>
+
+<main class="main">
+
+<h1 class="page-title">Arduino Projects/Other Projects</h1>
+<p class="page-subtitle">
+Learning exercises and preliminary experiments.
+</p>
+
+<div class="panel-wrap">
+
+<!-- TAB 1 (NO BUBBLES NOW) -->
+<details>
+  <summary>(Arduino rover module assignment 1)</summary>
+  <div class="panel-body">
+    <p>(Paragraph 1)</p>
+    <p>(Paragraph 2)</p>
+  </div>
+</details>
+
+<!-- TAB 2 (KEEP NORMAL TEXT) -->
+<details>
+  <summary>(Arduino rover module assignment 2 ultrasonic)</summary>
+  <div class="panel-body">
+
+    <p>
+      This tutorial demonstrated the use of an Ultrasonic range finder.
+      The point of this tutorial is to create a sketch that displays the
+      distance to an object on user request.
+    </p>
+
+    <div class="image-box">
+      <p><b>Ultrasonic Sensor Physical Setup</b></p>
+      <img src="ultrasonic_setup.png" alt="Ultrasonic Arduino Setup">
+      <div class="hint">Upload as <b>ultrasonic_setup.png</b></div>
+    </div>
+
+    <div class="image-box">
+      <p><b>Arduino Code (Screenshot)</b></p>
+      <img src="ultrasonic_code.png" alt="Ultrasonic Arduino Code">
+      <div class="hint">Upload as <b>ultrasonic_code.png</b></div>
+    </div>
+
+    <div class="image-box">
+      <p><b>Wiring Diagram / Hand Sketch</b></p>
+      <img src="ultrasonic_sketch.png" alt="Ultrasonic Wiring Sketch">
+      <div class="hint">Upload as <b>ultrasonic_sketch.png</b></div>
+    </div>
+
+    <p>(Paragraph 2 — write reflections, challenges, or results here.)</p>
+
+  </div>
+</details>
+
+<!-- TAB 3 (ADD 3 PICS + NO BUBBLES) -->
+<details>
+  <summary>(Arduino rover module assignment 3 - RF)</summary>
+  <div class="panel-body">
+
+    <p>(Paragraph 1)</p>
+    <p>(Paragraph 2)</p>
+
+    <!-- RF IMAGE 1 -->
+    <div class="image-box">
+      <p><b>RF Tutorial Diagram</b></p>
+      <img src="ardinoRFtutorialdiagrampic.png" alt="RF tutorial diagram">
+      <div class="hint">If your file is not .png, change the extension here.</div>
+    </div>
+
+    <!-- RF IMAGE 2 -->
+    <div class="image-box">
+      <p><b>RF Receiver Code</b></p>
+      <img src="RFrecievercodepic.png" alt="RF receiver code screenshot">
+      <div class="hint">If your file is not .png, change the extension here.</div>
+    </div>
+
+    <!-- RF IMAGE 3 -->
+    <div class="image-box">
+      <p><b>RF Transmitter Code</b></p>
+      <img src="RFtransmitorcodepic.png" alt="RF transmitter code screenshot">
+      <div class="hint">If your file is not .png, change the extension here.</div>
+    </div>
+
+  </div>
+</details>
+
+<!-- TAB 4 (NO BUBBLES NOW) -->
+<details>
+  <summary>(Other Project #4)</summary>
+  <div class="panel-body">
+    <p>(Paragraph 1)</p>
+    <p>(Paragraph 2)</p>
+  </div>
+</details>
+
+</div>
+</main>
+
+</div>
+</body>
+</html>

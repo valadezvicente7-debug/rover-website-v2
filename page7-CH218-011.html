@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Weekly Team Meeting Summaries (Page 7)</title>
+
+<style>
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f6f6fb;
+  }
+
+  /* ---- LAYOUT ---- */
+  .layout {
+    display: flex;
+    min-height: 100vh;
+  }
+
+  /* ---- SIDEBAR ---- */
+  .sidebar {
+    width: 240px;
+    background: #c9c0f5;
+    padding: 16px 12px;
+    box-sizing: border-box;
+  }
+
+  .sidebar h2 {
+    margin: 0 0 14px 0;
+    font-size: 18px;
+    color: #6a4bdc;
+    font-weight: 700;
+  }
+
+  .nav {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+  }
+
+  .nav a {
+    text-decoration: none;
+    color: #4b3aa5;
+    background: rgba(255, 255, 255, 0.35);
+    border: 1px solid rgba(0,0,0,0.08);
+    border-radius: 10px;
+    padding: 10px 12px;
+    display: block;
+    font-weight: 600;
+  }
+
+  .nav a:hover {
+    background: rgba(255, 255, 255, 0.55);
+  }
+
+  .nav a.active {
+    background: white;
+    border-left: 6px solid #7b5cff;
+    padding-left: 8px;
+  }
+
+  /* ---- MAIN CONTENT ---- */
+  .main {
+    flex: 1;
+    padding: 32px 40px;
+    box-sizing: border-box;
+  }
+
+  .page-title {
+    text-align: left;
+    color: #7b5cff;
+    font-size: 46px;
+    margin: 8px 0 8px 0;
+    font-family: "Trebuchet MS", Arial, sans-serif;
+  }
+
+  .page-subtitle {
+    text-align: left;
+    max-width: 1100px;
+    margin: 0 0 18px 0;
+    color: #666;
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  /* ---- DROPDOWN PANELS ---- */
+  .panel-wrap {
+    max-width: 1100px;
+    margin: 0;
+  }
+
+  details {
+    margin: 18px 0;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid rgba(0,0,0,0.12);
+    background: white;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  }
+
+  summary {
+    cursor: pointer;
+    font-weight: 700;
+    padding: 16px 18px;
+    background: linear-gradient(90deg, #7b5cff, #a06bff);
+    color: white;
+    list-style: none;
+    position: relative;
+  }
+
+  summary::-webkit-details-marker { display: none; }
+
+  summary::after {
+    content: "▾";
+    position: absolute;
+    right: 16px;
+    top: 14px;
+    font-size: 18px;
+    opacity: 0.95;
+    transform: rotate(0deg);
+    transition: transform 0.2s ease;
+  }
+
+  details[open] summary::after {
+    transform: rotate(180deg);
+  }
+
+  .panel-body {
+    padding: 18px;
+    color: #444;
+    font-size: 14px;
+    line-height: 1.65;
+  }
+
+  .hint {
+    color: #777;
+    font-size: 13px;
+    margin-top: 8px;
+  }
+
+  /* ---- IMAGE BOX (shared style) ---- */
+  .image-box {
+    margin-top: 14px;
+    border: 2px dashed rgba(0,0,0,0.22);
+    border-radius: 10px;
+    background: #fafafe;
+    padding: 16px;
+    text-align: center;
+  }
+
+  .image-box img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    border: 1px solid rgba(0,0,0,0.12);
+    display: block;
+    margin: 0 auto;
+  }
+</style>
+</head>
+
+<body>
+<div class="layout">
+
+  <aside class="sidebar">
+    <h2>Operation Rover Rebuttal</h2>
+
+    <nav class="nav">
+      <a href="index.html" >Home Page (Page 1)</a>
+      <a href="page2.html">Project Definiton (Page 2)</a>
+      <a href="page3.html">System Design (Page 3)</a>
+      <a href="page4.html">Empty Page leave for now (Page 4)</a>
+      <a href="page5.html">Missions (Page 5)</a>
+      <a href="page6.html">Arduino Tutorials/other tutorials (Page 6)</a>
+      <a href="page7.html" class="active">Weekly Team Meeting Summaries (Page 7)</a>
+      <a href="page8.html">Closing Thoughts (Page 8)</a>
+      <a href="page9.html">Resources (Page 9)</a>
+    </nav>
+  </aside>
+
+  <main class="main">
+    <h1 class="page-title">Weekly Team Meeting Summaries</h1>
+
+    <p class="page-subtitle">
+      These are the summaries of our weekly team meetings. There are 17 weeks, and each dropdown will give
+      a summary of what the team did each week.
+    </p>
+
+    <div class="panel-wrap">
+
+      <details>
+        <summary>Week 1 Summary</summary>
+        <div class="panel-body">
+          <p><b>Summary:</b> For week 1 The team assembled and made a teram contract that the team sgined for this semester's 
+          Rover project</p>
+          <p class="hint">(Example: roles assigned, project requirements reviewed, initial planning.)</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>Week 2 Summary</summary>
+        <div class="panel-body">
+          <p><b>Summary:</b> For week 2, the team began brainstorming on what to do in the beginning of this project.
+          The team started to figure out how to work on the website, Product definition, Work Breakdown Structure,
+          decision matrices, and concept generation.</p>
+
+          <!-- WEEK 2 IMAGES -->
+          <div class="image-box">
+            <p><b>Week 2 – Photo 1</b></p>
+            <img src="week2pic1of3.png" alt="Week 2 image 1">
+          </div>
+
+          <div class="image-box">
+            <p><b>Week 2 – Photo 2</b></p>
+            <img src="week2pic2of3.png" alt="Week 2 image 2">
+          </div>
+
+          <div class="image-box">
+            <p><b>Week 2 – Photo 3</b></p>
+            <img src="week2pic3of3.png" alt="Week 2 image 3">
+          </div>
+
+        </div>
+      </details>
+
+      <details>
+        <summary>Week 3 Summary</summary>
+        <div class="panel-body">
+          <p><b>Summary:</b> For week 3, the team helped Vicente on how to use/find the right tools for making the website!
+          The team also worked on who was going to work on what slides for the SSR/PDR Presentation.</p>
+
+          <div class="image-box">
+            <p><b>Week 3 Notes / Planning</b></p>
+            <img src="week3.png" alt="Week 3 notes / planning image">
+          </div>
+        </div>
+      </details>
+
+      <details>
+        <summary>Week 4 Summary</summary>
+        <div class="panel-body">
+          <p><b>Summary:</b> For week 4, the team presented there SRR + PDR Power Point presentation to Integration Industries.</p>
+
+          <div class="image-box">
+          <p><b>Week 4 SRR+PDR pic</b></p>
+          <img src="Week4SRRPDRpic.png" alt= "Week4_SRRPDRpic">
+        </div>
+      </details>
+
+      <details>
+        <summary>Week 5 Summary</summary>
+        <div class="panel-body">
+          <p><b>Summary:</b> For week 5 the team bought parts such as busk coneverotr, TPU spool, and an 11.1Volt s3 Lipobattering.
+          The tema worked on programing, asked dr.Bevill for advice on coding for mission 1, and started to maker a rough draft of the abstract for 
+          The showcase. The team also got motors running.
+          </p>
+
+          <div class="image-box">
+          <p><b>Week 5 Summary pics photo 1</b></p>
+          <img src="Week5pic1.png" alt= "Week5pic1_">
+
+          <div class="image-box">
+          <p><b>Week 5 Summary pics photo 2</b></p>
+          <img src="Week5pic2.png" alt= "Week5pic2_">
+
+        </div>
+        </div>
+      </details>
+
+      <details>
+        <summary>Week 6 Summary</summary>
+        <div class="panel-body">
+          <p><b>Summary:</b>The team worked on thier CDR Presentations, Website submission and SolidWorks Model
+           and Draft of Student Showcase Abstract. The team also worked on assembling the rover
+          </p>
+        </div>
+      </details>
+
+      <details>
+        <summary>Week 7 Summary</summary>
+        <div class="panel-body">
+          <p><b>Summary:</b> The team presented thier CDR presentaion, worked on the rover, and worked on Website Update #2.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>Week 8 Summary</summary>
+        <div class="panel-body">
+          <p><b>Summary:</b> The tema worked on presenting Mission 1 to Dr. Bevill, and got ready for being graded on mission 1 on wednesday March. 11. 2026..</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>Week 9 Summary</summary>
+        <div class="panel-body">
+          <p><b>Summary:</b> (Type Week 9 meeting summary here.)</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>Week 10 Summary</summary>
+        <div class="panel-body">
+          <p><b>Summary:</b> (Type Week 10 meeting summary here.)</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>Week 11 Summary</summary>
+        <div class="panel-body">
+          <p><b>Summary:</b> (Type Week 11 meeting summary here.)</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>Week 12 Summary</summary>
+        <div class="panel-body">
+          <p><b>Summary:</b> (Type Week 12 meeting summary here.)</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>Week 13 Summary</summary>
+        <div class="panel-body">
+          <p><b>Summary:</b> (Type Week 13 meeting summary here.)</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>Week 14 Summary</summary>
+        <div class="panel-body">
+          <p><b>Summary:</b> (Type Week 14 meeting summary here.)</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>Week 15 Summary</summary>
+        <div class="panel-body">
+          <p><b>Summary:</b> (Type Week 15 meeting summary here.)</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>Week 16 Summary</summary>
+        <div class="panel-body">
+          <p><b>Summary:</b> (Type Week 16 meeting summary here.)</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>Week 17 Summary</summary>
+        <div class="panel-body">
+          <p><b>Summary:</b> (Type Week 17 meeting summary here.)</p>
+        </div>
+      </details>
+
+    </div>
+  </main>
+</div>
+</body>
+</html>
